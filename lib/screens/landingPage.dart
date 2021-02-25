@@ -115,16 +115,15 @@ class LandingPage extends StatelessWidget {
 
               // create account
               TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => CreateAccount()));
-                  },
-                  child: Text(
-                    'Create Account',
-                    style: TextStyle(color: black, fontSize: 12),
-                  ))
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => CreateAccount()));
+                },
+                child: Text(
+                  'Create Account',
+                  style: TextStyle(color: black, fontSize: 12),
+                ),
+              ),
             ],
           ),
         ),
