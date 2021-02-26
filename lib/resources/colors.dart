@@ -11,5 +11,4 @@ Color darkGrey = Color(0xffc4c4c4);
 Color themeGreen = Color(0xff255147);
 Color lightGreen = Color(0xff316344);
 Color darkGreen = Color(0xff29593c);
-Color selected = Color(0xffe0a40a);
-Color unselected = Color(0xffdcdcdc);
+Color yellow = Color(0xffe0a40a);

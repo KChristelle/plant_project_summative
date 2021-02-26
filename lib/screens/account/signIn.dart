@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/colors.dart';
 import 'package:plant_growth_tracking_app/screens/account/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/account/signUp.dart';
+import 'package:plant_growth_tracking_app/screens/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/landingPage.dart';
 
 class SignIn extends StatelessWidget {
@@ -135,7 +136,7 @@ class SignIn extends StatelessWidget {
                 child: RaisedButton(
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   textColor: white,
                   color: darkGreen,
@@ -159,27 +160,39 @@ class SignIn extends StatelessWidget {
               ),
 
               // create account
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CreateAccount()));
-                },
-                child: Text(
-                  'Create Account',
-                  style: TextStyle(color: black, fontSize: 10),
-                ),
-              ),
+              Row(
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateAccount()));
+                    },
+                    child: Text(
+                      'Create Account',
+                      style: TextStyle(color: black, fontSize: 10),
+                    ),
+                  ),
 
-              // forgot password
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => ResetPassword()));
-                },
-                child: Text(
-                  'Forgot Password?',
-                  style: TextStyle(color: black, fontSize: 10),
-                ),
+                  SizedBox(
+                    width: 50,
+                  ),
+
+                  // forgot password
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ResetPassword()));
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: black, fontSize: 10),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

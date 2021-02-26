@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/colors.dart';
+import 'package:plant_growth_tracking_app/screens/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/landingPage.dart';
 
 class CreateAccount extends StatelessWidget {
@@ -159,7 +160,7 @@ class CreateAccount extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CreateAccount()));
+                            builder: (context) => HomePage()));
                   },
                   textColor: white,
                   color: darkGreen,
