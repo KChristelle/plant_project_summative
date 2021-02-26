@@ -48,7 +48,11 @@ class ResetPassword extends StatelessWidget {
               ),
               Text(
                 "Planner all plant parents need",
-                style: TextStyle(color: white, fontSize: 12),
+                style: TextStyle(
+                  color: white,
+                  fontSize: 12,
+                  letterSpacing: 0.5,
+                ),
               ),
               SizedBox(
                 height: 60,

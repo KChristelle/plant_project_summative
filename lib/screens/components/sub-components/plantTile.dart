@@ -12,10 +12,10 @@ class PlantTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(right: 16),
-      // decoration: BoxDecoration(
-      //   color: themeGreen,
-      //   borderRadius: BorderRadius.circular(10),
-      // ),
+      decoration: BoxDecoration(
+        color: themeGreen,
+        borderRadius: BorderRadius.circular(50),
+      ),
       child: Column(
         children: <Widget>[
           Container(
@@ -23,9 +23,9 @@ class PlantTile extends StatelessWidget {
               children: <Widget>[
                 // Image
                 Container(
-                  height: 150,
-                  width: 140,
-                  margin: EdgeInsets.only(left: 35, top: 8),
+                  height: 100,
+                  width: 75,
+                  margin: EdgeInsets.only(left: 35),
                   child: Image.asset(
                     imgURL,
                     fit: BoxFit.contain,
@@ -46,9 +46,9 @@ class PlantTile extends StatelessWidget {
 
                 // Plant Name
                 Container(
-                  height: 50,
-                  width: 65,
-                  margin: EdgeInsets.only(left: 8, top: 150),
+                  margin: EdgeInsets.only(left: 8, top: 108),
+                  width: 90,
+                  height: 30,
                   alignment: Alignment.center,
                   child: Text(
                     plantName,

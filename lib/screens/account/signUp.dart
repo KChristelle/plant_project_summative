@@ -48,7 +48,11 @@ class CreateAccount extends StatelessWidget {
               ),
               Text(
                 "Planner all plant parents need",
-                style: TextStyle(color: white, fontSize: 12),
+                style: TextStyle(
+                  color: white,
+                  fontSize: 12,
+                  letterSpacing: 0.5,
+                ),
               ),
               SizedBox(
                 height: 60,
@@ -157,10 +161,8 @@ class CreateAccount extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   textColor: white,
                   color: darkGreen,

@@ -49,14 +49,15 @@ class _MyPlantsState extends State<MyPlants> {
             ),
           ),
 
-          // SizedBox(
-          //   height: 12,
-          // ),
-          // Container(
-          //   width: 30,
-          //   height: 5,
-          //   color: black,
-          // ),
+          SizedBox(
+            height: 12,
+          ),
+          Container(
+            width: 30,
+            height: 5,
+            padding: EdgeInsets.symmetric(horizontal: 22),
+            color: black,
+          ),
 
           SizedBox(
             height: 20,
@@ -100,14 +101,15 @@ class _MyPlantsState extends State<MyPlants> {
             ),
           ),
 
-          // SizedBox(
-          //   height: 12,
-          // ),
-          // Container(
-          //   width: 30,
-          //   height: 5,
-          //   color: black,
-          // ),
+          SizedBox(
+            height: 12,
+          ),
+          Container(
+            width: 30,
+            height: 5,
+            padding: EdgeInsets.symmetric(horizontal: 22),
+            color: black,
+          ),
 
           SizedBox(
             height: 20,
@@ -116,11 +118,12 @@ class _MyPlantsState extends State<MyPlants> {
           // Plant Tiles
           Container(
             padding: EdgeInsets.only(left: 22),
-            height: 200,
+            height: 150,
+            width: 120,
             child: ListView.builder(
               itemCount: plants.length,
               shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
+              scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
                 return PlantTile(
                   imgURL: plants[index].imgURL,
