@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
@@ -92,9 +92,9 @@ class LandingPage extends StatelessWidget {
                 width: 200,
                 height: 35,
                 child: RaisedButton(
-                  onPressed: null,
-                  textColor: white,
-                  color: blue,
+                  onPressed: () {},
+                  textColor: Colors.white,
+                  color: Colors.blue,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -122,7 +122,10 @@ class LandingPage extends StatelessWidget {
                 },
                 child: Text(
                   'Create Account',
-                  style: TextStyle(color: black, fontSize: 12),
+                  style: TextStyle(
+                      color: Colors.green[800],
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
                 ),
               ),
             ],
