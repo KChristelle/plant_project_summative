@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/resources/colors.dart';
-import 'package:plant_growth_tracking_app/screens/account/resetPassword.dart';
-import 'package:plant_growth_tracking_app/screens/account/signUp.dart';
-import 'package:plant_growth_tracking_app/screens/homePage.dart';
-import 'package:plant_growth_tracking_app/screens/landingPage.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
+import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
 
 class SignIn extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class SignIn extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: grey,
+          color: kTextColor,
           image: DecorationImage(
               image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
         ),
@@ -29,7 +29,7 @@ class SignIn extends StatelessWidget {
                 "Plants",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 30,
                   letterSpacing: 5,
@@ -42,7 +42,7 @@ class SignIn extends StatelessWidget {
                 width: 35,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: white,
+                  color: kBackgroundColor,
                 ),
               ),
               SizedBox(
@@ -51,7 +51,7 @@ class SignIn extends StatelessWidget {
               Text(
                 "Planner all plant parents need",
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontSize: 12,
                   letterSpacing: 0.5,
                 ),
@@ -67,10 +67,10 @@ class SignIn extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LandingPage()));
                 },
-                backgroundColor: white,
+                backgroundColor: kBackgroundColor,
                 child: Icon(
                   Icons.close_rounded,
-                  color: black,
+                  color: kTextColor,
                   size: 35,
                 ),
               ),
@@ -83,8 +83,8 @@ class SignIn extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -111,8 +111,8 @@ class SignIn extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -142,7 +142,7 @@ class SignIn extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  textColor: white,
+                  textColor: kBackgroundColor,
                   color: darkGreen,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
@@ -175,7 +175,7 @@ class SignIn extends StatelessWidget {
                     },
                     child: Text(
                       'Create Account',
-                      style: TextStyle(color: black, fontSize: 10),
+                      style: TextStyle(color: kTextColor, fontSize: 10),
                     ),
                   ),
 
@@ -193,7 +193,7 @@ class SignIn extends StatelessWidget {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: TextStyle(color: black, fontSize: 10),
+                      style: TextStyle(color: kTextColor, fontSize: 10),
                     ),
                   ),
                 ],

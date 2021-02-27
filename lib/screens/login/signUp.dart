@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/resources/colors.dart';
-import 'package:plant_growth_tracking_app/screens/homePage.dart';
-import 'package:plant_growth_tracking_app/screens/landingPage.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
 class CreateAccount extends StatelessWidget {
   @override
@@ -10,9 +10,11 @@ class CreateAccount extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: grey,
+          color: kTextColor,
           image: DecorationImage(
-              image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
+            image: AssetImage("assets/landing.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Container(
           width: 400,
@@ -27,7 +29,7 @@ class CreateAccount extends StatelessWidget {
                 "Plants",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 30,
                   letterSpacing: 5,
@@ -40,7 +42,7 @@ class CreateAccount extends StatelessWidget {
                 width: 35,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: white,
+                  color: kBackgroundColor,
                 ),
               ),
               SizedBox(
@@ -49,7 +51,7 @@ class CreateAccount extends StatelessWidget {
               Text(
                 "Planner all plant parents need",
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontSize: 12,
                   letterSpacing: 0.5,
                 ),
@@ -64,15 +66,17 @@ class CreateAccount extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LandingPage()));
                 },
-                backgroundColor: white,
+                backgroundColor: kBackgroundColor,
                 child: Icon(
                   Icons.close_rounded,
-                  color: black,
+                  color: kTextColor,
                   size: 35,
                 ),
               ),
 
-              SizedBox(height: 60),
+              SizedBox(
+                height: 60,
+              ),
 
               // Email
               Container(
@@ -80,8 +84,8 @@ class CreateAccount extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -107,8 +111,8 @@ class CreateAccount extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -134,8 +138,8 @@ class CreateAccount extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -164,7 +168,7 @@ class CreateAccount extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => HomePage()));
                   },
-                  textColor: white,
+                  textColor: kBackgroundColor,
                   color: darkGreen,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
@@ -193,7 +197,7 @@ class CreateAccount extends StatelessWidget {
                 },
                 child: Text(
                   'Already have an account? Sign In',
-                  style: TextStyle(color: black, fontSize: 10),
+                  style: TextStyle(color: kTextColor, fontSize: 10),
                 ),
               ),
             ],
