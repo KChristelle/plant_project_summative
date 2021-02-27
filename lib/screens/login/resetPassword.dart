@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/resources/colors.dart';
-import 'package:plant_growth_tracking_app/screens/account/signIn.dart';
-import 'package:plant_growth_tracking_app/screens/landingPage.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
 
 class ResetPassword extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class ResetPassword extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-          color: grey,
+          color: kTextColor,
           image: DecorationImage(
               image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
         ),
@@ -27,7 +27,7 @@ class ResetPassword extends StatelessWidget {
                 "Plants",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontWeight: FontWeight.w600,
                   fontSize: 30,
                   letterSpacing: 5,
@@ -40,7 +40,7 @@ class ResetPassword extends StatelessWidget {
                 width: 35,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: white,
+                  color: kBackgroundColor,
                 ),
               ),
               SizedBox(
@@ -49,7 +49,7 @@ class ResetPassword extends StatelessWidget {
               Text(
                 "Planner all plant parents need",
                 style: TextStyle(
-                  color: white,
+                  color: kBackgroundColor,
                   fontSize: 12,
                   letterSpacing: 0.5,
                 ),
@@ -64,10 +64,10 @@ class ResetPassword extends StatelessWidget {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => LandingPage()));
                 },
-                backgroundColor: white,
+                backgroundColor: kBackgroundColor,
                 child: Icon(
                   Icons.close_rounded,
-                  color: black,
+                  color: kTextColor,
                   size: 35,
                 ),
               ),
@@ -80,8 +80,8 @@ class ResetPassword extends StatelessWidget {
                 height: 35,
                 child: RaisedButton(
                   onPressed: null,
-                  textColor: black,
-                  color: white,
+                  textColor: kTextColor,
+                  color: kBackgroundColor,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -110,7 +110,7 @@ class ResetPassword extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => SignIn()));
                   },
-                  textColor: white,
+                  textColor: kBackgroundColor,
                   color: darkGreen,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,

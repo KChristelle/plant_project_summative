@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/resources/colors.dart';
-import 'package:plant_growth_tracking_app/screens/components/body.dart';
-import 'package:plant_growth_tracking_app/screens/landingPage.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
 class HomePage extends StatefulWidget {
   // This widget is the home page of the application. It is stateful, meaning
@@ -13,19 +13,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -45,20 +32,24 @@ class _HomePageState extends State<HomePage> {
 
   AppBar buildAppBar() {
     return AppBar(
+      elevation: 0,
       // Here we take the value from the MyHomePage object that was created by
       // the App.build method, and use it to set our appbar title.
       title: Text(
-        "Plants Tracker",
-        style: TextStyle(color: black),
+        "Plant App",
       ),
-      backgroundColor: grey,
+      leading: IconButton(
+        // icon: SvgPicture.asset("assets/icons/menu.svg"),
+        icon: Icon(Icons.menu),
+        onPressed: () {},
+      ),
     );
   }
 
   Theme buildNavDrawer() {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: themeGreen,
+        canvasColor: kPrimaryColor,
       ),
       child: Drawer(
         child: ListView(
@@ -75,29 +66,29 @@ class _HomePageState extends State<HomePage> {
                 accountName: Text(
                   "User Name",
                   style: TextStyle(
-                    color: themeGreen,
+                    color: kPrimaryColor,
                   ),
                 ),
                 accountEmail: Text(
                   "username@gmail.com",
-                  style: TextStyle(color: themeGreen),
+                  style: TextStyle(color: kPrimaryColor),
                 ),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage("assets/avatar.webp"),
                 ),
                 otherAccountsPictures: [
                   CircleAvatar(
-                    backgroundColor: yellow,
+                    backgroundColor: darkyellow,
                     child: Text(
                       "A",
-                      style: TextStyle(color: themeGreen, fontSize: 25),
+                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
                     ),
                   ),
                   CircleAvatar(
-                    backgroundColor: yellow,
+                    backgroundColor: darkyellow,
                     child: Text(
                       "B",
-                      style: TextStyle(color: themeGreen, fontSize: 25),
+                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
                     ),
                   )
                 ]),
@@ -105,113 +96,96 @@ class _HomePageState extends State<HomePage> {
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
                 Icons.home_outlined,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Home',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
               onTap: null,
             ),
             Divider(
               indent: 80.0,
               endIndent: 30.0,
-              color: white,
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
-              leading: Icon(
-                Icons.shopping_bag_outlined,
-                color: white,
-              ),
-              title: Text(
-                'My Plants',
-                style: TextStyle(color: white),
-              ),
-              onTap: null,
-            ),
-            Divider(
-              indent: 80.0,
-              endIndent: 30.0,
-              color: white,
+              color: kBackgroundColor,
             ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
               leading: Icon(
                 Icons.favorite_border_outlined,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Favorites',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
             ),
             Divider(
               indent: 80.0,
               endIndent: 30.0,
-              color: white,
+              color: kBackgroundColor,
             ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
               leading: Icon(
                 Icons.verified_user_outlined,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Profile',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
             ),
             Divider(
               indent: 80.0,
               endIndent: 30.0,
-              color: white,
+              color: kBackgroundColor,
             ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
               leading: Icon(
                 Icons.settings_outlined,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Settings',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
             ),
             Divider(
               indent: 80.0,
               endIndent: 30.0,
-              color: white,
+              color: kBackgroundColor,
             ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
                 Icons.border_color,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Feedback',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
               trailing: Icon(
                 Icons.info_rounded,
-                color: yellow,
+                color: darkyellow,
               ),
             ),
             Divider(
               indent: 80.0,
               endIndent: 30.0,
-              color: white,
+              color: kBackgroundColor,
             ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
                 Icons.exit_to_app_outlined,
-                color: white,
+                color: kBackgroundColor,
               ),
               title: Text(
                 'Logout',
-                style: TextStyle(color: white),
+                style: TextStyle(color: kBackgroundColor),
               ),
               onTap: () => {
                 Navigator.push(context,
@@ -225,14 +199,14 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(500),
               child: InkWell(
                 borderRadius: BorderRadius.circular(500),
-                splashColor: themeGreen,
+                splashColor: kPrimaryColor,
                 onTap: () {
                   Navigator.of(context).pop();
                 },
                 child: CircleAvatar(
                   radius: 20,
-                  backgroundColor: yellow,
-                  child: Icon(Icons.arrow_back, color: themeGreen),
+                  backgroundColor: darkyellow,
+                  child: Icon(Icons.arrow_back, color: kPrimaryColor),
                 ),
               ),
             ),
@@ -245,33 +219,41 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  BottomNavigationBar buildBottomNavigationBar() {
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
-          label: 'My Plants',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Settings',
-        ),
-      ],
-      type: BottomNavigationBarType.shifting,
-      currentIndex: _selectedIndex,
-      selectedItemColor: themeGreen,
-      unselectedItemColor: themeGreen,
-      iconSize: 25,
-      onTap: _onItemTapped,
-      elevation: 5,
+  Container buildBottomNavigationBar() {
+    return Container(
+      padding: EdgeInsets.only(
+        left: kDefaultPadding * 2,
+        right: kDefaultPadding * 2,
+        bottom: kDefaultPadding,
+      ),
+      height: 80,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, -10),
+            blurRadius: 35,
+            color: kPrimaryColor.withOpacity(0.38),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.favorite),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.person),
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }
