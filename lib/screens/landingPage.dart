@@ -23,7 +23,7 @@ class LandingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 70,
+                height: 100,
               ),
               Text(
                 "Plants",
@@ -114,20 +114,39 @@ class LandingPage extends StatelessWidget {
                 height: 8,
               ),
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Container(
+                      child: InkWell(
+                        child: Text(
+                          'Create Account',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green[600],
+                              decoration: TextDecoration.underline),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              )
               // create account
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CreateAccount()));
-                },
-                child: Text(
-                  'Create Account',
-                  style: TextStyle(
-                      color: Colors.green[800],
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+              // TextButton(
+              //   onPressed: () {
+              //     Navigator.push(context,
+              //         MaterialPageRoute(builder: (context) => CreateAccount()));
+              //   },
+              //   child: Text(
+              //     'Create Account',
+              //     style: TextStyle(
+              //         color: Colors.green[800],
+              //         fontSize: 12,
+              //         fontWeight: FontWeight.bold),
+              //   ),
+              // ),
             ],
           ),
         ),
