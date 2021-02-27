@@ -10,9 +10,10 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        // color: Colors.green[800],
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
         decoration: BoxDecoration(
-          color: grey,
+          color: Colors.grey,
           image: DecorationImage(
               image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
         ),
@@ -23,7 +24,7 @@ class SignIn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 70,
+                height: 10,
               ),
               Text(
                 "Plants",
@@ -42,16 +43,16 @@ class SignIn extends StatelessWidget {
                 width: 35,
                 height: 4,
                 decoration: BoxDecoration(
-                  color: white,
+                  color: Colors.white,
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 15,
               ),
               Text(
                 "Planner all plant parents need",
                 style: TextStyle(
-                  color: white,
+                  color: Colors.white,
                   fontSize: 12,
                   letterSpacing: 0.5,
                 ),
@@ -61,142 +62,132 @@ class SignIn extends StatelessWidget {
                 height: 60,
               ),
 
-              // back to landing page
-              FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LandingPage()));
-                },
-                backgroundColor: white,
-                child: Icon(
-                  Icons.close_rounded,
-                  color: black,
-                  size: 35,
-                ),
-              ),
-
-              SizedBox(height: 60),
-
-              // Email
+              // Container for sign in form
               Container(
-                width: 250,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: black,
-                  color: white,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Email',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 12),
+                color: Colors.green,
+                padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                child: Column(
+                  children: <Widget>[
+                    // back to landing page
+                    FloatingActionButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LandingPage()));
+                      },
+                      backgroundColor: white,
+                      child: Icon(
+                        Icons.close_outlined,
+                        color: black,
+                        size: 25,
+                      ),
                     ),
-                  ),
+                    // first text field "Email"
+                    TextField(
+                      decoration: InputDecoration(
+                          labelText: 'EMAIL',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white))),
+                    ),
+                    // create space between the textfields
+                    SizedBox(
+                      height: 20.0,
+                    ),
+                    // second text field "Password"
+                    TextField(
+                      decoration: InputDecoration(
+                          labelText: 'PASSWORD',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white))),
+                      obscureText: true,
+                    ),
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    // Sign In
+                    Container(
+                      width: 250,
+                      height: 35,
+                      child: RaisedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()));
+                        },
+                        textColor: white,
+                        color: darkGreen,
+                        padding: const EdgeInsets.all(0.0),
+                        elevation: 5.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const Text(
+                            'Sign In',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 8,
+                    ),
+
+                    // create account
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => CreateAccount()));
+                          },
+                          child: Text(
+                            'Create Account',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 10.0),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 50,
+                        ),
+
+                        // forgot password
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResetPassword()));
+                          },
+                          child: Text(
+                            'Forgot Password?',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 10.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
 
               SizedBox(
-                height: 20,
-              ),
-
-              // Password
-              Container(
-                width: 250,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: black,
-                  color: white,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Password',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              // Sign In
-              Container(
-                width: 250,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
-                  },
-                  textColor: white,
-                  color: darkGreen,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Sign In',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 8,
-              ),
-
-              // create account
-              Row(
-                children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => CreateAccount()));
-                    },
-                    child: Text(
-                      'Create Account',
-                      style: TextStyle(color: black, fontSize: 10),
-                    ),
-                  ),
-
-                  SizedBox(
-                    width: 50,
-                  ),
-
-                  // forgot password
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ResetPassword()));
-                    },
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: black, fontSize: 10),
-                    ),
-                  ),
-                ],
+                height: 20.0,
               ),
             ],
           ),
