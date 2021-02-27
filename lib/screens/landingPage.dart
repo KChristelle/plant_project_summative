@@ -46,15 +46,23 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 40,
               ),
               Text(
-                "Planner all plant parents need",
+                "Welcome to a owner's best planner.",
                 style: TextStyle(
                     color: themeGreen, fontSize: 12, letterSpacing: 0.5),
               ),
               SizedBox(
-                height: 120,
+                height: 20,
+              ),
+              Text(
+                "Let's get started!",
+                style: TextStyle(
+                    color: themeGreen, fontSize: 12, letterSpacing: 0.5),
+              ),
+              SizedBox(
+                height: 70,
               ),
 
               // Sign In
@@ -125,28 +133,14 @@ class LandingPage extends StatelessWidget {
                           'Create Account',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.green[600],
+                              color: themeGreen,
                               decoration: TextDecoration.underline),
                         ),
                       ),
                     ),
                   )
                 ],
-              )
-              // create account
-              // TextButton(
-              //   onPressed: () {
-              //     Navigator.push(context,
-              //         MaterialPageRoute(builder: (context) => CreateAccount()));
-              //   },
-              //   child: Text(
-              //     'Create Account',
-              //     style: TextStyle(
-              //         color: Colors.green[800],
-              //         fontSize: 12,
-              //         fontWeight: FontWeight.bold),
-              //   ),
-              // ),
+              ),
             ],
           ),
         ),

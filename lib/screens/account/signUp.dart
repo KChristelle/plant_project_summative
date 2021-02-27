@@ -178,7 +178,6 @@ class CreateAccount extends StatelessWidget {
                   ],
                 ),
               ),
-
               SizedBox(
                 height: 15,
               ),
