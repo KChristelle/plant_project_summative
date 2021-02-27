@@ -9,8 +9,8 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Container(
-        // color: Colors.green[800],
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
         decoration: BoxDecoration(
           color: Colors.grey,
@@ -20,43 +20,57 @@ class SignIn extends StatelessWidget {
         child: Container(
           width: 400,
           height: 600,
+          decoration: BoxDecoration(
+              color: Colors.grey[200], borderRadius: BorderRadius.circular(20)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              SizedBox(
-                height: 10,
+              Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    iconSize: 30.0,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LandingPage()));
+                    },
+                  ),
+                ],
               ),
-              Text(
-                "Plants",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
-                  letterSpacing: 5,
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Container(
-                width: 35,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Planner all plant parents need",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  letterSpacing: 0.5,
-                ),
-              ),
+
+              // SizedBox(
+              //   height: 10,
+              // ),
+
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Plants",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: themeGreen,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 30,
+                          letterSpacing: 5,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: 35,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: themeGreen,
+                        ),
+                      ),
+                    ],
+                  )),
 
               SizedBox(
                 height: 60,
@@ -64,32 +78,16 @@ class SignIn extends StatelessWidget {
 
               // Container for sign in form
               Container(
-                color: Colors.green,
-                padding: EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
+                padding: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
                 child: Column(
                   children: <Widget>[
-                    // back to landing page
-                    FloatingActionButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LandingPage()));
-                      },
-                      backgroundColor: white,
-                      child: Icon(
-                        Icons.close_outlined,
-                        color: black,
-                        size: 25,
-                      ),
-                    ),
                     // first text field "Email"
                     TextField(
                       decoration: InputDecoration(
-                          labelText: 'EMAIL',
+                          labelText: 'Email',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: themeGreen,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white))),
@@ -101,10 +99,10 @@ class SignIn extends StatelessWidget {
                     // second text field "Password"
                     TextField(
                       decoration: InputDecoration(
-                          labelText: 'PASSWORD',
+                          labelText: 'Password',
                           labelStyle: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: themeGreen,
                           ),
                           focusedBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white))),
@@ -158,8 +156,10 @@ class SignIn extends StatelessWidget {
                           },
                           child: Text(
                             'Create Account',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 10.0),
+                            style: TextStyle(
+                                color: themeGreen,
+                                fontSize: 11.0,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         SizedBox(
@@ -176,8 +176,10 @@ class SignIn extends StatelessWidget {
                           },
                           child: Text(
                             'Forgot Password?',
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 10.0),
+                            style: TextStyle(
+                                color: themeGreen,
+                                fontSize: 11.0,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ],
