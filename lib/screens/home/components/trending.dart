@@ -55,15 +55,15 @@ class RecomendPlantCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Container(
       margin: EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
-      // width: size.width * 0.4,
-      width: 200,
+      width: size.width * 0.4,
+      // width: 200,
       child: Column(
         children: <Widget>[
           Image.asset(image),
