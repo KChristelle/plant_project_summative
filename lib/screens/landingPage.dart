@@ -102,7 +102,7 @@ class LandingPage extends StatelessWidget {
                 child: RaisedButton(
                   onPressed: () {},
                   textColor: Colors.white,
-                  color: Colors.blue,
+                  color: Colors.indigo,
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(

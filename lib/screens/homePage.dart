@@ -49,9 +49,9 @@ class _HomePageState extends State<HomePage> {
       // the App.build method, and use it to set our appbar title.
       title: Text(
         "Plants Tracker",
-        style: TextStyle(color: black),
+        style: TextStyle(color: themeGreen),
       ),
-      backgroundColor: grey,
+      backgroundColor: Colors.grey[350],
     );
   }
 
