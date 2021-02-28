@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
-  // const HeaderWithSearchBox({
-  //   Key key,
-  //   // @required this.size,
-  // }) : super(key: key);
+  const HeaderWithSearchBox({
+    Key key,
+    @required this.size,
+  }) : super(key: key);
 
-  // final Size size;
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(bottom: kDefaultPadding * 2.5),
       // It will cover 20% of our total height
-      // height: size.height * 0.2,
-      height: 227,
+      height: size.height * 0.25,
+      width: size.width,
       child: Stack(
         children: <Widget>[
           Container(
@@ -24,8 +24,8 @@ class HeaderWithSearchBox extends StatelessWidget {
               right: kDefaultPadding,
               bottom: 36 + kDefaultPadding,
             ),
-            // height: size.height * 0.2 - 27,
-            height: 200,
+            height: size.height * 0.25 - 27,
+            width: size.width,
             decoration: BoxDecoration(
               color: kPrimaryColor,
               borderRadius: BorderRadius.only(
@@ -82,7 +82,10 @@ class HeaderWithSearchBox extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Icon(Icons.search),
+                  Icon(
+                    Icons.search,
+                    color: kPrimaryColor,
+                  ),
                 ],
               ),
             ),

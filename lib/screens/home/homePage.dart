@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: buildAppBar(),
       drawer: buildNavDrawer(),
-      body: MyPlants(),
+      body: Plants(),
       bottomNavigationBar:
           buildBottomNavigationBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );
@@ -37,12 +37,16 @@ class _HomePageState extends State<HomePage> {
       // the App.build method, and use it to set our appbar title.
       title: Text(
         "Plant App",
+        style: TextStyle(color: kTextColor),
       ),
       leading: IconButton(
-        // icon: SvgPicture.asset("assets/icons/menu.svg"),
-        icon: Icon(Icons.menu),
+        icon: Icon(
+          Icons.menu,
+          color: kTextColor,
+        ),
         onPressed: () {},
       ),
+      backgroundColor: Colors.grey,
     );
   }
 
