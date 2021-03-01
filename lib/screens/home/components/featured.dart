@@ -1,39 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class FeaturedPlants extends StatelessWidget {
-  const FeaturedPlants({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Column(
-        children: <Widget>[
-          RecomendPlantCard(
-            image: "assets/img1.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "assets/img2.jpg",
-            title: "Angelica",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "assets/img3.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-        ],
+    return Center(
+      child: GridView.builder(
+        itemCount: plants.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          childAspectRatio: 0.7,
+        ),
+        itemBuilder: (BuildContext context, int index) {
+          return plants[index];
+        },
       ),
     );
   }
