@@ -17,9 +17,9 @@ class Plants extends StatelessWidget {
         children: <Widget>[
           // covers 20% of our screen
           HeaderWithSearchBox(size: size),
-          TitleWithMoreBtn(title: "Trending", press: () {}),
+          TitleWithMoreBtn(title: "My Plants", press: () {}),
           RecomendsPlants(),
-          TitleWithMoreBtn(title: "Featured", press: () {}),
+          TitleWithMoreBtn(title: "Explore", press: () {}),
           FeaturedPlants(),
           SizedBox(height: kDefaultPadding),
         ],

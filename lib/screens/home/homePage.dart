@@ -13,6 +13,19 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -37,16 +50,9 @@ class _HomePageState extends State<HomePage> {
       // the App.build method, and use it to set our appbar title.
       title: Text(
         "Plant App",
-        style: TextStyle(color: kTextColor),
+        style: TextStyle(color: kPrimaryColor),
       ),
-      leading: IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: kTextColor,
-        ),
-        onPressed: () {},
-      ),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.grey[300],
     );
   }
 
@@ -60,42 +66,27 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(1),
           children: <Widget>[
             UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  borderRadius: new BorderRadius.only(
-                    bottomLeft: const Radius.circular(5.0),
-                    bottomRight: const Radius.circular(5.0),
-                  ),
-                  color: Colors.white,
+              decoration: BoxDecoration(
+                borderRadius: new BorderRadius.only(
+                  bottomLeft: const Radius.circular(5.0),
+                  bottomRight: const Radius.circular(5.0),
                 ),
-                accountName: Text(
-                  "User Name",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                  ),
+                color: Colors.white,
+              ),
+              accountName: Text(
+                "User Name",
+                style: TextStyle(
+                  color: kPrimaryColor,
                 ),
-                accountEmail: Text(
-                  "username@gmail.com",
-                  style: TextStyle(color: kPrimaryColor),
-                ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage("assets/avatar.webp"),
-                ),
-                otherAccountsPictures: [
-                  CircleAvatar(
-                    backgroundColor: darkyellow,
-                    child: Text(
-                      "A",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
-                    ),
-                  ),
-                  CircleAvatar(
-                    backgroundColor: darkyellow,
-                    child: Text(
-                      "B",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
-                    ),
-                  )
-                ]),
+              ),
+              accountEmail: Text(
+                "username@gmail.com",
+                style: TextStyle(color: kPrimaryColor),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("assets/avatar.webp"),
+              ),
+            ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
@@ -164,26 +155,6 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
-                Icons.border_color,
-                color: kBackgroundColor,
-              ),
-              title: Text(
-                'Feedback',
-                style: TextStyle(color: kBackgroundColor),
-              ),
-              trailing: Icon(
-                Icons.info_rounded,
-                color: darkyellow,
-              ),
-            ),
-            Divider(
-              indent: 80.0,
-              endIndent: 30.0,
-              color: kBackgroundColor,
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
-              leading: Icon(
                 Icons.exit_to_app_outlined,
                 color: kBackgroundColor,
               ),
@@ -223,41 +194,29 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Container buildBottomNavigationBar() {
-    return Container(
-      padding: EdgeInsets.only(
-        left: kDefaultPadding * 2,
-        right: kDefaultPadding * 2,
-        bottom: kDefaultPadding,
-      ),
-      height: 80,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -10),
-            blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.38),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.favorite),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {},
-          ),
-        ],
-      ),
+  BottomNavigationBar buildBottomNavigationBar() {
+    return BottomNavigationBar(
+      items: <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_bag),
+          label: 'My Plants',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+      ],
+      type: BottomNavigationBarType.shifting,
+      currentIndex: _selectedIndex,
+      selectedItemColor: darkGreen,
+      unselectedItemColor: darkGreen,
+      iconSize: 25,
+      onTap: _onItemTapped,
+      elevation: 5,
     );
   }
 }

@@ -100,9 +100,9 @@ class LandingPage extends StatelessWidget {
                 width: 200,
                 height: 35,
                 child: RaisedButton(
-                  onPressed: null,
-                  textColor: kBackgroundColor,
-                  color: facebookBlue,
+                  onPressed: () {},
+                  textColor: Colors.white,
+                  color: Colors.indigo[800],
                   padding: const EdgeInsets.all(0.0),
                   elevation: 5.0,
                   shape: RoundedRectangleBorder(
@@ -124,21 +124,22 @@ class LandingPage extends StatelessWidget {
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10.0),
-                    child: Container(
-                      child: InkWell(
-                        child: Text(
-                          'Create Account',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: darkGreen,
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
+                children: <Widget>[
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateAccount()));
+                    },
+                    child: Text(
+                      'Create Account',
+                      style: TextStyle(
+                          color: darkGreen,
+                          fontSize: 11.0,
+                          fontWeight: FontWeight.bold),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
