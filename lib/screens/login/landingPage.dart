@@ -9,7 +9,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
@@ -23,7 +23,7 @@ class LandingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 70,
+                height: 100,
               ),
               Text(
                 "Plants",
@@ -46,15 +46,23 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 25,
+                height: 40,
               ),
               Text(
-                "Planner all plant parents need",
+                "Welcome to a owner's best planner.",
                 style: TextStyle(
                     color: kPrimaryColor, fontSize: 12, letterSpacing: 0.5),
               ),
               SizedBox(
-                height: 120,
+                height: 20,
+              ),
+              Text(
+                "Let's get started!",
+                style: TextStyle(
+                    color: darkGreen, fontSize: 12, letterSpacing: 0.5),
+              ),
+              SizedBox(
+                height: 70,
               ),
 
               // Sign In
@@ -114,16 +122,24 @@ class LandingPage extends StatelessWidget {
                 height: 8,
               ),
 
-              // create account
-              TextButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CreateAccount()));
-                },
-                child: Text(
-                  'Create Account',
-                  style: TextStyle(color: kTextColor, fontSize: 12),
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10.0),
+                    child: Container(
+                      child: InkWell(
+                        child: Text(
+                          'Create Account',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: darkGreen,
+                              decoration: TextDecoration.underline),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
               ),
             ],
           ),

@@ -8,7 +8,7 @@ class ResetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
         decoration: BoxDecoration(
           color: kTextColor,
           image: DecorationImage(
@@ -17,113 +17,110 @@ class ResetPassword extends StatelessWidget {
         child: Container(
           width: 400,
           height: 600,
+          decoration: BoxDecoration(
+              color: Colors.grey[200], borderRadius: BorderRadius.circular(20)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    iconSize: 30.0,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LandingPage()));
+                    },
+                  ),
+                ],
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(vertical: 10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        "Plants",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: darkGreen,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 30,
+                          letterSpacing: 5,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Container(
+                        width: 35,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          color: darkGreen,
+                        ),
+                      ),
+                    ],
+                  )),
               SizedBox(
                 height: 70,
               ),
-              Text(
-                "Plants",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: kBackgroundColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
-                  letterSpacing: 5,
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
               Container(
-                width: 35,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: kBackgroundColor,
-                ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                "Planner all plant parents need",
-                style: TextStyle(
-                  color: kBackgroundColor,
-                  fontSize: 12,
-                  letterSpacing: 0.5,
-                ),
-              ),
-              SizedBox(
-                height: 60,
-              ),
-
-              // back to landing page
-              FloatingActionButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LandingPage()));
-                },
-                backgroundColor: kBackgroundColor,
-                child: Icon(
-                  Icons.close_rounded,
-                  color: kTextColor,
-                  size: 35,
-                ),
-              ),
-
-              SizedBox(height: 60),
-
-              // Email
-              Container(
-                width: 250,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Email',
-                      style: TextStyle(fontSize: 12),
+                padding: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
+                child: Column(
+                  children: <Widget>[
+                    // first text field "Email"
+                    TextField(
+                      decoration: InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: darkGreen,
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white))),
                     ),
-                  ),
-                ),
-              ),
-
-              SizedBox(
-                height: 20,
-              ),
-
-              // Send Reset Link
-              Container(
-                width: 250,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
-                  },
-                  textColor: kBackgroundColor,
-                  color: darkGreen,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Send Reset Link',
-                      style: TextStyle(fontSize: 12),
+                    // create space between the textfields
+                    SizedBox(
+                      height: 20.0,
                     ),
-                  ),
+
+                    SizedBox(
+                      height: 40.0,
+                    ),
+                    // Sign In
+                    Container(
+                      width: 250,
+                      height: 35,
+                      child: RaisedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LandingPage()));
+                        },
+                        textColor: kTextColor,
+                        color: darkGreen,
+                        padding: const EdgeInsets.all(0.0),
+                        elevation: 5.0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const Text(
+                            'Send Reset Link',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 8,
+                    ),
+                  ],
                 ),
               ),
             ],
