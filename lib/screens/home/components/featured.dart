@@ -10,8 +10,8 @@ class FeaturedPlants extends StatelessWidget {
         itemCount: plants.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
+          crossAxisSpacing: kDefaultPadding / 2,
+          mainAxisSpacing: kDefaultPadding / 2,
           childAspectRatio: 0.7,
         ),
         itemBuilder: (BuildContext context, int index) {
