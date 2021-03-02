@@ -4,8 +4,19 @@ import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
+import '../../data/db_functions.dart';
 
 class SignIn extends StatelessWidget {
+  final myEmailController = TextEditingController();
+  final myPwController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myEmailController.dispose();
+    myPwController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,23 +92,17 @@ class SignIn extends StatelessWidget {
               Container(
                 width: 250,
                 height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Email',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                child: TextField(
+                  controller: myEmailController,
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.black45,
+                      filled: true,
+                      border: InputBorder.none,
+                      hintText: 'Enter Your Email!',
+                      hintStyle: TextStyle(color: Colors.white70)),
                 ),
               ),
 
@@ -106,26 +111,21 @@ class SignIn extends StatelessWidget {
               ),
 
               // Password
+              // Email
               Container(
                 width: 250,
                 height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Password',
-                      textAlign: TextAlign.left,
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                child: TextField(
+                  controller: myPwController,
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.black45,
+                      filled: true,
+                      border: InputBorder.none,
+                      hintText: 'Password!',
+                      hintStyle: TextStyle(color: Colors.white70)),
                 ),
               ),
 
@@ -138,9 +138,16 @@ class SignIn extends StatelessWidget {
                 width: 250,
                 height: 35,
                 child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                  onPressed: () async {
+                    int credCheck = await DatabaseHelper.instance
+                        .checkUser(myEmailController.text, myPwController.text);
+
+                    if (credCheck == 0) {
+                      print("invalid Username Or Password");
+                    } else {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    }
                   },
                   textColor: kBackgroundColor,
                   color: darkGreen,

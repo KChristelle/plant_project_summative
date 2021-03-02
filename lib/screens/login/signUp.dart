@@ -2,8 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import '../../data/db_functions.dart';
 
 class CreateAccount extends StatelessWidget {
+  final myEmailController = TextEditingController();
+  final myPwController = TextEditingController();
+  final myPwConfirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myEmailController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,22 +93,17 @@ class CreateAccount extends StatelessWidget {
               Container(
                 width: 250,
                 height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Email',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                child: TextField(
+                  controller: myEmailController,
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.black45,
+                      filled: true,
+                      border: InputBorder.none,
+                      hintText: 'Enter Your Email!',
+                      hintStyle: TextStyle(color: Colors.white70)),
                 ),
               ),
 
@@ -109,22 +115,17 @@ class CreateAccount extends StatelessWidget {
               Container(
                 width: 250,
                 height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Password',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                child: TextField(
+                  controller: myPwController,
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.black45,
+                      filled: true,
+                      border: InputBorder.none,
+                      hintText: 'Enter Your Password!',
+                      hintStyle: TextStyle(color: Colors.white70)),
                 ),
               ),
 
@@ -136,22 +137,17 @@ class CreateAccount extends StatelessWidget {
               Container(
                 width: 250,
                 height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Confirm Password',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
+                child: TextField(
+                  controller: myPwConfirmController,
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      fillColor: Colors.black45,
+                      filled: true,
+                      border: InputBorder.none,
+                      hintText: 'Confirm Your Password!',
+                      hintStyle: TextStyle(color: Colors.white70)),
                 ),
               ),
 
@@ -164,9 +160,26 @@ class CreateAccount extends StatelessWidget {
                 width: 250,
                 height: 35,
                 child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                  onPressed: () async {
+                    int dupCheck = await DatabaseHelper.instance
+                        .checkEmail(myEmailController.text);
+                    if (dupCheck == 0) {
+                      print('Duplicated Email!');
+
+                    } else if ((myPwController.text !=
+                        myPwConfirmController.text)|(myPwController.text == '')) {
+                      print('Passwords Not The Same or Null!');
+
+                    } else {
+                      int i = await DatabaseHelper.instance.newUser({
+                        DatabaseHelper.columnEmail: myEmailController.text,
+                        DatabaseHelper.columnPW: myPwController.text
+                      });
+                      print('the inserted id is $i');
+
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LandingPage()));
+                    }
                   },
                   textColor: kBackgroundColor,
                   color: darkGreen,
