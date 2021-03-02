@@ -1,4 +1,7 @@
+import 'package:plant_growth_tracking_app/models/myPlant.dart';
 import 'package:plant_growth_tracking_app/models/plant.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/myPlants.dart';
 
 List<Plant> getPlants() {
   List<Plant> plants = new List();
@@ -68,4 +71,51 @@ List<Plant> getPlants() {
   plant = new Plant();
 
   return plants;
+}
+
+List<MyPlant> getMyPlants() {
+  List<MyPlant> myPlants = new List();
+  MyPlant myPlant = new MyPlant();
+
+  // 1
+  myPlant.plantName = "Plant Name";
+  myPlant.imgURL = "assets/img1.jpg";
+  myPlant.details = "Details";
+  myPlant.state = "Healthy";
+  // myPlant.stateColor = lightGreen;
+
+  myPlants.add(myPlant);
+  myPlant = new MyPlant();
+
+  // 2
+  myPlant.plantName = "Plant Name";
+  myPlant.imgURL = "assets/img2.jpg";
+  myPlant.details = "Details";
+  myPlant.state = "Healthy";
+  // myPlant.stateColor = lightGreen;
+
+  myPlants.add(myPlant);
+  myPlant = new MyPlant();
+
+  // 3
+  myPlant.plantName = "Plant Name";
+  myPlant.imgURL = "assets/img3.jpg";
+  myPlant.details = "Details";
+  myPlant.state = "Healthy";
+  // myPlant.stateColor = lightGreen;
+
+  myPlants.add(myPlant);
+  myPlant = new MyPlant();
+
+  // 4
+  myPlant.plantName = "Plant Name";
+  myPlant.imgURL = "assets/img4.jpg";
+  myPlant.details = "Details";
+  myPlant.state = "Healthy";
+  // myPlant.stateColor = lightGreen;
+
+  myPlants.add(myPlant);
+  myPlant = new MyPlant();
+
+  return myPlants;
 }
