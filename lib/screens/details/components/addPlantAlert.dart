@@ -5,9 +5,9 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 class AddPlantAlert extends StatefulWidget {
   final Text alertTitle;
   final Text alertSubtitle;
+  // Higher values mean more blurred overlays.
   final double blurValue;
   final double backgroundOpacity;
-  // final Icon dialogIcon;
 
   AddPlantAlert({
     Key key,
@@ -15,14 +15,12 @@ class AddPlantAlert extends StatefulWidget {
     @required this.alertSubtitle,
     this.blurValue,
     this.backgroundOpacity,
-    // this.dialogIcon,
   }) : super(key: key);
 
   createState() => _AddPlantAlertState();
 }
 
 class _AddPlantAlertState extends State<AddPlantAlert> {
-
   double deviceWidth;
   double deviceHeight;
   double dialogHeight;
@@ -38,7 +36,7 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
     deviceHeight = orientation == Orientation.portrait
         ? screenSize.height
         : screenSize.width;
-    dialogHeight = deviceHeight * (2 / 5);
+    dialogHeight = deviceHeight * (3 / 7);
 
     return MediaQuery(
       data: MediaQueryData(),
@@ -72,7 +70,7 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
                                 topLeft: Radius.circular(20.0),
                                 topRight: Radius.circular(20.0)),
                           ),
-                          color: Colors.white,
+                          color: kBackgroundColor,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: <Widget>[
@@ -88,8 +86,8 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
                       ),
                     ),
                     Positioned(
-                      bottom: dialogHeight - 50,child:
-                      _defaultIcon(),
+                      bottom: dialogHeight - 50,
+                      child: _defaultIcon(),
                     ),
                   ],
                 ),
@@ -100,15 +98,6 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
       ),
     );
   }
-
-  // Container _buildActions() {
-  //   return Container(
-  //     child: Row(
-  //       mainAxisSize: MainAxisSize.min,
-  //       children: widget.actions,
-  //     ),
-  //   );
-  // }
 
   Image _defaultIcon() {
     return Image(
@@ -123,13 +112,21 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
       alignment: Alignment.center,
       child: RaisedButton(
         elevation: 2.0,
-        color: kPrimaryColor,
+        color: lightGreen,
         child: Text(
           "View Plants",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: kBackgroundColor),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(kDefaultPadding),
         ),
         onPressed: () {
-          Navigator.pop(context);
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //     builder: (context) => ViewPlants(),
+          //   ),
+          // );
         },
       ),
     );
@@ -139,7 +136,10 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
 Text richTitle(String title) {
   return Text(
     title,
-    style: TextStyle(fontSize: 24.0),
+    style: TextStyle(
+      fontSize: 28.0,
+      color: kPrimaryColor,
+    ),
   );
 }
 
@@ -147,7 +147,7 @@ Text richSubtitle(String subtitle) {
   return Text(
     subtitle,
     style: TextStyle(
-      color: Colors.grey,
+      color: kPrimaryColor,
     ),
   );
 }
