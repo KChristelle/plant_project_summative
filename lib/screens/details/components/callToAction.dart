@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/addPlantAlert.dart';
 import '../../../data/db_functions.dart';
 import '../../../data/user.dart';
 
@@ -32,7 +33,17 @@ class CallToAction extends StatelessWidget {
                   DatabaseHelper.columnWater: 100,
                   DatabaseHelper.columnNut: 100
                 });
-                print('the inserted id is $i');
+                Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddPlantAlert(
+                    alertTitle: Text("Welcome to Plant Care"),
+                    alertSubtitle: Text("Start taking care of your plants!"),
+                    blurValue: 0.05,
+                    backgroundOpacity: 0.05,
+                  ),
+                ),
+              );
               },
               child: Text(
                 "Add to My Plants",
