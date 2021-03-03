@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/data/data.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/plantCard.dart';
 
 class RecomendsPlants extends StatelessWidget {
   const RecomendsPlants({
@@ -8,113 +9,21 @@ class RecomendsPlants extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: <Widget>[
-          RecomendPlantCard(
-            image: "assets/img1.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "assets/img2.jpg",
-            title: "Angelica",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-          RecomendPlantCard(
-            image: "assets/img3.jpg",
-            title: "Samantha",
-            country: "Russia",
-            price: 440,
-            press: () {},
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class RecomendPlantCard extends StatelessWidget {
-  const RecomendPlantCard({
-    Key key,
-    this.image,
-    this.title,
-    this.country,
-    this.price,
-    this.press,
-  }) : super(key: key);
-
-  final String image, title, country;
-  final int price;
-  final Function press;
-
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(
-        left: kDefaultPadding,
-        top: kDefaultPadding / 2,
-        bottom: kDefaultPadding * 2.5,
-      ),
-      width: size.width * 0.4,
-      // width: 200,
-      child: Column(
-        children: <Widget>[
-          Image.asset(image),
-          GestureDetector(
-            onTap: press,
-            child: Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 50,
-                    color: kPrimaryColor.withOpacity(0.23),
-                  ),
-                ],
-              ),
-              child: Row(
-                children: <Widget>[
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: "$title\n".toUpperCase(),
-                            style: Theme.of(context).textTheme.button),
-                        TextSpan(
-                          text: "$country".toUpperCase(),
-                          style: TextStyle(
-                            color: kPrimaryColor.withOpacity(0.5),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Spacer(),
-                  Text(
-                    '\$$price',
-                    style: Theme.of(context)
-                        .textTheme
-                        .button
-                        .copyWith(color: kPrimaryColor),
-                  )
-                ],
-              ),
-            ),
-          )
-        ],
+      child: ListView.builder(
+        itemCount: plants.length,
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        primary: true,
+        itemBuilder: (context, index) {
+          return PlantCard(
+            image: plants[index].image,
+            title: plants[index].title,
+            country: plants[index].country,
+            price: plants[index].price,
+            // press: plants[index].press,
+          );
+        },
       ),
     );
   }
