@@ -1,6 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/plantCard.dart';
 
 List<PlantCard> plants = [
@@ -32,13 +29,13 @@ List<PlantCard> plants = [
     price: 440,
     // press: () {},
   ),
-  PlantCard(
-    image: "assets/img5.jpg",
-    title: "Angelica",
-    country: "Russia",
-    price: 440,
-    // press: () {},
-  ),
+  // PlantCard(
+  //   image: "assets/img5.jpg",
+  //   title: "Angelica",
+  //   country: "Russia",
+  //   price: 440,
+  //   // press: () {},
+  // ),
   PlantCard(
     image: "assets/img6.jpg",
     title: "Samantha",
@@ -53,11 +50,11 @@ List<PlantCard> plants = [
     price: 440,
     // press: () {},
   ),
-  PlantCard(
-    image: "assets/img8.jpg",
-    title: "Samantha",
-    country: "Russia",
-    price: 440,
-    // press: () {},
-  ),
+  // PlantCard(
+  //   image: "assets/img8.jpg",
+  //   title: "Samantha",
+  //   country: "Russia",
+  //   price: 440,
+  //   // press: () {},
+  // ),
 ];

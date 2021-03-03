@@ -10,20 +10,23 @@ class RecomendsPlants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListView.builder(
-        itemCount: plants.length,
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        primary: true,
-        itemBuilder: (context, index) {
-          return PlantCard(
-            image: plants[index].image,
-            title: plants[index].title,
-            country: plants[index].country,
-            price: plants[index].price,
-            // press: plants[index].press,
-          );
-        },
+      child: SizedBox(
+        height: 300,
+        child: ListView.builder(
+          itemCount: plants.length,
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          primary: true,
+          itemBuilder: (context, index) {
+            return PlantCard(
+              image: plants[index].image,
+              title: plants[index].title,
+              country: plants[index].country,
+              price: plants[index].price,
+              // press: plants[index].press,
+            );
+          },
+        ),
       ),
     );
   }

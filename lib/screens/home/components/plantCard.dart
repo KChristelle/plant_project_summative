@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 
 class PlantCard extends StatelessWidget {
   const PlantCard({
@@ -26,7 +27,12 @@ class PlantCard extends StatelessWidget {
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          Image.asset(image),
+          Image.asset(
+            image,
+            // fit: BoxFit.scaleDown,
+            // width: 200.0,
+            // height: 150.0,
+          ),
           GestureDetector(
             onTap: () {
               Navigator.push(
