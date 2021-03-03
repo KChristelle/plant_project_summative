@@ -4,6 +4,7 @@ import 'package:plant_growth_tracking_app/screens/home/components/categoryTitle.
 import 'package:plant_growth_tracking_app/screens/home/components/featured.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/trending.dart';
+import 'package:plant_growth_tracking_app/screens/home/explorePage.dart';
 
 class Plants extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -19,7 +20,16 @@ class Plants extends StatelessWidget {
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: "Trending", press: () {}),
           RecomendsPlants(),
-          TitleWithMoreBtn(title: "Featured", press: () {}),
+          TitleWithMoreBtn(
+              title: "Featured",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ExplorePage(),
+                  ),
+                );
+              }),
           FeaturedPlants(),
           SizedBox(height: kDefaultPadding),
         ],

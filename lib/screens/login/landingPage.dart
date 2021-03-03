@@ -1,113 +1,65 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/addPlantAlert.dart';
+import 'package:plant_growth_tracking_app/screens/login/components/actionButton.dart';
+import 'package:plant_growth_tracking_app/screens/login/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
 
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
+        height: size.height,
+        padding: EdgeInsets.symmetric(
+            horizontal: kDefaultPadding + 10, vertical: size.height * 0.15),
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("assets/landing.jpg"), fit: BoxFit.cover),
+            image: AssetImage("assets/landing.jpg"),
+            fit: BoxFit.cover,
+          ),
         ),
         child: Container(
-          width: 400,
-          height: 600,
+          width: size.width * 0.85,
+          height: size.height * 0.9,
           decoration: BoxDecoration(
-              color: kBackgroundColor, borderRadius: BorderRadius.circular(20)),
+            color: kBackgroundColor,
+            borderRadius: BorderRadius.circular(kDefaultPadding),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: 70,
+                height: size.height * 0.1,
               ),
-              Text(
-                "Plants",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: kPrimaryColor,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 30,
-                  letterSpacing: 5,
-                ),
-              ),
+              LoginHeader(),
               SizedBox(
-                height: 5,
+                height: size.height * 0.1,
               ),
-              Container(
-                width: 35,
-                height: 4,
-                decoration: BoxDecoration(
-                  color: kPrimaryColor,
-                ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              Text(
-                "Planner all plant parents need",
-                style: TextStyle(
-                    color: kPrimaryColor, fontSize: 12, letterSpacing: 0.5),
-              ),
-              SizedBox(
-                height: 120,
-              ),
-
               // Sign In
-              Container(
-                width: 200,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
-                  },
-                  textColor: kTextColor,
-                  color: kBackgroundColor,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Sign In',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ),
+              ActionButton(
+                action: "Sign In",
+                textColor: kTextColor,
+                backgroundColor: kBackgroundColor,
+                press: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignIn()));
+                },
               ),
 
               SizedBox(
-                height: 20,
+                height: kDefaultPadding,
               ),
 
               // Sign In with Facebook
-              Container(
-                width: 200,
-                height: 35,
-                child: RaisedButton(
-                  onPressed: null,
-                  textColor: kBackgroundColor,
-                  color: facebookBlue,
-                  padding: const EdgeInsets.all(0.0),
-                  elevation: 5.0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    child: const Text(
-                      'Sign In With Facebook',
-                      style: TextStyle(fontSize: 12),
-                    ),
-                  ),
-                ),
+              ActionButton(
+                action: "Sign In With Facebook",
+                textColor: kBackgroundColor,
+                backgroundColor: facebookBlue,
+                press: () {},
               ),
 
               SizedBox(
@@ -122,7 +74,10 @@ class LandingPage extends StatelessWidget {
                 },
                 child: Text(
                   'Create Account',
-                  style: TextStyle(color: kTextColor, fontSize: 12),
+                  style: TextStyle(
+                    color: kTextColor,
+                    fontSize: 12.0,
+                  ),
                 ),
               ),
             ],

@@ -3,35 +3,27 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
-class HomePage extends StatefulWidget {
-  // This widget is the home page of the application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: buildAppBar(),
-      drawer: buildNavDrawer(),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40.0),
+        child: BuildAppBar(),
+      ),
+      drawer: BuildNavDrawer(),
       body: Plants(),
       bottomNavigationBar:
-          buildBottomNavigationBar(), // This trailing comma makes auto-formatting nicer for build methods.
+          BuildBottomNavigationBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
 
-  AppBar buildAppBar() {
+class BuildAppBar extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       elevation: 0,
       // Here we take the value from the MyHomePage object that was created by
       // the App.build method, and use it to set our appbar title.
@@ -39,18 +31,14 @@ class _HomePageState extends State<HomePage> {
         "Plant App",
         style: TextStyle(color: kTextColor),
       ),
-      leading: IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: kTextColor,
-        ),
-        onPressed: () {},
-      ),
       backgroundColor: Colors.grey,
     );
   }
+}
 
-  Theme buildNavDrawer() {
+class BuildNavDrawer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
         canvasColor: kPrimaryColor,
@@ -60,42 +48,43 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.all(1),
           children: <Widget>[
             UserAccountsDrawerHeader(
-                decoration: BoxDecoration(
-                  borderRadius: new BorderRadius.only(
-                    bottomLeft: const Radius.circular(5.0),
-                    bottomRight: const Radius.circular(5.0),
+              decoration: BoxDecoration(
+                borderRadius: new BorderRadius.only(
+                  bottomLeft: const Radius.circular(5.0),
+                  bottomRight: const Radius.circular(5.0),
+                ),
+                color: Colors.white,
+              ),
+              accountName: Text(
+                "User Name",
+                style: TextStyle(
+                  color: kPrimaryColor,
+                ),
+              ),
+              accountEmail: Text(
+                "username@gmail.com",
+                style: TextStyle(color: kPrimaryColor),
+              ),
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: AssetImage("assets/avatar.webp"),
+              ),
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundColor: darkyellow,
+                  child: Text(
+                    "A",
+                    style: TextStyle(color: kPrimaryColor, fontSize: 25),
                   ),
-                  color: Colors.white,
                 ),
-                accountName: Text(
-                  "User Name",
-                  style: TextStyle(
-                    color: kPrimaryColor,
+                CircleAvatar(
+                  backgroundColor: darkyellow,
+                  child: Text(
+                    "B",
+                    style: TextStyle(color: kPrimaryColor, fontSize: 25),
                   ),
-                ),
-                accountEmail: Text(
-                  "username@gmail.com",
-                  style: TextStyle(color: kPrimaryColor),
-                ),
-                currentAccountPicture: CircleAvatar(
-                  backgroundImage: AssetImage("assets/avatar.webp"),
-                ),
-                otherAccountsPictures: [
-                  CircleAvatar(
-                    backgroundColor: darkyellow,
-                    child: Text(
-                      "A",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
-                    ),
-                  ),
-                  CircleAvatar(
-                    backgroundColor: darkyellow,
-                    child: Text(
-                      "B",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
-                    ),
-                  )
-                ]),
+                )
+              ],
+            ),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
@@ -222,8 +211,10 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
+}
 
-  Container buildBottomNavigationBar() {
+class BuildBottomNavigationBar extends StatelessWidget {
+  Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
         left: kDefaultPadding * 2,
