@@ -24,15 +24,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       // backgroundColor: Colors.red,
 
-      appBar: buildAppBar(),
-      drawer: buildNavDrawer(),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kDefaultPadding * 2),
+          child: AppBarHome()),
+      drawer: DrawerHome(),
       body: Plants(),
       bottomNavigationBar:
-          buildBottomNavigationBar(), // This trailing comma makes auto-formatting nicer for build methods.
+          BottomNavBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
 
-  AppBar buildAppBar() {
+class AppBarHome extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
       // Here we take the value from the MyHomePage object that was created by
@@ -41,21 +46,83 @@ class _HomePageState extends State<HomePage> {
         "Plant App",
         style: TextStyle(color: kTextColor),
       ),
-      leading: IconButton(
-        icon: Icon(
-          Icons.menu,
-          color: kTextColor,
-        ),
-        onPressed: () {},
-      ),
+      // leading: IconButton(
+      //   icon: Icon(
+      //     Icons.menu,
+      //     color: kTextColor,
+      //   ),
+      //   onPressed: () {
+      //     Navigator.push(
+      //         context, MaterialPageRoute(builder: (context) => DrawerHome()));
+      //   },
+      // ),
       backgroundColor: Colors.grey,
     );
   }
+}
 
-  Theme buildNavDrawer() {
+class BottomNavBar extends StatefulWidget {
+  @override
+  _BottomNavBarState createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart),
+          label: 'My Plants',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.settings),
+          label: 'Settings',
+        ),
+      ],
+      type: BottomNavigationBarType.shifting,
+      currentIndex: _selectedIndex,
+      selectedItemColor: darkGreen,
+      unselectedItemColor: darkGreen,
+      iconSize: 25,
+      onTap: _onItemTapped,
+      elevation: 5,
+    );
+  }
+}
+
+class DrawerHome extends StatefulWidget {
+  @override
+  _DrawerHomeState createState() => _DrawerHomeState();
+}
+
+class _DrawerHomeState extends State<DrawerHome> {
+  @override
+  Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: kPrimaryColor,
+        canvasColor: darkGreen,
       ),
       child: Drawer(
         child: ListView(
@@ -72,12 +139,12 @@ class _HomePageState extends State<HomePage> {
                 accountName: Text(
                   "User Name",
                   style: TextStyle(
-                    color: kPrimaryColor,
+                    color: darkGreen,
                   ),
                 ),
                 accountEmail: Text(
                   "username@gmail.com",
-                  style: TextStyle(color: kPrimaryColor),
+                  style: TextStyle(color: darkGreen),
                 ),
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage("assets/avatar.webp"),
@@ -87,14 +154,14 @@ class _HomePageState extends State<HomePage> {
                     backgroundColor: darkyellow,
                     child: Text(
                       "A",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
+                      style: TextStyle(color: darkGreen, fontSize: 25),
                     ),
                   ),
                   CircleAvatar(
                     backgroundColor: darkyellow,
                     child: Text(
                       "B",
-                      style: TextStyle(color: kPrimaryColor, fontSize: 25),
+                      style: TextStyle(color: darkGreen, fontSize: 25),
                     ),
                   )
                 ]),
@@ -106,6 +173,23 @@ class _HomePageState extends State<HomePage> {
               ),
               title: Text(
                 'Home',
+                style: TextStyle(color: kBackgroundColor),
+              ),
+              onTap: null,
+            ),
+            Divider(
+              indent: 80.0,
+              endIndent: 30.0,
+              color: kBackgroundColor,
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
+              leading: Icon(
+                Icons.shopping_bag_outlined,
+                color: kBackgroundColor,
+              ),
+              title: Text(
+                'My Plants',
                 style: TextStyle(color: kBackgroundColor),
               ),
               onTap: null,
@@ -205,14 +289,14 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(500),
               child: InkWell(
                 borderRadius: BorderRadius.circular(500),
-                splashColor: kPrimaryColor,
+                splashColor: darkGreen,
                 onTap: () {
                   Navigator.of(context).pop();
                 },
                 child: CircleAvatar(
                   radius: 20,
                   backgroundColor: darkyellow,
-                  child: Icon(Icons.arrow_back, color: kPrimaryColor),
+                  child: Icon(Icons.arrow_back, color: darkGreen),
                 ),
               ),
             ),
@@ -221,44 +305,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Container buildBottomNavigationBar() {
-    return Container(
-      padding: EdgeInsets.only(
-        left: kDefaultPadding * 2,
-        right: kDefaultPadding * 2,
-        bottom: kDefaultPadding,
-      ),
-      height: 80,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset(0, -10),
-            blurRadius: 35,
-            color: kPrimaryColor.withOpacity(0.38),
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          IconButton(
-            icon: Icon(Icons.home),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.favorite),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {},
-          ),
-        ],
       ),
     );
   }
