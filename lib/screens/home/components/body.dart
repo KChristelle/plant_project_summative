@@ -18,7 +18,12 @@ class Plants extends StatelessWidget {
           // covers 20% of our screen
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(title: "My Plants", press: () {
-          
+            Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ViewPlants(),
+                  ),
+                );
           }),
           RecomendsPlants(),
           TitleWithMoreBtn(title: "Explore", press: () {
