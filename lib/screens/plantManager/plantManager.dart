@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 
 class PlantManager extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kDefaultPadding * 2),
+          child: AppBarHome()),
+      drawer: DrawerHome(),
       body: Container(
+        height: 600,
+        width: 400,
         decoration: BoxDecoration(color: kPrimaryColor),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               HeaderWithPlantDetails(size: size),
-              PlantCareDetails(),
-              AdditionalInfo(),
+              // PlantCareDetails(),
+              // AdditionalInfo(),
             ],
           ),
         ),
@@ -49,13 +56,15 @@ class HeaderWithPlantDetails extends StatelessWidget {
             height: size.height * 0.25 - 27,
             width: size.width,
             decoration: BoxDecoration(
+              // image: DecorationImage(
+              //     image: AssetImage("assets/img1.jpg"), fit: BoxFit.cover),
               color: kBackgroundColor,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(36),
                 bottomRight: Radius.circular(36),
               ),
             ),
-            child: Column(
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
@@ -63,38 +72,57 @@ class HeaderWithPlantDetails extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        'Plant Name',
-                        style: Theme.of(context).textTheme.headline5.copyWith(
-                            color: kPrimaryColor, fontWeight: FontWeight.bold),
+                      Positioned(
+                        left: 0,
+                        top: 20.0,
+                        child: Container(
+                            child: Column(
+                          children: <Widget>[
+                            Text(
+                              'Plant Name',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5
+                                  .copyWith(
+                                      color: kPrimaryColor,
+                                      fontWeight: FontWeight.bold),
+                            ),
+                            Text(
+                              'Details',
+                              style:
+                                  TextStyle(color: kPrimaryColor, fontSize: 12),
+                            ),
+                            Container(
+                              decoration: BoxDecoration(
+                                color: lightGreen,
+                                borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(15),
+                                  bottomRight: Radius.circular(15),
+                                ),
+                              ),
+                              child: Text(
+                                "Healthy",
+                                style: TextStyle(color: kPrimaryColor),
+                              ),
+                            ),
+                          ],
+                        )),
                       ),
-                      Text(
-                        'Details',
-                        style: TextStyle(color: kPrimaryColor, fontSize: 12),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: lightGreen,
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(15),
-                            bottomRight: Radius.circular(15),
+                      Positioned(
+                        left: 200,
+                        top: 20,
+                        child: Container(
+                          width: 10,
+                          height: 20,
+                          child: Image.asset(
+                            "img1.jpg",
+                            fit: BoxFit.contain,
                           ),
-                        ),
-                        child: Text(
-                          "Healthy",
-                          style: TextStyle(color: kPrimaryColor),
                         ),
                       ),
                     ],
                   ),
                 ),
-                Container(
-                    width: 120,
-                    height: 150,
-                    child: Image.asset(
-                      "img1.jpg",
-                      fit: BoxFit.contain,
-                    ))
               ],
             ),
           ),
