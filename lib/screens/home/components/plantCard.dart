@@ -26,7 +26,12 @@ class PlantCard extends StatelessWidget {
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          Image.asset(image),
+          Image.asset(
+            image,
+            // fit: BoxFit.scaleDown,
+            // width: 200.0,
+            // height: 150.0,
+          ),
           GestureDetector(
             onTap: () {
               Navigator.push(

@@ -22,6 +22,8 @@ class _HomePageState extends State<HomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
+      // backgroundColor: Colors.red,
+
       appBar: buildAppBar(),
       drawer: buildNavDrawer(),
       body: Plants(),
