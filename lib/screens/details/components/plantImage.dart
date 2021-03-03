@@ -6,7 +6,7 @@ class PlantImage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Positioned(
       top: 0,
-      bottom: size.height * 0.3,
+      bottom: size.height * 0.5,
       child: Container(
         height: size.height * 0.3,
         width: size.width,

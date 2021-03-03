@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
+import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
 class HomePage extends StatefulWidget {
@@ -180,7 +181,10 @@ class _DrawerHomeState extends State<DrawerHome> {
                 'My Plants',
                 style: TextStyle(color: kBackgroundColor),
               ),
-              onTap: null,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ViewPlants()));
+              },
             ),
             Divider(
               indent: 80.0,

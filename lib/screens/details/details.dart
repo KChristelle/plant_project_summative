@@ -14,23 +14,21 @@ class DetailsPage extends StatelessWidget {
           preferredSize: Size.fromHeight(kDefaultPadding * 2),
           child: AppBarHome()),
       drawer: DrawerHome(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Stack(
-              children: <Widget>[
-                Container(
-                  height: size.height * 0.8,
-                ),
-                PlantImage(),
-                PlantDetails(),
-              ],
-            ),
-            CallToAction(),
-          ],
-        ),
+      body: Column(
+        children: [
+          Stack(
+            children: <Widget>[
+              Container(
+                height: size.height * 0.8,
+              ),
+              PlantImage(),
+              PlantDetails(),
+              CallToAction(),
+            ],
+          ),
+        ],
       ),
-      // bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
