@@ -21,6 +21,29 @@ This a flutter project and requires:
 - Any IDE of your choice
 - Emulator or device to run the app
 
+##Database
+
+Database is implemented with sqflite. 
+The database consists of 3 tables.
+1- Users (UserID, Email, Password)
+    This table id used to store a new users credentials. 
+    This table is used to validate a users login,
+    This table is used to associate user behavior to a unique user account. 
+    Unique email is enforced.
+    
+2- Plants (PlantID, Name, Details)
+    This table is used to store a plants name and details
+    
+3- Inventory (InventoryID, UserID, PlantID, Status, Health, Water, Sun)
+    This table is used to store a users plants. 
+    It stored the health of the plant and allows tracking of a plants metrics. 
+    
+TODO: 
+    Enforce valid email.  
+    Encrypt stored passwords.
+    Implement plant card factories. 
+    
+    
 ## Points to work on for Summative
 
 Please note that this is not the final version of our project. <br>

@@ -4,14 +4,19 @@ import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
+import '../../data/db_functions.dart';
+import '../../data/user.dart';
 
 class SignIn extends StatelessWidget {
+  final myEmailController = TextEditingController();
+  final myPwController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 120),
         decoration: BoxDecoration(
           color: kTextColor,
           image: DecorationImage(
@@ -83,6 +88,7 @@ class SignIn extends StatelessWidget {
                   children: <Widget>[
                     // first text field "Email"
                     TextField(
+                      controller: myEmailController,
                       decoration: InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
@@ -98,6 +104,7 @@ class SignIn extends StatelessWidget {
                     ),
                     // second text field "Password"
                     TextField(
+                      controller: myPwController,
                       decoration: InputDecoration(
                           labelText: 'Password',
                           labelStyle: TextStyle(
@@ -116,11 +123,18 @@ class SignIn extends StatelessWidget {
                       width: 250,
                       height: 35,
                       child: RaisedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                        onPressed: () async {
+                          int userid = await DatabaseHelper.instance
+                              .checkUser(myEmailController.text, myPwController.text);
+
+                          if (userid == 0) {
+                            print("invalid Username Or Password");
+                          } else {
+                            userEmail = myEmailController.text;
+                            userID = userid;
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => HomePage()));
+                          }
                         },
                         textColor: Colors.white,
                         color: darkGreen,

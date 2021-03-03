@@ -3,14 +3,27 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
+import '../../data/db_functions.dart';
 
 class CreateAccount extends StatelessWidget {
+  final myEmailController = TextEditingController();
+  final myPwController = TextEditingController();
+  final myPwConfirmController = TextEditingController();
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myEmailController.dispose();
+    myPwController.dispose();
+    myPwConfirmController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 150),
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 110),
         decoration: BoxDecoration(
           color: kTextColor,
           image: DecorationImage(
@@ -80,6 +93,7 @@ class CreateAccount extends StatelessWidget {
                   children: <Widget>[
                     // first text field "Email"
                     TextField(
+                      controller: myEmailController,
                       decoration: InputDecoration(
                           labelText: 'Email',
                           labelStyle: TextStyle(
@@ -95,6 +109,7 @@ class CreateAccount extends StatelessWidget {
                     ),
                     // second text field "Password"
                     TextField(
+                      controller: myPwController,
                       decoration: InputDecoration(
                           labelText: 'Password',
                           labelStyle: TextStyle(
@@ -110,6 +125,7 @@ class CreateAccount extends StatelessWidget {
                     ),
                     // second text field "Password"
                     TextField(
+                      controller: myPwConfirmController,
                       decoration: InputDecoration(
                           labelText: 'Confirm Password',
                           labelStyle: TextStyle(
@@ -128,11 +144,28 @@ class CreateAccount extends StatelessWidget {
                       width: 250,
                       height: 35,
                       child: RaisedButton(
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePage()));
+                        onPressed: () async {
+                          int dupCheck = await DatabaseHelper.instance
+                              .checkEmail(myEmailController.text);
+                          if (dupCheck == 0) {
+                            print('Duplicated Email!');
+                          } else if ((myPwController.text !=
+                                  myPwConfirmController.text) |
+                              (myPwController.text == '')) {
+                            print('Passwords Not The Same or Null!');
+                          } else {
+                            int i = await DatabaseHelper.instance.newUser({
+                              DatabaseHelper.columnEmail:
+                                  myEmailController.text,
+                              DatabaseHelper.columnPW: myPwController.text
+                            });
+                            print('the inserted id is $i');
+
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LandingPage()));
+                          }
                         },
                         textColor: kTextColor,
                         color: darkGreen,

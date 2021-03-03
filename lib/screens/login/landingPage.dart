@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
+import '../../data/db_functions.dart';
 
 class LandingPage extends StatelessWidget {
   @override
@@ -100,7 +101,7 @@ class LandingPage extends StatelessWidget {
                 width: 200,
                 height: 35,
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: (){},
                   textColor: Colors.white,
                   color: Colors.indigo[800],
                   padding: const EdgeInsets.all(0.0),

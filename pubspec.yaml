@@ -25,6 +25,10 @@ dependencies:
     sdk: flutter
   google_fonts: ^1.1.2
   flutter_svg: ^0.19.1 #it helps us to use SVG
+  sqflite:
+  path:
+  path_provider:
+
 
 
   # The following adds the Cupertino Icons font to your application.
