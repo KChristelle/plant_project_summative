@@ -21,10 +21,11 @@ This a flutter project and requires:
 - Any IDE of your choice
 - Emulator or device to run the app
 
-##Database
+## Database
 
 Database is implemented with sqflite. 
 The database consists of 3 tables.
+
 1- Users (UserID, Email, Password)
     This table id used to store a new users credentials. 
     This table is used to validate a users login,
