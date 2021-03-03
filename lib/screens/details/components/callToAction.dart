@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class CallToAction extends StatelessWidget {
   @override
@@ -26,10 +27,13 @@ class CallToAction extends StatelessWidget {
             ),
           ),
         ),
-        Expanded(
+        SizedBox(
+          width: size.width / 2,
+          height: 60,
           child: FlatButton(
             onPressed: () {},
-            child: Text("Add to List"),
+            child: Text("Add to My Plants"),
+            color: kTextColor,
           ),
         ),
       ],
