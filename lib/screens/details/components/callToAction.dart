@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import '../../../data/db_functions.dart';
+import '../../../data/user.dart';
 
 class CallToAction extends StatelessWidget {
   @override
@@ -20,7 +22,18 @@ class CallToAction extends StatelessWidget {
                 ),
               ),
               color: Colors.teal[900],
-              onPressed: () {},
+              onPressed: () async {
+                int i = await DatabaseHelper.instance.newUserPlant({
+                  DatabaseHelper.columnUID: "$userID",
+                  DatabaseHelper.columnPID: "1",
+                  DatabaseHelper.columnStatus: "Alive",
+                  DatabaseHelper.columnHealth: 100,
+                  DatabaseHelper.columnSun: 100,
+                  DatabaseHelper.columnWater: 100,
+                  DatabaseHelper.columnNut: 100
+                });
+                print('the inserted id is $i');
+              },
               child: Text(
                 "Add to My Plants",
                 style: TextStyle(

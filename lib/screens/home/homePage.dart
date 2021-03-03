@@ -3,17 +3,24 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
 import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import '../../data/user.dart';
+import '../../data/db_functions.dart';
+
 
 class HomePage extends StatefulWidget {
   // This widget is the home page of the application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
 
+
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+
+
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -91,6 +98,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
+
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.shopping_cart),
@@ -117,11 +125,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
 }
 
 class DrawerHome extends StatefulWidget {
+
   @override
   _DrawerHomeState createState() => _DrawerHomeState();
 }
 
 class _DrawerHomeState extends State<DrawerHome> {
+
+
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -141,13 +152,13 @@ class _DrawerHomeState extends State<DrawerHome> {
                 color: Colors.white,
               ),
               accountName: Text(
-                "User Name",
+                "UserID: $userID",
                 style: TextStyle(
                   color: kPrimaryColor,
                 ),
               ),
               accountEmail: Text(
-                "username@gmail.com",
+                "UserEmail: "+userEmail,
                 style: TextStyle(color: kPrimaryColor),
               ),
               currentAccountPicture: CircleAvatar(
@@ -164,7 +175,8 @@ class _DrawerHomeState extends State<DrawerHome> {
                 'Home',
                 style: TextStyle(color: kBackgroundColor),
               ),
-              onTap: null,
+              onTap: (){Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HomePage()));},
             ),
             Divider(
               indent: 80.0,
@@ -181,7 +193,9 @@ class _DrawerHomeState extends State<DrawerHome> {
                 'My Plants',
                 style: TextStyle(color: kBackgroundColor),
               ),
-              onTap: () {
+              onTap: () async {
+                inventorySize = await DatabaseHelper.instance
+                    .getInventoryLength();
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ViewPlants()));
               },
