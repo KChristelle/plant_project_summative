@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 
 class AddPlantAlert extends StatefulWidget {
   final Text alertTitle;
@@ -101,7 +102,7 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
 
   Image _defaultIcon() {
     return Image(
-      image: AssetImage("packages/rich_alert/assets/success.png"),
+      image: AssetImage("assets/icons/success.png"),
       width: deviceHeight / 7,
       height: deviceHeight / 7,
     );
@@ -121,12 +122,12 @@ class _AddPlantAlertState extends State<AddPlantAlert> {
           borderRadius: BorderRadius.circular(kDefaultPadding),
         ),
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) => ViewPlants(),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ViewPlants(),
+            ),
+          );
         },
       ),
     );
