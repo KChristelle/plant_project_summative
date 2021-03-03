@@ -6,6 +6,7 @@ import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
 import '../../data/db_functions.dart';
 import '../../data/user.dart';
+import 'loginAlert.dart';
 
 class SignIn extends StatelessWidget {
   final myEmailController = TextEditingController();
@@ -128,12 +129,11 @@ class SignIn extends StatelessWidget {
                               .checkUser(myEmailController.text, myPwController.text);
 
                           if (userid == 0) {
-                            print("invalid Username Or Password");
+                            showAlertDialogFailedLogin(context);
                           } else {
                             userEmail = myEmailController.text;
                             userID = userid;
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => HomePage()));
+                            showAlertDialogNewLogin(context);
                           }
                         },
                         textColor: Colors.white,

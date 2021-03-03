@@ -4,6 +4,7 @@ import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
 import '../../data/db_functions.dart';
+import "loginAlert.dart";
 
 class CreateAccount extends StatelessWidget {
   final myEmailController = TextEditingController();
@@ -148,23 +149,18 @@ class CreateAccount extends StatelessWidget {
                           int dupCheck = await DatabaseHelper.instance
                               .checkEmail(myEmailController.text);
                           if (dupCheck == 0) {
-                            print('Duplicated Email!');
+                            showAlertDialogDupEmail(context);
                           } else if ((myPwController.text !=
                                   myPwConfirmController.text) |
                               (myPwController.text == '')) {
-                            print('Passwords Not The Same or Null!');
+                            showAlertDialogPwNotMatch(context);
                           } else {
                             int i = await DatabaseHelper.instance.newUser({
                               DatabaseHelper.columnEmail:
                                   myEmailController.text,
                               DatabaseHelper.columnPW: myPwController.text
                             });
-                            print('the inserted id is $i');
-
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LandingPage()));
+                            showAlertDialogNewUser(context);
                           }
                         },
                         textColor: kTextColor,
