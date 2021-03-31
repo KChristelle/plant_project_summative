@@ -6,21 +6,16 @@ import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import '../../data/user.dart';
 import '../../data/db_functions.dart';
 
-
 class HomePage extends StatefulWidget {
   // This widget is the home page of the application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
-
-
 
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
-
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
@@ -43,8 +38,6 @@ class _HomePageState extends State<HomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      // backgroundColor: Colors.red,
-
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(kDefaultPadding * 2),
           child: AppBarHome()),
@@ -67,7 +60,9 @@ class AppBarHome extends StatelessWidget {
         "Plant App",
         style: TextStyle(color: kPrimaryColor),
       ),
-      backgroundColor: Colors.grey[300],
+      // backgroundColor: Colors.grey[300],
+      backgroundColor: kBackgroundColor,
+      iconTheme: IconThemeData(color: kPrimaryColor),
     );
   }
 }
@@ -98,26 +93,21 @@ class _BottomNavBarState extends State<BottomNavBar> {
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
           label: 'Home',
-
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart),
-          label: 'My Plants',
+          icon: Icon(Icons.add_circle),
+          label: 'Add',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Profile',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
-          label: 'Settings',
+          icon: Icon(Icons.favorite),
+          label: 'Favorites',
         ),
       ],
       type: BottomNavigationBarType.shifting,
       currentIndex: _selectedIndex,
-      selectedItemColor: darkGreen,
-      unselectedItemColor: darkGreen,
-      iconSize: 25,
+      selectedItemColor: kPrimaryColor,
+      unselectedItemColor: kPrimaryColor,
+      iconSize: 30,
       onTap: _onItemTapped,
       elevation: 5,
     );
@@ -125,14 +115,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
 }
 
 class DrawerHome extends StatefulWidget {
-
   @override
   _DrawerHomeState createState() => _DrawerHomeState();
 }
 
 class _DrawerHomeState extends State<DrawerHome> {
-
-
   @override
   Widget build(BuildContext context) {
     return Theme(
@@ -158,7 +145,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                 ),
               ),
               accountEmail: Text(
-                "UserEmail: "+userEmail,
+                "UserEmail: " + userEmail,
                 style: TextStyle(color: kPrimaryColor),
               ),
               currentAccountPicture: CircleAvatar(
@@ -175,8 +162,10 @@ class _DrawerHomeState extends State<DrawerHome> {
                 'Home',
                 style: TextStyle(color: kBackgroundColor),
               ),
-              onTap: (){Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => HomePage()));},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => HomePage()));
+              },
             ),
             Divider(
               indent: 80.0,
@@ -194,8 +183,8 @@ class _DrawerHomeState extends State<DrawerHome> {
                 style: TextStyle(color: kBackgroundColor),
               ),
               onTap: () async {
-                inventorySize = await DatabaseHelper.instance
-                    .getInventoryLength();
+                inventorySize =
+                    await DatabaseHelper.instance.getInventoryLength();
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ViewPlants()));
               },

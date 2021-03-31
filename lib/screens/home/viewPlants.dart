@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/featured.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
-import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/plantCard.dart';
-import '../../data/db_functions.dart';
 import '../../data/user.dart';
 
 import 'components/categoryTitle.dart';
