@@ -12,14 +12,14 @@ class HeaderWithSearchBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // It will cover 20% of our total height
+      // It will cover 25% of our total height
       height: size.height * 0.25,
       width: size.width,
       child: Stack(
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(
-              left: 0,
+              left: 10,
               right: kDefaultPadding,
               bottom: 36 + kDefaultPadding,
             ),
@@ -28,40 +28,44 @@ class HeaderWithSearchBox extends StatelessWidget {
             decoration: BoxDecoration(
               color: kPrimaryColor,
             ),
-          ),
-          Positioned(
-            left: 45,
-            top: 0,
-            child: Column(
-              children: <Widget>[
-                SizedBox(
-                  height: 20.0,
-                ),
-                RichText(
-                  textAlign: TextAlign.left,
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: 'Explore\n',
-                        style: Theme.of(context).textTheme.headline5.copyWith(
-                              color: kBackgroundColor,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 5,
-                              fontSize: 40,
-                            ),
-                      ),
-                      TextSpan(
-                        text: 'Add new plants to your family',
-                        style: TextStyle(
-                          color: kBackgroundColor,
-                          fontSize: 14,
-                          letterSpacing: 1.5,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+              child: Row(
+                children: <Widget>[
+                  RichText(
+                    textAlign: TextAlign.left,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Explore\n',
+                          style: Theme.of(context).textTheme.headline5.copyWith(
+                                color: kBackgroundColor,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 5,
+                                fontSize: 40,
+                              ),
                         ),
-                      ),
-                    ],
+                        TextSpan(
+                          text: 'Add new plants to your family',
+                          style: TextStyle(
+                            color: kBackgroundColor,
+                            fontSize: 14,
+                            letterSpacing: 1.5,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Container(
+                    width: size.height * 0.08,
+                    height: size.height * 0.08,
+                    child: Image.asset(
+                      "assets/logo.PNG",
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(

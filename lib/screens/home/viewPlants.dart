@@ -35,38 +35,41 @@ class _ViewPlantsState extends State<ViewPlants> {
           child: AppBarHome()),
       drawer: DrawerHome(),
       body: Container(
-          child: Column(children: [
-        SizedBox(
-          height: size.height * 0.04,
-        ),
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
-          child: TitleWithMoreBtn(
-            title: "View Plants",
-            press: () {},
-          ),
-        ),
-        SizedBox(
-          height: size.height * 0.03,
-        ),
-        SearchBar(),
-        Categories(),
-        SizedBox(
-          height: 550,
-          child: GridView.builder(
-            itemCount: inventorySize,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: kDefaultPadding / 2,
-              // mainAxisSpacing: kDefaultPadding / 14,
-              childAspectRatio: 0.7,
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height * 0.04,
             ),
-            itemBuilder: (BuildContext context, int index) {
-              return plants[index];
-            },
-          ),
-        )
-      ])),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TitleWithMoreBtn(
+                title: "View Plants",
+                press: () {},
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            SearchBar(),
+            Categories(),
+            SizedBox(
+              height: 550,
+              child: GridView.builder(
+                itemCount: inventorySize,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: kDefaultPadding / 2,
+                  // mainAxisSpacing: kDefaultPadding / 14,
+                  childAspectRatio: 0.7,
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return plants[index];
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar:
           BottomNavBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );

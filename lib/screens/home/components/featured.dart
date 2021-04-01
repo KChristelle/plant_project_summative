@@ -1,22 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/featuredCardWithLocation.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/recommendCard.dart';
 
-class FeaturedPlants extends StatelessWidget {
+class FeaturesPlants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 300,
-      child: GridView.builder(
+    Size size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width,
+      height: size.height * 0.4,
+      margin: EdgeInsets.symmetric(
+        horizontal: kDefaultPadding,
+      ),
+      child: ListView.builder(
         itemCount: plants.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: kDefaultPadding / 2,
-          // mainAxisSpacing: kDefaultPadding / 14,
-          childAspectRatio: 0.7,
-        ),
-        itemBuilder: (BuildContext context, int index) {
-          return plants[index];
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        primary: true,
+        itemBuilder: (context, index) {
+          return FeaturedCardWithLocation(
+            image: plantsWithLocation[index].image,
+            title: plantsWithLocation[index].title,
+            country: plantsWithLocation[index].country,
+            location: plantsWithLocation[index].location,
+            action: plantsWithLocation[index].action,
+          );
         },
       ),
     );

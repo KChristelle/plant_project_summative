@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/categoryTitle.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/featured.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
@@ -32,7 +32,7 @@ class ExplorePage extends StatelessWidget {
           ),
           SearchBar(),
           Categories(),
-          FeaturedPlants(),
+          PlantsGridView(),
         ],
       ),
       bottomNavigationBar: BottomNavBar(),

@@ -54,62 +54,60 @@ class AppBarHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      // Here we take the value from the MyHomePage object that was created by
-      // the App.build method, and use it to set our appbar title.
-      title: Text(
-        "Plant App",
-        style: TextStyle(color: kPrimaryColor),
-      ),
-      // backgroundColor: Colors.grey[300],
-      backgroundColor: kBackgroundColor,
-      iconTheme: IconThemeData(color: kPrimaryColor),
+      iconTheme: IconThemeData(color: kBackgroundColor),
     );
   }
 }
 
-class BottomNavBar extends StatefulWidget {
-  @override
-  _BottomNavBarState createState() => _BottomNavBarState();
-}
-
-class _BottomNavBarState extends State<BottomNavBar> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _selectedIndex = index;
-    });
-  }
-
+class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.add_circle),
-          label: 'Add',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.favorite),
-          label: 'Favorites',
-        ),
-      ],
-      type: BottomNavigationBarType.shifting,
-      currentIndex: _selectedIndex,
-      selectedItemColor: kPrimaryColor,
-      unselectedItemColor: kPrimaryColor,
-      iconSize: 30,
-      onTap: _onItemTapped,
-      elevation: 5,
+    return Container(
+      padding: EdgeInsets.only(
+        left: kDefaultPadding * 2,
+        right: kDefaultPadding * 2,
+        bottom: kDefaultPadding,
+      ),
+      height: 80,
+      decoration: BoxDecoration(
+        color: kBackgroundColor,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, -10),
+            blurRadius: 35,
+            color: kPrimaryColor.withOpacity(0.38),
+          ),
+        ],
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.home_outlined,
+              color: kPrimaryColor,
+              size: 25,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.add_circle,
+              color: kPrimaryColor,
+              size: 35,
+            ),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.favorite_outline,
+              color: kPrimaryColor,
+              size: 25,
+            ),
+            onPressed: () {},
+          ),
+        ],
+      ),
     );
   }
 }
