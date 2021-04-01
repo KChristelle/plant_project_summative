@@ -12,10 +12,12 @@ class PlantDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.7,
+      width: size.width,
       child: Text(
         description,
-        style: TextStyle(fontSize: 12, letterSpacing: 0.8),
+        style: TextStyle(
+          fontSize: 12,
+        ),
       ),
     );
   }
