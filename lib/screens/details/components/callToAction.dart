@@ -4,7 +4,7 @@ import 'package:plant_growth_tracking_app/screens/details/components/addPlantAle
 import '../../../data/db_functions.dart';
 import '../../../data/user.dart';
 
-class CallToAction extends StatelessWidget {
+class AddToPlants extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

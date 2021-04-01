@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import '../../data/user.dart';
@@ -8,8 +10,6 @@ import 'components/categoryTitle.dart';
 
 // This widget is the home page of the application. It is stateful, meaning
 class ViewPlants extends StatefulWidget {
-
-
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
 
@@ -17,18 +17,10 @@ class ViewPlants extends StatefulWidget {
   _ViewPlantsState createState() => _ViewPlantsState();
 }
 
-
-
-
 class _ViewPlantsState extends State<ViewPlants> {
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -42,21 +34,39 @@ class _ViewPlantsState extends State<ViewPlants> {
           preferredSize: Size.fromHeight(kDefaultPadding * 2),
           child: AppBarHome()),
       drawer: DrawerHome(),
-      body: Container(child: Column(children: [TitleWithMoreBtn(title: "My Plants", press: () {}), SizedBox(
-        height: 550,
-        child: GridView.builder(
-          itemCount: inventorySize,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: kDefaultPadding / 2,
-            // mainAxisSpacing: kDefaultPadding / 14,
-            childAspectRatio: 0.7,
-          ),
-          itemBuilder: (BuildContext context, int index) {
-            return plants[index];
-          },
+      body: Container(
+          child: Column(children: [
+        SizedBox(
+          height: size.height * 0.04,
         ),
-      )])),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: TitleWithMoreBtn(
+            title: "View Plants",
+            press: () {},
+          ),
+        ),
+        SizedBox(
+          height: size.height * 0.03,
+        ),
+        SearchBar(),
+        Categories(),
+        SizedBox(
+          height: 550,
+          child: GridView.builder(
+            itemCount: inventorySize,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: kDefaultPadding / 2,
+              // mainAxisSpacing: kDefaultPadding / 14,
+              childAspectRatio: 0.7,
+            ),
+            itemBuilder: (BuildContext context, int index) {
+              return plants[index];
+            },
+          ),
+        )
+      ])),
       bottomNavigationBar:
           BottomNavBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );

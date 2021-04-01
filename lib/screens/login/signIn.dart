@@ -7,7 +7,7 @@ import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
 import '../../data/db_functions.dart';
 import '../../data/user.dart';
-import 'loginAlert.dart';
+import 'components/loginAlert.dart';
 
 class SignIn extends StatelessWidget {
   final myEmailController = TextEditingController();

@@ -82,44 +82,50 @@ class HeaderWithSearchBox extends StatelessWidget {
             bottom: 25,
             left: 0,
             right: 0,
-            child: Container(
-              alignment: Alignment.center,
-              margin: EdgeInsets.symmetric(horizontal: kDefaultPadding + 5),
-              padding: EdgeInsets.symmetric(horizontal: kDefaultPadding - 5),
-              height: 43,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    offset: Offset(0, 10),
-                    blurRadius: 50,
-                    color: kPrimaryColor.withOpacity(0.23),
-                  ),
-                ],
-              ),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: TextField(
-                      onChanged: (value) {},
-                      decoration: InputDecoration(
-                        hintText: "Search",
-                        hintStyle: TextStyle(
-                          color: kPrimaryColor.withOpacity(0.5),
-                        ),
-                        enabledBorder: InputBorder.none,
-                        focusedBorder: InputBorder.none,
-                      ),
-                    ),
-                  ),
-                  Icon(
-                    Icons.search,
-                    color: kPrimaryColor,
-                  ),
-                ],
+            child: SearchBar(),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SearchBar extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding + 5),
+      padding: EdgeInsets.symmetric(horizontal: kDefaultPadding - 5),
+      height: 43,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(20),
+        boxShadow: [
+          BoxShadow(
+            offset: Offset(0, 10),
+            blurRadius: 50,
+            color: kPrimaryColor.withOpacity(0.23),
+          ),
+        ],
+      ),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: TextField(
+              onChanged: (value) {},
+              decoration: InputDecoration(
+                hintText: "Search",
+                hintStyle: TextStyle(
+                  color: kPrimaryColor.withOpacity(0.5),
+                ),
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
               ),
             ),
+          ),
+          Icon(
+            Icons.search,
+            color: kPrimaryColor,
           ),
         ],
       ),
