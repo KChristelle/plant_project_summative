@@ -122,3 +122,44 @@ class _PlantDescriptionSelectorState extends State<PlantDescriptionSelector> {
     );
   }
 }
+
+class DaysSelector extends StatefulWidget {
+  @override
+  _DaysSelectorState createState() => _DaysSelectorState();
+}
+
+class _DaysSelectorState extends State<DaysSelector> {
+  List<String> days = ['1', '2', '3', '4', '5', '6', '7'];
+  String _selectedDay;
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton(
+      hint: Text("0"),
+      value: _selectedDay,
+      icon: Icon(Icons.arrow_drop_down),
+      iconSize: 16,
+      elevation: 16,
+      style: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.5,
+        color: kTextColor,
+      ),
+      underline: Container(
+        height: 1,
+        color: Color(0xffBBB7B7),
+      ),
+      onChanged: (newValue) {
+        setState(() {
+          _selectedDay = newValue;
+        });
+      },
+      items: days.map((day) {
+        return DropdownMenuItem(
+          child: Text(day),
+          value: day,
+        );
+      }).toList(),
+    );
+  }
+}

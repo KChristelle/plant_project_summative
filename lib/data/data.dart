@@ -31,13 +31,13 @@ List<FeaturedPlantCard> plants = [
     action: Icon(Icons.add_circle),
     // press: () {},
   ),
-  // FeaturedPlantCard(
-  //   image: "assets/img5.jpg",
-  //   title: "Angelica",
-  //   country: "Russia",
-  //   action: Icon(Icons.add_circle),
-  //   // press: () {},
-  // ),
+  FeaturedPlantCard(
+    image: "assets/img5.jpg",
+    title: "Angelica",
+    country: "Russia",
+    action: Icon(Icons.add_circle),
+    // press: () {},
+  ),
   FeaturedPlantCard(
     image: "assets/img6.jpg",
     title: "Samantha",
@@ -52,13 +52,13 @@ List<FeaturedPlantCard> plants = [
     action: Icon(Icons.add_circle),
     // press: () {},
   ),
-  // FeaturedPlantCard(
-  //   image: "assets/img8.jpg",
-  //   title: "Samantha",
-  //   country: "Russia",
-  //   action: Icon(Icons.add_circle),
-  //   // press: () {},
-  // ),
+  FeaturedPlantCard(
+    image: "assets/img8.jpg",
+    title: "Samantha",
+    country: "Russia",
+    action: Icon(Icons.add_circle),
+    // press: () {},
+  ),
 ];
 
 List<PlantCardWithLocation> plantsWithLocation = [
@@ -94,14 +94,14 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  // PlantCardWithLocation(
-  //   image: "assets/img5.jpg",
-  //   title: "Angelica",
-  //   country: "Russia",
-  //   action: Icon(Icons.add_circle),
-  //   location: "Living Room",
-  //   // press: () {},
-  // ),
+  PlantCardWithLocation(
+    image: "assets/img5.jpg",
+    title: "Angelica",
+    country: "Russia",
+    action: Icon(Icons.add_circle),
+    location: "Living Room",
+    // press: () {},
+  ),
   PlantCardWithLocation(
     image: "assets/img6.jpg",
     title: "Samantha",
@@ -118,21 +118,21 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  // PlantCardWithLocation(
-  //   image: "assets/img8.jpg",
-  //   title: "Samantha",
-  //   country: "Russia",
-  //   action: Icon(Icons.add_circle),
-  //   location: "Living Room",
-  //   // press: () {},
-  // ),
+  PlantCardWithLocation(
+    image: "assets/img8.jpg",
+    title: "Samantha",
+    country: "Russia",
+    action: Icon(Icons.add_circle),
+    location: "Living Room",
+    // press: () {},
+  ),
 ];
 
 // plant species/names
 List<String> plantSpecies = ['Aloe Vera', 'Cactus', 'Angelica'];
 
 // plant locations
-List<String> plantLocation = ['Indoor', 'Outdoor', 'Location'];
+List<String> plantLocation = ['Indoor', 'Outdoor', 'Office'];
 
 // plant descriptions
 List<String> plantDesc = [

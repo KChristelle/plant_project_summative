@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
-          title: null,
+          title: "",
           color: kPrimaryColor,
           textColor: kBackgroundColor,
         ),

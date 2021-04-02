@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
 void main() => runApp(PlantApp());
 
@@ -24,7 +24,7 @@ class PlantApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: LandingPage(),
     );
   }
 }

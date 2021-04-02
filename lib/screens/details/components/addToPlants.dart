@@ -4,6 +4,8 @@ import '../../../data/db_functions.dart';
 import '../../../data/user.dart';
 
 class AddToPlants extends StatelessWidget {
+  AddToPlants({Key key, this.action});
+  final String action;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -29,7 +31,7 @@ class AddToPlants extends StatelessWidget {
           });
         },
         child: Text(
-          "Add to My Plants",
+          action,
           style: TextStyle(
             color: kBackgroundColor,
             fontSize: 14,

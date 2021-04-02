@@ -220,7 +220,9 @@ class PlantDetails extends StatelessWidget {
             SizedBox(
               height: kDefaultPadding,
             ),
-            AddToPlants(),
+            AddToPlants(
+              action: "Add to My Plants",
+            ),
           ],
         ),
       ),
