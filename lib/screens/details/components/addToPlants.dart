@@ -9,11 +9,11 @@ class AddToPlants extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       width: size.width / 2.5,
-      height: 40,
+      height: 38,
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(60),
+            Radius.circular(30),
           ),
         ),
         color: kPrimaryColor,
@@ -31,8 +31,10 @@ class AddToPlants extends StatelessWidget {
         child: Text(
           "Add to My Plants",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+            color: kBackgroundColor,
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0.5,
           ),
         ),
       ),

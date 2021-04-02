@@ -14,7 +14,7 @@ class PlantImage extends StatelessWidget {
           Container(
             height: size.height * 0.35,
             width: size.width,
-            color: darkGrey.withOpacity(0.5),
+            color: Color(0xffE5E5E5),
           ),
 
           // Image
@@ -33,7 +33,7 @@ class PlantImage extends StatelessWidget {
                   Radius.circular(size.height * 0.125),
                 ),
                 border: Border.all(
-                  color: kTextColor,
+                  color: Color(0xffBBB7B7),
                   width: 1.0,
                 ),
               ),
@@ -48,7 +48,7 @@ class PlantImage extends StatelessWidget {
               width: 26,
               height: 26,
               decoration: BoxDecoration(
-                color: lightGreen,
+                color: Color(0xff316344).withOpacity(0.8),
                 borderRadius: BorderRadius.all(
                   Radius.circular(12.5),
                 ),

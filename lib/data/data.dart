@@ -127,3 +127,16 @@ List<PlantCardWithLocation> plantsWithLocation = [
   //   // press: () {},
   // ),
 ];
+
+// plant species/names
+List<String> plantSpecies = ['Aloe Vera', 'Cactus', 'Angelica'];
+
+// plant locations
+List<String> plantLocation = ['Indoor', 'Outdoor', 'Location'];
+
+// plant descriptions
+List<String> plantDesc = [
+  "Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.",
+  "",
+  ""
+];
