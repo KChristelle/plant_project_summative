@@ -97,7 +97,14 @@ class FeaturedPlantCard extends StatelessWidget {
                     icon: action,
                     color: kPrimaryColor,
                     iconSize: 30,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PlantProfile(),
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),

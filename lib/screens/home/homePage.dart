@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
 import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
@@ -116,7 +117,12 @@ class BottomNavBar extends StatelessWidget {
               color: kPrimaryColor,
               size: 35,
             ),
-            onPressed: () {},
+            onPressed: () {Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PlantProfile(),
+                ),
+              );},
           ),
           IconButton(
             icon: Icon(

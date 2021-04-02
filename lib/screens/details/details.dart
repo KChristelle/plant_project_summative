@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/addToPlants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantDetails.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantImage.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
