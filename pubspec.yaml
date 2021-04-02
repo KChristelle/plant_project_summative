@@ -28,6 +28,7 @@ dependencies:
   sqflite:
   path:
   path_provider:
+  slider_button: ^0.6.0
 
 
 

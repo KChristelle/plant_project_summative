@@ -31,8 +31,13 @@ class _ViewPlantsState extends State<ViewPlants> {
       // backgroundColor: Colors.red,
 
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kDefaultPadding * 2),
-          child: AppBarHome()),
+        preferredSize: Size.fromHeight(kDefaultPadding * 2),
+        child: AppBarHome(
+          title: "Plant App",
+          color: kBackgroundColor,
+          textColor: kPrimaryColor,
+        ),
+      ),
       drawer: DrawerHome(),
       body: Container(
         child: Column(

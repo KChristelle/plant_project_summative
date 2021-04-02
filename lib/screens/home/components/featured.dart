@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/featuredCardWithLocation.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/recommendCard.dart';
 
 class FeaturesPlants extends StatelessWidget {
   @override

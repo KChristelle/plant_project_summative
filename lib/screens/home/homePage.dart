@@ -39,8 +39,13 @@ class _HomePageState extends State<HomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kDefaultPadding * 2),
-          child: AppBarHome()),
+        preferredSize: Size.fromHeight(kDefaultPadding * 2),
+        child: AppBarHome(
+          title: null,
+          color: kPrimaryColor,
+          textColor: kBackgroundColor,
+        ),
+      ),
       drawer: DrawerHome(),
       body: Plants(),
       bottomNavigationBar:
@@ -50,11 +55,26 @@ class _HomePageState extends State<HomePage> {
 }
 
 class AppBarHome extends StatelessWidget {
+  AppBarHome({
+    Key key,
+    this.title,
+    this.color,
+    this.textColor,
+  });
+  final String title;
+  final Color color, textColor;
   @override
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      iconTheme: IconThemeData(color: kBackgroundColor),
+      backgroundColor: color,
+      title: Text(
+        title,
+        style: TextStyle(
+          color: textColor,
+        ),
+      ),
+      iconTheme: IconThemeData(color: kTextColor),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/callToAction.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantDetails.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantImage.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
@@ -11,8 +10,13 @@ class PlantProfile extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(kDefaultPadding * 2),
-          child: AppBarHome()),
+        preferredSize: Size.fromHeight(kDefaultPadding * 2),
+        child: AppBarHome(
+          title: "Plant App",
+          color: kBackgroundColor,
+          textColor: kPrimaryColor.withOpacity(0.6),
+        ),
+      ),
       drawer: DrawerHome(),
       body: Column(
         children: <Widget>[
@@ -23,12 +27,11 @@ class PlantProfile extends StatelessWidget {
               ),
               PlantImage(),
               PlantDetails(),
-              AddToPlants(),
             ],
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavBar(),
+      // bottomNavigationBar: BottomNavBar(),
     );
   }
 }

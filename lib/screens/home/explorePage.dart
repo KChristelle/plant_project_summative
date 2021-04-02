@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/categoryTitle.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
@@ -12,7 +13,11 @@ class ExplorePage extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(40.0),
-        child: AppBarHome(),
+        child: AppBarHome(
+          title: "Plant App",
+          color: kBackgroundColor,
+          textColor: kPrimaryColor,
+        ),
       ),
       drawer: DrawerHome(),
       body: Column(
