@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/addToPlants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/selector.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
+import 'package:plant_growth_tracking_app/screens/details/fertilize.dart';
+import 'package:plant_growth_tracking_app/screens/details/sunlight.dart';
+import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 
 class PlantDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    Color sliderColor = kBackgroundColor,
+        sliderBackgroundColor = Color(0xffBBB7B7);
     return Positioned(
       top: size.height * 0.3,
       child: Container(
-        // height: size.height * 0.6,
         width: size.width,
         padding: EdgeInsets.all(kDefaultPadding),
         decoration: BoxDecoration(
           color: kBackgroundColor,
-          // borderRadius: BorderRadius.only(
-          //   topLeft: Radius.circular(kDefaultPadding * 2),
-          //   topRight: Radius.circular(kDefaultPadding * 2),
-          // ),
         ),
         child: Column(
           children: <Widget>[
@@ -30,16 +29,7 @@ class PlantDetails extends StatelessWidget {
             // plant info
             Row(
               children: [
-                Text(
-                  "Plant Info",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
-                    color: kTextColor,
-                  ),
-                ),
+                Title(title: "Plant Info"),
               ],
             ),
             SizedBox(
@@ -54,15 +44,7 @@ class PlantDetails extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
                   child: Column(
                     children: [
-                      Text(
-                        "Plant Name",
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w300,
-                          letterSpacing: 0.5,
-                          color: kTextColor,
-                        ),
-                      ),
+                      SubTitle(title: "Plant Name"),
 
                       // select plant species
                       PlantSpeciesSelector(),
@@ -77,16 +59,7 @@ class PlantDetails extends StatelessWidget {
                   padding: EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
                   child: Column(
                     children: [
-                      Text(
-                        "Plant Location",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w300,
-                          letterSpacing: 0.5,
-                          color: kTextColor,
-                        ),
-                      ),
+                      SubTitle(title: "Plant Location"),
 
                       // select plant location
                       PlantLocationSelector(),
@@ -107,15 +80,7 @@ class PlantDetails extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        "Plant Notes",
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w300,
-                          letterSpacing: 0.5,
-                          color: kTextColor,
-                        ),
-                      ),
+                      SubTitle(title: "Plant Notes"),
                     ],
                   ),
 
@@ -131,19 +96,11 @@ class PlantDetails extends StatelessWidget {
             // Plant care
             Row(
               children: [
-                Text(
-                  "Plant Care",
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.5,
-                    color: kTextColor,
-                  ),
-                ),
+                Title(title: "Plant Care"),
               ],
             ),
             SizedBox(
-              height: kDefaultPadding,
+              height: kDefaultPadding / 2,
             ),
 
             Container(
@@ -161,7 +118,18 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Water",
                     schedule: "Not Set",
-                    press: () {},
+                    color: sliderColor,
+                    backgroundColor: sliderBackgroundColor,
+                    press: () {
+                      // sliderColor = kBackgroundColor;
+                      // sliderBackgroundColor = kPrimaryColor;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WateringScheduler(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 5,
@@ -183,7 +151,18 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Fertilize",
                     schedule: "Not Set",
-                    press: () {},
+                    color: sliderColor,
+                    backgroundColor: sliderBackgroundColor,
+                    press: () {
+                      // sliderColor = kBackgroundColor;
+                      // sliderBackgroundColor = kPrimaryColor;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FertilizeScheduler(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 5,
@@ -205,7 +184,18 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Temperature",
                     schedule: "Not Set",
-                    press: () {},
+                    color: sliderColor,
+                    backgroundColor: sliderBackgroundColor,
+                    press: () {
+                      // sliderColor = kBackgroundColor;
+                      // sliderBackgroundColor = kPrimaryColor;
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SunlightScheduler(),
+                        ),
+                      );
+                    },
                   ),
                   SizedBox(
                     height: 5,
@@ -220,11 +210,42 @@ class PlantDetails extends StatelessWidget {
             SizedBox(
               height: kDefaultPadding,
             ),
-            AddToPlants(
-              action: "Add to My Plants",
-            ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class Title extends StatelessWidget {
+  Title({Key key, this.title});
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+        letterSpacing: 0.5,
+        color: kTextColor,
+      ),
+    );
+  }
+}
+
+class SubTitle extends StatelessWidget {
+  SubTitle({Key key, this.title});
+  final String title;
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      title,
+      style: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w300,
+        letterSpacing: 0.5,
+        color: kTextColor,
       ),
     );
   }

@@ -3,10 +3,19 @@ import 'package:slider_button/slider_button.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class CareOption extends StatelessWidget {
-  CareOption({Key key, this.icon, this.title, this.schedule, this.press});
+  CareOption({
+    Key key,
+    this.icon,
+    this.title,
+    this.schedule,
+    this.press,
+    this.color,
+    this.backgroundColor,
+  });
   final String title, schedule;
   final Icon icon;
   final Function press;
+  final Color color, backgroundColor;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -59,8 +68,8 @@ class CareOption extends StatelessWidget {
           label: Text(''),
           width: 35,
           height: 16,
-          backgroundColor: Color(0xffBBB7B7),
-          buttonColor: kBackgroundColor,
+          backgroundColor: backgroundColor,
+          buttonColor: color,
           buttonSize: 12,
           icon: null,
           boxShadow: BoxShadow(color: kBackgroundColor, blurRadius: 4),

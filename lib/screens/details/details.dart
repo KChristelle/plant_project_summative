@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/addToPlants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantDetails.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/plantImage.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
@@ -18,18 +19,19 @@ class PlantProfile extends StatelessWidget {
         ),
       ),
       drawer: DrawerHome(),
-      body: Column(
-        children: <Widget>[
-          Stack(
-            children: [
-              Container(
-                height: size.height,
-              ),
-              PlantImage(),
-              PlantDetails(),
-            ],
-          ),
-        ],
+      body: Container(
+        child: Stack(
+          children: [
+            Container(
+              height: size.height,
+            ),
+            PlantImage(),
+            PlantDetails(),
+            AddToPlants(
+              action: "Add New Plant",
+            ),
+          ],
+        ),
       ),
     );
   }

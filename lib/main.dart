@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
-void main() => runApp(PlantApp());
+void main() {
+  initializeDateFormatting().then((_) => runApp(PlantApp()));
+}
 
 class PlantApp extends StatelessWidget {
   // This widget is the root of the application.

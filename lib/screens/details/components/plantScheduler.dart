@@ -1,41 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/addToPlants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/plantImage.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/selector.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
-import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
-
-class Scheduler extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kDefaultPadding * 2),
-        child: AppBarHome(
-          title: "Plant App",
-          color: kBackgroundColor,
-          textColor: Color(0xff316344).withOpacity(0.63),
-        ),
-      ),
-      drawer: DrawerHome(),
-      body: Column(
-        children: [
-          Stack(
-            children: <Widget>[
-              Container(
-                height: size.height,
-              ),
-              PlantImage(),
-              PlantScheduler(action: "Watering",),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 class PlantScheduler extends StatelessWidget {
   PlantScheduler({Key key, this.action});
@@ -43,19 +9,26 @@ class PlantScheduler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    Color sliderColor = kBackgroundColor,
+        sliderBackgroundColor = Color(0xffBBB7B7);
     return Positioned(
-      top: size.height * 0.3,
+      top: size.height * 0.2,
       child: Container(
-        // height: size.height * 0.6,
         width: size.width,
-        // padding: EdgeInsets.all(kDefaultPadding),
         decoration: BoxDecoration(
           color: kBackgroundColor,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(kDefaultPadding),
+            topRight: Radius.circular(kDefaultPadding),
+          ),
         ),
         child: Column(
           children: <Widget>[
             Container(
-              padding: EdgeInsets.all(kDefaultPadding / 2),
+              padding: EdgeInsets.symmetric(
+                vertical: kDefaultPadding / 2,
+                horizontal: kDefaultPadding,
+              ),
               child: Row(
                 children: [
                   // title bar
@@ -64,7 +37,7 @@ class PlantScheduler extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      letterSpacing: 0.5,
+                      letterSpacing: 1,
                       color: kTextColor,
                     ),
                   ),
@@ -72,9 +45,8 @@ class PlantScheduler extends StatelessWidget {
                   Text(
                     "x",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
-                      letterSpacing: 0.5,
                       color: kTextColor,
                     ),
                   )
@@ -102,33 +74,36 @@ class PlantScheduler extends StatelessWidget {
                   ),
 
                   // days of week
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // monday
-                      DayButton(action: "M"),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // monday
+                        DayButton(action: "M"),
 
-                      // tuesday
-                      DayButton(action: "T"),
+                        // tuesday
+                        DayButton(action: "T"),
 
-                      // wednesday
-                      DayButton(action: "W"),
+                        // wednesday
+                        DayButton(action: "W"),
 
-                      // thursday
-                      DayButton(action: "T"),
+                        // thursday
+                        DayButton(action: "T"),
 
-                      // friday
-                      DayButton(action: "F"),
+                        // friday
+                        DayButton(action: "F"),
 
-                      // saturday
-                      DayButton(action: "S"),
+                        // saturday
+                        DayButton(action: "S"),
 
-                      // sunday
-                      DayButton(action: "S"),
-                    ],
+                        // sunday
+                        DayButton(action: "S"),
+                      ],
+                    ),
                   ),
                   SizedBox(
-                    height: kDefaultPadding / 2,
+                    height: kDefaultPadding,
                   ),
                   Container(
                     height: 1.0,
@@ -145,7 +120,7 @@ class PlantScheduler extends StatelessWidget {
                         title: "REPEAT DAYS",
                       ),
                       SizedBox(
-                        width: size.width * 0.02,
+                        width: size.width * 0.03,
                       ),
 
                       // days selector
@@ -160,18 +135,43 @@ class PlantScheduler extends StatelessWidget {
                     color: Color(0xffBBB7B7),
                   ),
                   SizedBox(
+                    height: kDefaultPadding,
+                  ),
+
+                  // amount
+                  SectionTitle(
+                    title: "AMOUNT",
+                  ),
+                  SliderAmount(),
+                  SizedBox(
                     height: kDefaultPadding / 2,
+                  ),
+                  Container(
+                    height: 1.0,
+                    color: Color(0xffBBB7B7),
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding,
                   ),
 
                   // calendar setting
                   Row(
                     children: [
                       // calendar icon
-                      Icon(
-                        Icons.calendar_today,
-                        size: 20,
+                      IconButton(
+                        icon: Icon(Icons.calendar_today),
+                        iconSize: 20,
                         color: kTextColor,
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => DateTimePicker(),
+                          //   ),
+                          // );
+                        },
                       ),
+
                       SizedBox(
                         width: size.width * 0.04,
                       ),
@@ -206,14 +206,14 @@ class PlantScheduler extends StatelessWidget {
                       Spacer(),
                       // arrow
                       Icon(
-                        Icons.arrow_forward_rounded,
+                        Icons.arrow_forward_ios,
                         size: 18,
                         color: kTextColor,
                       ),
                     ],
                   ),
                   SizedBox(
-                    height: kDefaultPadding / 2,
+                    height: kDefaultPadding,
                   ),
                   Container(
                     height: 1.0,
@@ -240,7 +240,16 @@ class PlantScheduler extends StatelessWidget {
                       size: 12,
                       color: kBackgroundColor,
                     ),
-                    press: () {},
+                    color: sliderColor,
+                    backgroundColor: sliderBackgroundColor,
+                    press: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => DateTimePicker(),
+                      //   ),
+                      // );
+                    },
                   ),
                   SizedBox(
                     height: kDefaultPadding / 2,
@@ -255,15 +264,19 @@ class PlantScheduler extends StatelessWidget {
                       size: 12,
                       color: kBackgroundColor,
                     ),
-                    press: () {},
+                    color: sliderColor,
+                    backgroundColor: sliderBackgroundColor,
+                    press: () {
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => DateTimePicker(),
+                      //   ),
+                      // );
+                    },
                   ),
                   SizedBox(
                     height: kDefaultPadding,
-                  ),
-
-                  // CTA
-                  AddToPlants(
-                    action: "APPLY",
                   ),
                 ],
               ),
@@ -300,6 +313,7 @@ class DayButton extends StatelessWidget {
   final String action;
   @override
   Widget build(BuildContext context) {
+    Color color = Color(0xff29593C).withOpacity(0.3);
     return Container(
       width: 25,
       height: 25,
@@ -309,13 +323,44 @@ class DayButton extends StatelessWidget {
             Radius.circular(30),
           ),
         ),
-        color: Color(0xff29593C).withOpacity(0.63),
-        onPressed: () {},
+        color: color,
+        onPressed: () {
+          // color = kBackgroundColor;
+        },
         child: Text(
           action,
           style: TextStyle(fontSize: 10),
         ),
       ),
+    );
+  }
+}
+
+class SliderAmount extends StatefulWidget {
+  // SliderAmount({Key key, this.unit}) : super(key: key);
+  // final String unit;
+  @override
+  _SliderAmountState createState() => _SliderAmountState();
+}
+
+class _SliderAmountState extends State<SliderAmount> {
+  double _currentSliderValue = 200;
+
+  @override
+  Widget build(BuildContext context) {
+    return Slider(
+      value: _currentSliderValue,
+      min: 0,
+      max: 500,
+      divisions: 5,
+      activeColor: Color(0xff29593C),
+      inactiveColor: Color(0xffBBB7B7),
+      label: _currentSliderValue.round().toString() + ' ml',
+      onChanged: (double value) {
+        setState(() {
+          _currentSliderValue = value;
+        });
+      },
     );
   }
 }

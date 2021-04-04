@@ -7,7 +7,7 @@ class PlantImage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Positioned(
       top: 0,
-      bottom: size.height * 0.7,
+      bottom: size.height * 0.6,
       child: Stack(
         children: <Widget>[
           // background
@@ -51,6 +51,10 @@ class PlantImage extends StatelessWidget {
                 color: Color(0xff316344).withOpacity(0.8),
                 borderRadius: BorderRadius.all(
                   Radius.circular(12.5),
+                ),
+                border: Border.all(
+                  color: Color(0xffBBB7B7),
+                  width: 1.0,
                 ),
               ),
               child: Icon(

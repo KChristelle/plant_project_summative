@@ -93,6 +93,7 @@ class _PlantDescriptionSelectorState extends State<PlantDescriptionSelector> {
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
+      isExpanded: true,
       hint: Text(""),
       value: _selectedDesc,
       icon: Icon(Icons.arrow_drop_down),
@@ -140,9 +141,8 @@ class _DaysSelectorState extends State<DaysSelector> {
       iconSize: 16,
       elevation: 16,
       style: TextStyle(
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
-        letterSpacing: 0.5,
         color: kTextColor,
       ),
       underline: Container(
