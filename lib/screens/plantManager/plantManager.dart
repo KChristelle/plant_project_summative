@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/plantManager/components/header.dart';
-import 'package:plant_growth_tracking_app/screens/plantManager/components/moreInfo.dart';
-import 'package:plant_growth_tracking_app/screens/plantManager/components/plantDetails.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/components/plantOverview.dart';
 
 class PlantManager extends StatelessWidget {
   @override
@@ -12,20 +11,22 @@ class PlantManager extends StatelessWidget {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
-        child: AppBarHome(),
+        child: AppBarHome(
+          title: "Plant App",
+          color: kBackgroundColor,
+          textColor: Color(0xff316344).withOpacity(0.63),
+        ),
       ),
       drawer: DrawerHome(),
       body: Container(
-        decoration: BoxDecoration(color: kPrimaryColor),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              HeaderWithPlantDetails(size: size),
-              PlantCareDetails(),
-              AdditionalInfo(),
-            ],
-          ),
+        child: Stack(
+          children: [
+            Container(
+              height: size.height,
+            ),
+            HeaderWithPlantDetails(),
+            PlantCareDetails(),
+          ],
         ),
       ),
     );

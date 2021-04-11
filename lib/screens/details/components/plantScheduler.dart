@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
+import 'package:date_field/date_field.dart';
 
 class PlantScheduler extends StatelessWidget {
   PlantScheduler({Key key, this.action});
@@ -163,12 +164,7 @@ class PlantScheduler extends StatelessWidget {
                         iconSize: 20,
                         color: kTextColor,
                         onPressed: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => DateTimePicker(),
-                          //   ),
-                          // );
+                          //
                         },
                       ),
 

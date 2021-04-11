@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/featuredCard.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/recommendCard.dart';
+import 'package:plant_growth_tracking_app/screens/reminders/components/checklistCard.dart';
 
 List<FeaturedPlantCard> plants = [
   FeaturedPlantCard(
@@ -139,4 +140,31 @@ List<String> plantDesc = [
   "Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.",
   "",
   ""
+];
+
+List<ChecklistCard> checklist = [
+  ChecklistCard(
+    image: "assets/img1.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Watering",
+    plantTitle: "Aloe Vera",
+    time: "10:00 AM",
+    action: false,
+  ),
+  ChecklistCard(
+    image: "assets/img1.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Watering",
+    plantTitle: "Aloe Vera",
+    time: "10:00 AM",
+    action: false,
+  ),
+  ChecklistCard(
+    image: "assets/img1.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Watering",
+    plantTitle: "Aloe Vera",
+    time: "10:00 AM",
+    action: false,
+  ),
 ];

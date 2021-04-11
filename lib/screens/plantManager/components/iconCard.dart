@@ -27,15 +27,15 @@ class IconCard extends StatelessWidget {
             color: kPrimaryColor.withOpacity(0.22),
           ),
           BoxShadow(
-            offset: Offset(-15, -15),
+            offset: Offset(-5, -5),
             blurRadius: 20,
-            color: Colors.white,
+            color: kBackgroundColor,
           ),
         ],
       ),
       child: Icon(
         icon,
-        color: kPrimaryColor,
+        color: darkyellow.withOpacity(0.4),
       ),
     );
   }
