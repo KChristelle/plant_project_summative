@@ -6,12 +6,13 @@ import '../signIn.dart';
 
 showAlertDialogNewUser(BuildContext context) {
   // set up the button
+  // ignore: deprecated_member_use
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () {Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => LandingPage()));},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => LandingPage()));
+    },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
@@ -32,12 +33,13 @@ showAlertDialogNewUser(BuildContext context) {
 
 showAlertDialogDupEmail(BuildContext context) {
   // set up the button
+  // ignore: deprecated_member_use
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () {Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => CreateAccount()));},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => CreateAccount()));
+    },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
@@ -55,14 +57,16 @@ showAlertDialogDupEmail(BuildContext context) {
     },
   );
 }
+
 showAlertDialogPwNotMatch(BuildContext context) {
   // set up the button
+  // ignore: deprecated_member_use
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () {Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => CreateAccount()));},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => CreateAccount()));
+    },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
@@ -83,17 +87,17 @@ showAlertDialogPwNotMatch(BuildContext context) {
 
 showAlertDialogNewLogin(BuildContext context) {
   // set up the button
+  // ignore: deprecated_member_use
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () {Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => HomePage()));},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomePage()));
+    },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Login Succesful"),
-
     actions: [
       okButton,
     ],
@@ -109,12 +113,13 @@ showAlertDialogNewLogin(BuildContext context) {
 
 showAlertDialogFailedLogin(BuildContext context) {
   // set up the button
+  // ignore: deprecated_member_use
   Widget okButton = FlatButton(
     child: Text("OK"),
-    onPressed: () {Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => SignIn()));},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SignIn()));
+    },
   );
   // set up the AlertDialog
   AlertDialog alert = AlertDialog(

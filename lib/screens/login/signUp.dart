@@ -13,6 +13,7 @@ class CreateAccount extends StatelessWidget {
   final myPwConfirmController = TextEditingController();
 
   @override
+  // ignore: override_on_non_overriding_member
   void dispose() {
     // Clean up the controller when the widget is disposed.
     myEmailController.dispose();
@@ -103,7 +104,7 @@ class CreateAccount extends StatelessWidget {
                       action: "Sign Up",
                       backgroundColor: kPrimaryColor,
                       textColor: kBackgroundColor,
-                      width: size.width * 0.4,
+                      width: size.width * 0.5,
                       press: () async {
                         int dupCheck = await DatabaseHelper.instance
                             .checkEmail(myEmailController.text);
@@ -114,6 +115,7 @@ class CreateAccount extends StatelessWidget {
                             (myPwController.text == '')) {
                           showAlertDialogPwNotMatch(context);
                         } else {
+                          // ignore: unused_local_variable
                           int i = await DatabaseHelper.instance.newUser({
                             DatabaseHelper.columnEmail: myEmailController.text,
                             DatabaseHelper.columnPW: myPwController.text

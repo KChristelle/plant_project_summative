@@ -37,7 +37,7 @@ class LoginBody extends StatelessWidget {
             action: 'Sign In',
             backgroundColor: kBackgroundColor,
             textColor: kPrimaryColor,
-            width: size.width * 0.3,
+            width: size.width * 0.5,
             press: () {
               Navigator.push(
                 context,
@@ -56,7 +56,7 @@ class LoginBody extends StatelessWidget {
             action: 'Sign In With Facebook',
             backgroundColor: facebookBlue,
             textColor: kBackgroundColor,
-            width: size.width * 0.3,
+            width: size.width * 0.5,
             press: () {},
           ),
           SizedBox(

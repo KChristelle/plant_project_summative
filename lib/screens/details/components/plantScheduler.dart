@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
+// ignore: unused_import
 import 'package:date_field/date_field.dart';
 
 class PlantScheduler extends StatelessWidget {
@@ -313,6 +314,7 @@ class DayButton extends StatelessWidget {
     return Container(
       width: 25,
       height: 25,
+      // ignore: deprecated_member_use
       child: RaisedButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(

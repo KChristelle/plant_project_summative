@@ -17,8 +17,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // ignore: unused_field
   int _selectedIndex = 0;
 
+  // ignore: unused_element
   void _onItemTapped(int index) {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -117,12 +119,14 @@ class BottomNavBar extends StatelessWidget {
               color: kPrimaryColor,
               size: 35,
             ),
-            onPressed: () {Navigator.push(
+            onPressed: () {
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => PlantProfile(),
                 ),
-              );},
+              );
+            },
           ),
           IconButton(
             icon: Icon(

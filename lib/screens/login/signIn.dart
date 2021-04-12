@@ -41,9 +41,17 @@ class SignIn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               SizedBox(
-                height: size.height * 0.08,
+                height: size.height * 0.05,
               ),
-
+              // logo
+              Container(
+                width: size.height * 0.06,
+                height: size.height * 0.06,
+                child: Image.asset(
+                  "assets/plants-logo.jpg",
+                  fit: BoxFit.contain,
+                ),
+              ),
               // title
               AppTitle(),
               SizedBox(
@@ -58,10 +66,11 @@ class SignIn extends StatelessWidget {
 
               // Container for sign in form
               Container(
-                padding: EdgeInsets.only(top: 15.0, left: 20.0, right: 20.0),
+                padding: EdgeInsets.only(top: 15.0, left: 10.0, right: 20.0),
                 child: Column(
                   children: <Widget>[
                     // Email
+
                     InputField(
                       label: "Email",
                       hideText: false,
@@ -86,7 +95,7 @@ class SignIn extends StatelessWidget {
                       action: "Sign In",
                       backgroundColor: kPrimaryColor,
                       textColor: kBackgroundColor,
-                      width: size.width * 0.4,
+                      width: size.width * 0.5,
                       press: () async {
                         int userid = await DatabaseHelper.instance.checkUser(
                             myEmailController.text, myPwController.text);
@@ -105,7 +114,7 @@ class SignIn extends StatelessWidget {
                     ),
 
                     Container(
-                      width: size.width * 0.4,
+                      // width: size.width * 0.4,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
@@ -120,9 +129,6 @@ class SignIn extends StatelessWidget {
                                 ),
                               );
                             },
-                          ),
-                          SizedBox(
-                            width: 50,
                           ),
 
                           // forgot password

@@ -175,6 +175,7 @@ class _CalendarPageState extends State<CalendarPage>
   }
 
   // More advanced TableCalendar configuration (using Builders & Styles)
+  // ignore: unused_element
   Widget _buildTableCalendarWithBuilders() {
     return TableCalendar(
       locale: 'pl_PL',
@@ -308,6 +309,7 @@ class _CalendarPageState extends State<CalendarPage>
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
+            // ignore: deprecated_member_use
             RaisedButton(
               child: Text('Month'),
               onPressed: () {
@@ -316,6 +318,7 @@ class _CalendarPageState extends State<CalendarPage>
                 });
               },
             ),
+            // ignore: deprecated_member_use
             RaisedButton(
               child: Text('2 weeks'),
               onPressed: () {
@@ -325,6 +328,7 @@ class _CalendarPageState extends State<CalendarPage>
                 });
               },
             ),
+            // ignore: deprecated_member_use
             RaisedButton(
               child: Text('Week'),
               onPressed: () {
@@ -336,6 +340,7 @@ class _CalendarPageState extends State<CalendarPage>
           ],
         ),
         const SizedBox(height: 8.0),
+        // ignore: deprecated_member_use
         RaisedButton(
           child: Text(
               'Set day ${dateTime.day}-${dateTime.month}-${dateTime.year}'),

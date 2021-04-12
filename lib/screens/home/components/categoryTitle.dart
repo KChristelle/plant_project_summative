@@ -19,6 +19,7 @@ class TitleWithMoreBtn extends StatelessWidget {
         children: <Widget>[
           TitleWithCustomUnderline(text: title),
           Spacer(),
+          // ignore: deprecated_member_use
           FlatButton(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),

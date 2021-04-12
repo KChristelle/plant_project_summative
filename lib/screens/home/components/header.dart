@@ -57,20 +57,21 @@ class HeaderWithSearchBox extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Container(
-                    width: size.height * 0.08,
-                    height: size.height * 0.08,
-                    child: Image.asset(
-                      "assets/logo.PNG",
-                    ),
-                  ),
+                  // logo
+                  // Container(
+                  //   width: size.height * 0.08,
+                  //   height: size.height * 0.08,
+                  //   child: Image.asset(
+                  //     "assets/plants-logo.jpg",
+                  //   ),
+                  // ),
                 ],
               ),
             ),
           ),
           Positioned(
             top: size.height * 0.18,
-            height: 30,
+            height: 50,
             width: size.width,
             child: Container(
               decoration: BoxDecoration(
@@ -98,7 +99,7 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding + 5),
+      margin: EdgeInsets.symmetric(horizontal: kDefaultPadding + 10),
       padding: EdgeInsets.symmetric(horizontal: kDefaultPadding - 5),
       height: 43,
       decoration: BoxDecoration(

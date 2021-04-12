@@ -7,6 +7,15 @@ class LoginHeader extends StatelessWidget {
     return Container(
       child: Column(
         children: <Widget>[
+          // logo
+          Container(
+            width: size.height * 0.06,
+            height: size.height * 0.06,
+            child: Image.asset(
+              "assets/plants-logo.jpg",
+              fit: BoxFit.contain,
+            ),
+          ),
           // Title
           AppTitle(),
           SizedBox(
@@ -17,16 +26,6 @@ class LoginHeader extends StatelessWidget {
           welcome(),
           SizedBox(
             height: size.height * 0.03,
-          ),
-
-          // logo
-          Container(
-            width: size.height * 0.06,
-            height: size.height * 0.06,
-            child: Image.asset(
-              "assets/logo.PNG",
-              fit: BoxFit.contain,
-            ),
           ),
         ],
       ),

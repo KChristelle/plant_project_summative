@@ -21,6 +21,7 @@ class AddToPlants extends StatelessWidget {
         margin: EdgeInsets.all(kDefaultPadding),
         width: size.width / 3,
         height: 38,
+        // ignore: deprecated_member_use
         child: RaisedButton(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
@@ -29,6 +30,7 @@ class AddToPlants extends StatelessWidget {
           ),
           color: kPrimaryColor,
           onPressed: () async {
+            // ignore: unused_local_variable
             int i = await DatabaseHelper.instance.newUserPlant({
               DatabaseHelper.columnUID: "$userID",
               DatabaseHelper.columnPID: "1",

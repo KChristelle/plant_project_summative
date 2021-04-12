@@ -19,6 +19,7 @@ class PrimarySignIn extends StatelessWidget {
     return Container(
       width: width,
       height: size.height * 0.05,
+      // ignore: deprecated_member_use
       child: RaisedButton(
         onPressed: press,
         textColor: textColor,
@@ -49,6 +50,7 @@ class SecondarySignIn extends StatelessWidget {
   final String action;
   final Function press;
   Widget build(BuildContext context) {
+    // ignore: deprecated_member_use
     return FlatButton(
       hoverColor: kBackgroundColor,
       focusColor: kBackgroundColor,
