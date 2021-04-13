@@ -23,7 +23,7 @@ class FeaturedCardWithLocation extends StatelessWidget {
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding / 2,
       ),
-      width: size.width * 0.6,
+      width: size.width * 0.5,
       child: Column(
         children: <Widget>[
           // Image
