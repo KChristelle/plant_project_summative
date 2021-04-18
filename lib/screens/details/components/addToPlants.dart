@@ -16,10 +16,10 @@ class AddToPlants extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Positioned(
       bottom: 0,
-      left: (size.width - (size.width / 3)) / 2,
+      left: (size.width - (size.width / 3)) / 3,
       child: Container(
         margin: EdgeInsets.all(kDefaultPadding),
-        width: size.width / 3,
+        width: size.width / 2,
         height: 38,
         // ignore: deprecated_member_use
         child: RaisedButton(

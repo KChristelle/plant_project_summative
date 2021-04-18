@@ -12,33 +12,35 @@ class ExplorePage extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
+        preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
           title: "Plant App",
           color: kBackgroundColor,
-          textColor: kPrimaryColor,
+          textColor: Color(0xff316344).withOpacity(0.63),
         ),
       ),
       drawer: DrawerHome(),
-      body: Column(
-        children: [
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TitleWithMoreBtn(
-              title: "Explore Plants",
-              press: () {},
+      body: Container(
+        child: Column(
+          children: [
+            SizedBox(
+              height: size.height * 0.04,
             ),
-          ),
-          SizedBox(
-            height: size.height * 0.03,
-          ),
-          SearchBar(),
-          Categories(),
-          PlantsGridView(),
-        ],
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              child: TitleWithMoreBtn(
+                title: "Explore Plants",
+                press: () {},
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.03,
+            ),
+            SearchBar(),
+            Categories(),
+            PlantsGridView(),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavBar(),
     );

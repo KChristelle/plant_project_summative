@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/switch.dart';
 import 'package:slider_button/slider_button.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
@@ -46,7 +47,8 @@ class CareOption extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w600,
                   letterSpacing: 0.5,
-                  fontSize: 12,
+                  fontSize: 15,
+                  color: darkGreen,
                 ),
               ),
               TextSpan(
@@ -55,6 +57,7 @@ class CareOption extends StatelessWidget {
                   fontSize: 10,
                   fontWeight: FontWeight.w300,
                   letterSpacing: 0.5,
+                  color: darkGrey,
                 ),
               ),
             ],
@@ -63,6 +66,7 @@ class CareOption extends StatelessWidget {
 
         // slider button
         Spacer(),
+        GreenSwitch(),
         SliderButton(
           action: press,
           label: Text(''),

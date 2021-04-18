@@ -20,7 +20,7 @@ class PlantImage extends StatelessWidget {
           // Image
           Positioned(
             top: size.height * 0.025,
-            left: size.width * 0.38,
+            left: size.width * 0.25,
             child: Container(
               height: size.height * 0.25,
               width: size.height * 0.25,
@@ -43,7 +43,7 @@ class PlantImage extends StatelessWidget {
           // Edit icon
           Positioned(
             top: size.height * 0.2125,
-            left: size.width * 0.38 + size.height * 0.20,
+            left: size.width * 0.25 + size.height * 0.20,
             child: Container(
               width: 26,
               height: 26,
