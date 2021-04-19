@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/recommends.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/components/checklistCard.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/components/topnav.dart';
@@ -29,26 +30,30 @@ class _RemindersState extends State<Reminders> {
         ),
       ),
       drawer: DrawerHome(),
-      body: Container(
-        child: Column(
-          children: [
-            SizedBox(
-              height: size.height * 0.04,
-            ),
-            SearchBar(),
-            SizedBox(
-              height: kDefaultPadding / 3,
-            ),
-            TitleBar(),
-            DayPicker(
-              date: "Monday, Apr 12 2021",
-            ),
-            DayPicker(
-              date: "Tuesday, Apr 13 2021",
-            ),
-          ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Column(
+            children: [
+              SizedBox(
+                height: size.height * 0.04,
+              ),
+              SearchBar(),
+              TitleBar(),
+              DayPicker(
+                date: "Monday, Apr 12 2021",
+              ),
+              DayPicker(
+                date: "Tuesday, Apr 13 2021",
+              ),
+              DayPicker(
+                date: "Wednesday, Apr 14 2021",
+              ),
+            ],
+          ),
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }
@@ -65,6 +70,7 @@ class DayPicker extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(
                 left: kDefaultPadding * 1.5,
+                top: kDefaultPadding / 1.5,
               ),
               child: Text(
                 date,

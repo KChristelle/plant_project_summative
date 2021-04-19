@@ -145,7 +145,7 @@ class PlantDetails extends StatelessWidget {
                   // fertilize section
                   CareOption(
                     icon: Icon(
-                      Icons.water_damage,
+                      Icons.eco_outlined,
                       size: 12,
                       color: kBackgroundColor,
                     ),
@@ -182,7 +182,7 @@ class PlantDetails extends StatelessWidget {
                       size: 12,
                       color: kBackgroundColor,
                     ),
-                    title: "Temperature",
+                    title: "Sunlight",
                     schedule: "Not Set",
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,

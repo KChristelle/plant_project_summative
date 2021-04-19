@@ -33,6 +33,7 @@ class PlantProfile extends StatelessWidget {
           ],
         ),
       ),
+      // bottomNavigationBar: BottomNavBar(),
     );
   }
 }
