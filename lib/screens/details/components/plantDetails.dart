@@ -145,7 +145,7 @@ class PlantDetails extends StatelessWidget {
                   // fertilize section
                   CareOption(
                     icon: Icon(
-                      Icons.water_damage,
+                      Icons.food_bank,
                       size: 12,
                       color: kBackgroundColor,
                     ),

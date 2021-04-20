@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 
 class GreenSwitch extends StatefulWidget {
   @override
@@ -12,6 +13,12 @@ class _GreenSwitchState extends State<GreenSwitch> {
     if (isSwitched == false) {
       setState(() {
         isSwitched = true;
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => WateringScheduler(),
+          ),
+        );
       });
     } else {
       setState(() {
@@ -33,10 +40,6 @@ class _GreenSwitchState extends State<GreenSwitch> {
             inactiveThumbColor: Colors.white,
             inactiveTrackColor: Colors.grey,
           )),
-      // Text(
-      //   '$textValue',
-      //   style: TextStyle(fontSize: 20),
-      // )
     ]);
   }
 }

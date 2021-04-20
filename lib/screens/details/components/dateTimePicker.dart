@@ -18,9 +18,17 @@ class _DateTimePickerState extends State<DateTimePicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const FlutterLogo(size: 100),
+            // logo
+            Container(
+              width: 85,
+              height: 85,
+              child: Image.asset(
+                "assets/plants-logo.jpg",
+                fit: BoxFit.contain,
+              ),
+            ),
             const SizedBox(height: 20),
-            const Text('DateField package showcase'),
+            const Text('Setting Time for your Reminders'),
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Text('DateTimeField'),

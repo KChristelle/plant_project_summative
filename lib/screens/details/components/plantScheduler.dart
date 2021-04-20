@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/dateTimePicker.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 // ignore: unused_import
@@ -44,14 +45,12 @@ class PlantScheduler extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Text(
-                    "x",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: kTextColor,
-                    ),
-                  )
+                  IconButton(
+                      icon: Icon(Icons.close),
+                      iconSize: 20,
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      }),
                 ],
               ),
             ),
@@ -185,6 +184,7 @@ class PlantScheduler extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 0.5,
                                     fontSize: 12,
+                                    color: darkGreen,
                                   ),
                                 ),
                                 TextSpan(
@@ -193,6 +193,7 @@ class PlantScheduler extends StatelessWidget {
                                     fontSize: 10,
                                     fontWeight: FontWeight.w300,
                                     letterSpacing: 0.5,
+                                    color: darkGreen,
                                   ),
                                 ),
                               ],
@@ -202,16 +203,41 @@ class PlantScheduler extends StatelessWidget {
                       ),
                       Spacer(),
                       // arrow
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 18,
-                        color: kTextColor,
-                      ),
+                      IconButton(
+                          icon: Icon(Icons.arrow_forward_ios),
+                          iconSize: 18,
+                          color: kTextColor,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DateTimePicker(),
+                              ),
+                            );
+                          }),
                     ],
                   ),
                   SizedBox(
                     height: kDefaultPadding,
                   ),
+                  // SizedBox(
+                  //   height: kDefaultPadding / 2,
+                  // ),
+                  // DateTimeFormField(
+                  //   decoration: const InputDecoration(
+                  //     hintStyle: TextStyle(color: Colors.black45),
+                  //     errorStyle: TextStyle(color: Colors.redAccent),
+                  //     border: OutlineInputBorder(),
+                  //     suffixIcon: Icon(Icons.event_note),
+                  //     labelText: 'Starting Date',
+                  //   ),
+                  //   autovalidateMode: AutovalidateMode.always,
+                  //   validator: (e) =>
+                  //       (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+                  //   onDateSelected: (DateTime value) {
+                  //     print(value);
+                  //   },
+                  // ),
                   Container(
                     height: 1.0,
                     color: Color(0xffBBB7B7),
@@ -224,10 +250,10 @@ class PlantScheduler extends StatelessWidget {
                   SectionTitle(
                     title: "SET REMINDER",
                   ),
+
                   SizedBox(
                     height: kDefaultPadding / 2,
                   ),
-
                   // morning
                   CareOption(
                     title: "Morning",
@@ -240,12 +266,12 @@ class PlantScheduler extends StatelessWidget {
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
                     press: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => DateTimePicker(),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DateTimePicker(),
+                        ),
+                      );
                     },
                   ),
                   SizedBox(
@@ -308,6 +334,7 @@ class SectionTitle extends StatelessWidget {
 class DayButton extends StatelessWidget {
   DayButton({Key key, this.action});
   final String action;
+  // bool isButtonPressed = false;
   @override
   Widget build(BuildContext context) {
     Color color = Color(0xff29593C).withOpacity(0.3);
@@ -316,14 +343,19 @@ class DayButton extends StatelessWidget {
       height: 25,
       // ignore: deprecated_member_use
       child: RaisedButton(
+        padding: EdgeInsets.all(0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(30),
+            Radius.circular(35),
           ),
         ),
         color: color,
+        // color: isButtonPressed ? Colors.green : Colors.green[900],
         onPressed: () {
           // color = kBackgroundColor;
+          // setState(() {
+          //       isButtonPressed =!isButtonPressed;
+          //     });
         },
         child: Text(
           action,
