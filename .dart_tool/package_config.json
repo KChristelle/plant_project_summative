@@ -86,6 +86,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_datetime_picker",
+      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_datetime_picker-1.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/rachel/snap/flutter/common/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -326,7 +332,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-18T15:02:38.540738Z",
+  "generated": "2021-04-20T19:24:35.248286Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }

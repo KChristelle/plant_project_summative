@@ -3,6 +3,9 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 
 class GreenSwitch extends StatefulWidget {
+  final Function action;
+
+  const GreenSwitch({Key key, this.action}) : super(key: key);
   @override
   _GreenSwitchState createState() => _GreenSwitchState();
 }
