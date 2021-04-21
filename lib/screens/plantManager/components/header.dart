@@ -40,6 +40,9 @@ class HeaderWithPlantDetails extends StatelessWidget {
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
+                  height: kDefaultPadding * 0.5,
+                ),
+                SizedBox(
                   height: kDefaultPadding / 2,
                 ),
 
@@ -59,7 +62,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
                     PlantCareParams(
                       icon: Icons.thermostat_outlined,
                       title: "Room Temp",
-                      value: "25*C",
+                      value: "25°C",
                     ),
 
                     SizedBox(
@@ -89,27 +92,48 @@ class HeaderWithPlantDetails extends StatelessWidget {
               ],
             ),
           ),
-
-          // image
+          // image from plantimage
           Positioned(
-            top: 0,
-            left: size.width * 0.5,
-            right: 0,
+            top: size.height * 0.03,
+            left: size.width * 0.70,
             child: Container(
-              width: size.width * 0.5,
-              height: size.height * 0.35,
-              margin: EdgeInsets.only(left: 19),
+              height: size.height * 0.12,
+              width: size.height * 0.12,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(36),
-                ),
                 image: DecorationImage(
                   image: AssetImage("assets/img1.jpg"),
                   fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(size.height * 0.125),
+                ),
+                border: Border.all(
+                  color: Color(0xffBBB7B7),
+                  width: 1.0,
+                ),
               ),
             ),
           ),
+          // image
+          // Positioned(
+          //   top: 0,
+          //   left: size.width * 0.5,
+          //   right: 0,
+          //   child: Container(
+          //     width: size.width * 0.5,
+          //     height: size.height * 0.35,
+          //     margin: EdgeInsets.only(left: 19),
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.only(
+          //         bottomRight: Radius.circular(36),
+          //       ),
+          //       image: DecorationImage(
+          //         image: AssetImage("assets/img1.jpg"),
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

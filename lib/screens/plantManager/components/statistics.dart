@@ -127,7 +127,7 @@ class DayBarLevel extends StatelessWidget {
       padding: EdgeInsets.only(
         top: kDefaultPadding / 2,
         left: kDefaultPadding,
-        right: kDefaultPadding,
+        right: kDefaultPadding / 2,
       ),
       child: Column(
         children: [

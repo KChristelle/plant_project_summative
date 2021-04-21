@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+// ignore: unused_import
 import 'package:plant_growth_tracking_app/screens/details/fertilize.dart';
 import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 

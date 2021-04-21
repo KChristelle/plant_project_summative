@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/dateTimePicker.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 // ignore: unused_import
@@ -225,10 +224,11 @@ class PlantScheduler extends StatelessWidget {
                   // TODO: Change color to green
                   DateTimeFormField(
                     decoration: const InputDecoration(
-                      hintStyle: TextStyle(color: Colors.black45),
+                      hintStyle: TextStyle(color: Colors.black45, fontSize: 10),
                       errorStyle: TextStyle(color: Colors.redAccent),
                       border: OutlineInputBorder(),
-                      suffixIcon: Icon(Icons.event_note),
+                      // TODO Find the right shade of green
+                      suffixIcon: Icon(Icons.event_note, color: Colors.green),
                       labelText: 'Starting Date',
                     ),
                     autovalidateMode: AutovalidateMode.always,

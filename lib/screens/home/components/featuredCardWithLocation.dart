@@ -77,13 +77,13 @@ class FeaturedCardWithLocation extends StatelessWidget {
                         TextSpan(
                             text: "$title\n".toUpperCase(),
                             style: Theme.of(context).textTheme.button),
-                        TextSpan(
-                          text: "$country\n".toUpperCase(),
-                          style: TextStyle(
-                            color: kPrimaryColor.withOpacity(0.5),
-                            fontSize: 12,
-                          ),
-                        ),
+                        // TextSpan(
+                        //   text: "$country\n".toUpperCase(),
+                        //   style: TextStyle(
+                        //     color: kPrimaryColor.withOpacity(0.5),
+                        //     fontSize: 12,
+                        //   ),
+                        // ),
                         TextSpan(
                           text: "$location",
                           style: TextStyle(
@@ -97,12 +97,12 @@ class FeaturedCardWithLocation extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  IconButton(
-                    icon: Icon(Icons.favorite_border_outlined),
-                    color: kPrimaryColor,
-                    iconSize: 30,
-                    onPressed: () {},
-                  ),
+                  // IconButton(
+                  //   icon: Icon(Icons.favorite_border_outlined),
+                  //   color: kPrimaryColor,
+                  //   iconSize: 30,
+                  //   onPressed: () {},
+                  // ),
                   IconButton(
                     icon: action,
                     color: kPrimaryColor,

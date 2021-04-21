@@ -21,7 +21,7 @@ class PlantCareDetails extends StatelessWidget {
             TitleWithIcon(
               title: 'Plant Overview',
               icon: Icon(
-                Icons.search,
+                Icons.remove_red_eye,
                 color: lightGreen,
                 size: 20,
               ),
