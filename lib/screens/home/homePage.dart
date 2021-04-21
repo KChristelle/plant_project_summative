@@ -158,28 +158,56 @@ class _DrawerHomeState extends State<DrawerHome> {
         child: ListView(
           padding: EdgeInsets.all(1),
           children: <Widget>[
-            UserAccountsDrawerHeader(
-              decoration: BoxDecoration(
-                borderRadius: new BorderRadius.only(
-                  bottomLeft: const Radius.circular(5.0),
-                  bottomRight: const Radius.circular(5.0),
+            Stack(children: <Widget>[
+              UserAccountsDrawerHeader(
+                decoration: BoxDecoration(
+                  borderRadius: new BorderRadius.only(
+                    bottomLeft: const Radius.circular(5.0),
+                    bottomRight: const Radius.circular(5.0),
+                  ),
+                  color: Colors.white,
                 ),
-                color: Colors.white,
-              ),
-              accountName: Text(
-                "UserID: $userID",
-                style: TextStyle(
-                  color: kPrimaryColor,
+                accountName: Text(
+                  "UserID: $userID",
+                  style: TextStyle(
+                    color: kPrimaryColor,
+                  ),
+                ),
+                accountEmail: Text(
+                  "UserEmail: " + userEmail,
+                  style: TextStyle(color: kPrimaryColor),
+                ),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("assets/avatar.webp"),
                 ),
               ),
-              accountEmail: Text(
-                "UserEmail: " + userEmail,
-                style: TextStyle(color: kPrimaryColor),
+              // Edit icon
+              Positioned(
+                top: 95,
+                left: 73,
+                child: Container(
+                  width: 20,
+                  height: 20,
+                  decoration: BoxDecoration(
+                    color: Color(0xff316344).withOpacity(0.8),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(12.5),
+                    ),
+                    border: Border.all(
+                      color: Color(0xffBBB7B7),
+                      width: 1.0,
+                    ),
+                  ),
+                  child: IconButton(
+                    icon: Icon(Icons.edit_rounded),
+                    color: kBackgroundColor,
+                    alignment: Alignment.topLeft,
+                    iconSize: 16,
+                    onPressed: () {},
+                  ),
+                ),
               ),
-              currentAccountPicture: CircleAvatar(
-                backgroundImage: AssetImage("assets/avatar.webp"),
-              ),
-            ),
+            ]),
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
