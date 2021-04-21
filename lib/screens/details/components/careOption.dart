@@ -12,6 +12,7 @@ class CareOption extends StatelessWidget {
     this.press,
     this.color,
     this.backgroundColor,
+    // Add another global var
   });
   final String title, schedule;
   final Icon icon;
@@ -66,7 +67,9 @@ class CareOption extends StatelessWidget {
 
         // slider button
         Spacer(),
-        GreenSwitch(),
+        GreenSwitch(
+          press: null,
+        ),
         SliderButton(
           action: press,
           label: Text(''),
