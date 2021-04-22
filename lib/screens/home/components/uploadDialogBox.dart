@@ -75,9 +75,18 @@ class UploadPictureDialog extends StatelessWidget {
                         fontSize: 12),
                   ),
                 ),
-                SizedBox(
-                  height: 10.0,
-                ),
+                Container(
+                    alignment: Alignment.center,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Gallery',
+                        style: TextStyle(
+                            color: kBackgroundColor,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 12),
+                      ),
+                    )),
               ],
             ),
           ),
