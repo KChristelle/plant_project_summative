@@ -60,7 +60,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                   childAspectRatio: 0.7,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return plants[index];
+                  return userplants[index];
                 },
               ),
             ),

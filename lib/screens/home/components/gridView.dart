@@ -8,7 +8,7 @@ class PlantsGridView extends StatelessWidget {
     return SizedBox(
       height: 300,
       child: GridView.builder(
-        itemCount: plants.length,
+        itemCount: userplants.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: kDefaultPadding / 2,
@@ -16,7 +16,7 @@ class PlantsGridView extends StatelessWidget {
           childAspectRatio: 0.7,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return plants[index];
+          return userplants[index];
         },
       ),
     );

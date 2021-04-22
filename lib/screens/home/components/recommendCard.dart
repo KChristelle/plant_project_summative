@@ -10,10 +10,12 @@ class RecommendPlantCard extends StatelessWidget {
     this.country,
     this.action,
     this.location,
+    this.press,
   }) : super(key: key);
 
   final String image, title, country, location;
   final Icon action;
+  final Function press;
 
   @override
   Widget build(BuildContext context) {

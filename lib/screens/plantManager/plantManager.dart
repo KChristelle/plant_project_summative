@@ -12,7 +12,7 @@ class PlantManager extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
-          title: "Plant App",
+          title: "Plant Manager",
           color: kBackgroundColor,
           textColor: Color(0xff316344).withOpacity(0.63),
           iconColor: Color(0xff316344).withOpacity(0.63),

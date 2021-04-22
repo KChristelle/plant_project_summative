@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 
-class FeaturedPlantCard extends StatelessWidget {
-  const FeaturedPlantCard({
+class UserPlantCard extends StatelessWidget {
+  const UserPlantCard({
     Key key,
     this.image,
     this.title,
     this.country,
-    this.location,
     this.action,
+    this.location,
     this.press,
   }) : super(key: key);
+
   final String image, title, country, location;
   final Icon action;
   final Function press;
@@ -23,14 +25,13 @@ class FeaturedPlantCard extends StatelessWidget {
       margin: EdgeInsets.only(
         left: kDefaultPadding,
         top: kDefaultPadding / 2,
-        bottom: kDefaultPadding / 2,
+        bottom: kDefaultPadding * 2.5,
       ),
-      width: size.width * 0.6,
+      width: size.width * 0.4,
       child: Column(
         children: <Widget>[
-          // Image
           Container(
-            height: size.height * 0.26,
+            height: size.height * 0.21,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -42,20 +43,16 @@ class FeaturedPlantCard extends StatelessWidget {
               ),
             ),
           ),
-
           GestureDetector(
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlantProfile(),
+                  builder: (context) => PlantManager(),
                 ),
               );
             },
-
-            // details
             child: Container(
-              // height: size.height * 0.05,
               padding: EdgeInsets.all(kDefaultPadding / 2),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -117,7 +114,7 @@ class FeaturedPlantCard extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PlantProfile()));
+                              builder: (context) => PlantManager()));
                     },
                   ),
                 ],
