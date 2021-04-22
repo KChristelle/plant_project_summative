@@ -58,7 +58,7 @@ class PlantImage extends StatelessWidget {
                 ),
               ),
               child: Icon(
-                Icons.edit_rounded,
+                Icons.add_photo_alternate_rounded,
                 color: kBackgroundColor,
                 size: 16,
               ),

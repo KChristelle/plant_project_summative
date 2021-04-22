@@ -4,6 +4,7 @@ import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
 import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import 'package:plant_growth_tracking_app/screens/reminders/reminders.dart';
 import '../../data/user.dart';
 import '../../data/db_functions.dart';
 
@@ -78,6 +79,10 @@ class AppBarHome extends StatelessWidget {
         ),
       ),
       iconTheme: IconThemeData(color: kTextColor),
+      leading: IconButton(
+        icon: Icon(Icons.sort_rounded),
+        onPressed: () => Scaffold.of(context).openDrawer(),
+      ),
     );
   }
 }
@@ -87,11 +92,12 @@ class BottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(
-        left: kDefaultPadding * 2,
-        right: kDefaultPadding * 2,
-        bottom: kDefaultPadding,
+        top: kDefaultPadding / 2,
+        left: kDefaultPadding,
+        right: kDefaultPadding,
+        bottom: kDefaultPadding / 2,
       ),
-      height: 80,
+      height: 60,
       decoration: BoxDecoration(
         color: kBackgroundColor,
         boxShadow: [
@@ -111,13 +117,20 @@ class BottomNavBar extends StatelessWidget {
               color: kPrimaryColor,
               size: 25,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
           ),
           IconButton(
             icon: Icon(
-              Icons.add_circle,
+              Icons.add_circle_outline,
               color: kPrimaryColor,
-              size: 35,
+              size: 25,
             ),
             onPressed: () {
               Navigator.push(
@@ -130,11 +143,34 @@ class BottomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(
-              Icons.favorite_outline,
+              Icons.grid_view,
               color: kPrimaryColor,
               size: 25,
             ),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ViewPlants(),
+                ),
+              );
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              // Icons.local_florist_outlined,
+              Icons.grass_outlined,
+              color: kPrimaryColor,
+              size: 25,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Reminders(),
+                ),
+              );
+            },
           ),
         ],
       ),
@@ -152,7 +188,7 @@ class _DrawerHomeState extends State<DrawerHome> {
   Widget build(BuildContext context) {
     return Theme(
       data: Theme.of(context).copyWith(
-        canvasColor: darkGreen,
+        canvasColor: kPrimaryColor,
       ),
       child: Drawer(
         child: ListView(

@@ -6,6 +6,7 @@ import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import '../../data/user.dart';
 
+// ignore: unused_import
 import 'components/categoryTitle.dart';
 
 // This widget is the home page of the application. It is stateful, meaning
@@ -33,7 +34,7 @@ class _ViewPlantsState extends State<ViewPlants> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
-          title: "Plant App",
+          title: "My Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
         ),
@@ -45,16 +46,16 @@ class _ViewPlantsState extends State<ViewPlants> {
             SizedBox(
               height: size.height * 0.04,
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TitleWithMoreBtn(
-                title: "View Plants",
-                press: () {},
-              ),
-            ),
-            SizedBox(
-              height: size.height * 0.03,
-            ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 15),
+            //   child: TitleWithMoreBtn(
+            //     title: "View Plants",
+            //     press: () {},
+            //   ),
+            // ),
+            // SizedBox(
+            //   height: size.height * 0.03,
+            // ),
             SearchBar(),
             Categories(),
             SizedBox(

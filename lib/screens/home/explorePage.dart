@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+// ignore: unused_import
 import 'package:plant_growth_tracking_app/screens/home/components/categoryTitle.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
@@ -14,7 +15,7 @@ class ExplorePage extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(40.0),
         child: AppBarHome(
-          title: "Plant App",
+          title: "Explore Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
         ),
@@ -25,16 +26,16 @@ class ExplorePage extends StatelessWidget {
           SizedBox(
             height: size.height * 0.04,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15),
-            child: TitleWithMoreBtn(
-              title: "Explore Plants",
-              press: () {},
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.03,
-          ),
+          // Padding(
+          //   padding: EdgeInsets.symmetric(horizontal: 15),
+          //   child: TitleWithMoreBtn(
+          //     title: "Explore Plants",
+          //     press: () {},
+          //   ),
+          // ),
+          // SizedBox(
+          //   height: size.height * 0.03,
+          // ),
           SearchBar(),
           Categories(),
           PlantsGridView(),

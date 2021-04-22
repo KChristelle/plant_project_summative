@@ -15,7 +15,7 @@ class _TitleBarState extends State<TitleBar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 8),
+      padding: const EdgeInsets.only(top: 20, left: 8, right: 8),
       child: SizedBox(
         height: 30,
         child: ListView.builder(
