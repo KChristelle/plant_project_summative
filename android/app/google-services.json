@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545682868779",
+    "project_id": "mobilesummative",
+    "storage_bucket": "mobilesummative.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545682868779:android:2da8c3e77a95fe4047b86e",
+        "android_client_info": {
+          "package_name": "com.example.plant_growth_tracking_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545682868779-7sk03j33r2sn7lonietqi6ik1u2e6ku2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9tDmKtCsQubDX10aFwIU1Xd9zjufc814"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545682868779-7sk03j33r2sn7lonietqi6ik1u2e6ku2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
