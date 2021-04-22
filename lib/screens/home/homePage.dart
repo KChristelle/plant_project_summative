@@ -209,12 +209,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                   ),
                   color: Colors.white,
                 ),
-                accountName: Text(
-                  "UserID: $userID",
-                  style: TextStyle(
-                    color: kPrimaryColor,
-                  ),
-                ),
+               
                 accountEmail: Text(
                   "UserEmail: " + userEmail,
                   style: TextStyle(color: kPrimaryColor),
