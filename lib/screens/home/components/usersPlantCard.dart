@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 
 class UserPlantCard extends StatelessWidget {
