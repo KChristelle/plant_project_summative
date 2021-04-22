@@ -6,12 +6,40 @@ import 'package:plant_growth_tracking_app/screens/details/fertilize.dart';
 import 'package:plant_growth_tracking_app/screens/details/sunlight.dart';
 import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 
-class PlantDetails extends StatelessWidget {
+class PlantDetails extends StatefulWidget {
+  @override
+  _PlantDetailsState createState() => _PlantDetailsState();
+}
+
+class _PlantDetailsState extends State<PlantDetails> {
+  Color _wsliderColor = kBackgroundColor,
+      _wsliderBackgroundColor = Color(0xffBBB7B7);
+  Color _fsliderColor = kBackgroundColor,
+      _fsliderBackgroundColor = Color(0xffBBB7B7);
+  Color _ssliderColor = kBackgroundColor,
+      _ssliderBackgroundColor = Color(0xffBBB7B7);
+  void _onWaterSelected() {
+    setState(() {
+      _wsliderColor = Color(0xffBBB7B7);
+      _wsliderBackgroundColor = kBackgroundColor;
+    });
+  }
+
+  void _onFertilizeSelected() {
+    setState(() {
+      _fsliderColor = Color(0xffBBB7B7);
+      _fsliderBackgroundColor = kBackgroundColor;
+    });
+  }
+
+  void _onSunlightSelected() {
+    _ssliderColor = Color(0xffBBB7B7);
+    _ssliderBackgroundColor = kBackgroundColor;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    Color sliderColor = kBackgroundColor,
-        sliderBackgroundColor = Color(0xffBBB7B7);
     return Positioned(
       top: size.height * 0.3,
       child: Container(
@@ -118,11 +146,10 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Water",
                     schedule: "Not Set",
-                    color: sliderColor,
-                    backgroundColor: sliderBackgroundColor,
+                    color: _wsliderColor,
+                    backgroundColor: _wsliderBackgroundColor,
                     press: () {
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
+                      _onWaterSelected();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -151,11 +178,10 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Fertilize",
                     schedule: "Not Set",
-                    color: sliderColor,
-                    backgroundColor: sliderBackgroundColor,
+                    color: _fsliderColor,
+                    backgroundColor: _fsliderBackgroundColor,
                     press: () {
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
+                      _onFertilizeSelected();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -184,11 +210,10 @@ class PlantDetails extends StatelessWidget {
                     ),
                     title: "Sunlight",
                     schedule: "Not Set",
-                    color: sliderColor,
-                    backgroundColor: sliderBackgroundColor,
+                    color: _ssliderColor,
+                    backgroundColor: _ssliderBackgroundColor,
                     press: () {
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
+                      _onSunlightSelected();
                       Navigator.push(
                         context,
                         MaterialPageRoute(

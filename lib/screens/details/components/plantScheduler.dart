@@ -4,6 +4,7 @@ import 'package:plant_growth_tracking_app/screens/details/components/listSelecto
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 // ignore: unused_import
 import 'package:date_field/date_field.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
 class PlantScheduler extends StatelessWidget {
   PlantScheduler({Key key, this.action});
@@ -44,12 +45,22 @@ class PlantScheduler extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  Text(
-                    "x",
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600,
-                      color: kTextColor,
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PlantProfile(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "x",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: kTextColor,
+                      ),
                     ),
                   )
                 ],
@@ -305,12 +316,35 @@ class SectionTitle extends StatelessWidget {
   }
 }
 
-class DayButton extends StatelessWidget {
+class DayButton extends StatefulWidget {
   DayButton({Key key, this.action});
   final String action;
   @override
+  _DayButtonState createState() => _DayButtonState();
+}
+
+class _DayButtonState extends State<DayButton> {
+  Color _color = Color(0xff29593C).withOpacity(0.3);
+  Color _textColor = kTextColor;
+  bool isSelected = false;
+  void _toggle() {
+    if (isSelected == false) {
+      setState(() {
+        isSelected = true;
+        _color = Color(0xff29593C).withOpacity(0.9);
+        _textColor = kBackgroundColor;
+      });
+    } else {
+      setState(() {
+        isSelected = false;
+        _color = Color(0xff29593C).withOpacity(0.3);
+        _textColor = kTextColor;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    Color color = Color(0xff29593C).withOpacity(0.3);
     return Container(
       width: 25,
       height: 25,
@@ -321,13 +355,13 @@ class DayButton extends StatelessWidget {
             Radius.circular(30),
           ),
         ),
-        color: color,
+        color: _color,
         onPressed: () {
-          // color = kBackgroundColor;
+          _toggle();
         },
         child: Text(
-          action,
-          style: TextStyle(fontSize: 10),
+          widget.action,
+          style: TextStyle(fontSize: 10, color: _textColor),
         ),
       ),
     );
