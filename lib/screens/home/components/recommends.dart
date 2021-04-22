@@ -23,7 +23,7 @@ class RecommendsPlants extends StatelessWidget {
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
-          return PlantCardWithLocation(
+          return RecommendPlantCard(
             image: plantsWithLocation[index].image,
             title: plantsWithLocation[index].title,
             country: plantsWithLocation[index].country,

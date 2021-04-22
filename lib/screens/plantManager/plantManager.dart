@@ -15,6 +15,7 @@ class PlantManager extends StatelessWidget {
           title: "Plant App",
           color: kBackgroundColor,
           textColor: Color(0xff316344).withOpacity(0.63),
+          iconColor: Color(0xff316344).withOpacity(0.63),
         ),
       ),
       drawer: DrawerHome(),

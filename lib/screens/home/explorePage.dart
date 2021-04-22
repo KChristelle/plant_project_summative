@@ -18,6 +18,7 @@ class ExplorePage extends StatelessWidget {
           title: "Explore Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -26,16 +27,6 @@ class ExplorePage extends StatelessWidget {
           SizedBox(
             height: size.height * 0.04,
           ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(horizontal: 15),
-          //   child: TitleWithMoreBtn(
-          //     title: "Explore Plants",
-          //     press: () {},
-          //   ),
-          // ),
-          // SizedBox(
-          //   height: size.height * 0.03,
-          // ),
           SearchBar(),
           Categories(),
           PlantsGridView(),

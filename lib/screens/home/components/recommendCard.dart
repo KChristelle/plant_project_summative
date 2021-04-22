@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
-class PlantCardWithLocation extends StatelessWidget {
-  const PlantCardWithLocation({
+class RecommendPlantCard extends StatelessWidget {
+  const RecommendPlantCard({
     Key key,
     this.image,
     this.title,
@@ -67,43 +67,52 @@ class PlantCardWithLocation extends StatelessWidget {
               ),
               child: Row(
                 children: <Widget>[
-                  RichText(
-                    text: TextSpan(
-                      children: [
-                        TextSpan(
-                            text: "$title\n".toUpperCase(),
-                            style: Theme.of(context).textTheme.button),
-                        TextSpan(
-                          text: "$country\n".toUpperCase(),
-                          style: TextStyle(
-                            color: kPrimaryColor.withOpacity(0.5),
-                            fontSize: 12,
+                  Column(
+                    children: <Widget>[
+                      Row(
+                        children: [
+                          Container(
+                            height: kDefaultPadding,
+                            child: Text("$title\n".toUpperCase(),
+                                textAlign: TextAlign.left,
+                                style: Theme.of(context).textTheme.button),
                           ),
-                        ),
-                        TextSpan(
-                          text: "$location",
-                          style: TextStyle(
-                            color: kPrimaryColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.place_outlined,
+                            size: 12,
+                            color: kPrimaryColor.withOpacity(0.8),
                           ),
-                        ),
-                      ],
-                    ),
+                          SizedBox(
+                            width: kDefaultPadding / 5,
+                          ),
+                          Text(
+                            "$location",
+                            style: TextStyle(
+                              color: kPrimaryColor.withOpacity(0.8),
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                   Spacer(),
-                  IconButton(
-                    icon: Icon(Icons.favorite_border_outlined),
-                    color: kPrimaryColor,
-                    iconSize: 30,
-                    onPressed: () {},
-                  ),
                   IconButton(
                     icon: action,
                     color: kPrimaryColor,
                     iconSize: 30,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PlantProfile()));
+                    },
                   ),
                 ],
               ),

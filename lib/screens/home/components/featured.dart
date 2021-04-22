@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/featuredCardWithLocation.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/featuredCard.dart';
 
 class FeaturesPlants extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class FeaturesPlants extends StatelessWidget {
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
-          return FeaturedCardWithLocation(
+          return FeaturedPlantCard(
             image: plantsWithLocation[index].image,
             title: plantsWithLocation[index].title,
             country: plantsWithLocation[index].country,

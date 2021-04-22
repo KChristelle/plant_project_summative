@@ -62,8 +62,8 @@ List<FeaturedPlantCard> plants = [
   ),
 ];
 
-List<PlantCardWithLocation> plantsWithLocation = [
-  PlantCardWithLocation(
+List<RecommendPlantCard> plantsWithLocation = [
+  RecommendPlantCard(
     image: "assets/img1.jpg",
     title: "Samantha",
     country: "Russia",
@@ -71,7 +71,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img2.jpg",
     title: "Angelica",
     country: "Russia",
@@ -79,7 +79,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img3.jpg",
     title: "Samantha",
     country: "Russia",
@@ -87,7 +87,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img4.jpg",
     title: "Samantha",
     country: "Russia",
@@ -95,7 +95,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img5.jpg",
     title: "Angelica",
     country: "Russia",
@@ -103,7 +103,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img6.jpg",
     title: "Samantha",
     country: "Russia",
@@ -111,7 +111,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img7.jpg",
     title: "Angelica",
     country: "Russia",
@@ -119,7 +119,7 @@ List<PlantCardWithLocation> plantsWithLocation = [
     location: "Living Room",
     // press: () {},
   ),
-  PlantCardWithLocation(
+  RecommendPlantCard(
     image: "assets/img8.jpg",
     title: "Samantha",
     country: "Russia",

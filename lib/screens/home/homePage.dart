@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
           title: "",
           color: kPrimaryColor,
           textColor: kBackgroundColor,
+          iconColor: kBackgroundColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -64,9 +65,10 @@ class AppBarHome extends StatelessWidget {
     this.title,
     this.color,
     this.textColor,
+    this.iconColor,
   });
   final String title;
-  final Color color, textColor;
+  final Color color, textColor, iconColor;
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -78,7 +80,7 @@ class AppBarHome extends StatelessWidget {
           color: textColor,
         ),
       ),
-      iconTheme: IconThemeData(color: kTextColor),
+      iconTheme: IconThemeData(color: iconColor),
       leading: IconButton(
         icon: Icon(Icons.sort_rounded),
         onPressed: () => Scaffold.of(context).openDrawer(),
@@ -150,7 +152,6 @@ class BottomNavBar extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.grid_view,
-              // Icons.favorite_outline,
               color: kPrimaryColor,
               size: 25,
             ),
@@ -165,7 +166,6 @@ class BottomNavBar extends StatelessWidget {
           ),
           IconButton(
             icon: Icon(
-              // Icons.local_florist_outlined,
               Icons.grass_outlined,
               color: kPrimaryColor,
               size: 25,
@@ -196,7 +196,6 @@ class _DrawerHomeState extends State<DrawerHome> {
     return Theme(
       data: Theme.of(context).copyWith(
         canvasColor: kPrimaryColor,
-        // canvasColor: darkGreen,
       ),
       child: Drawer(
         child: ListView(
@@ -300,9 +299,13 @@ class _DrawerHomeState extends State<DrawerHome> {
                 color: kBackgroundColor,
               ),
               title: Text(
-                'Favorites',
+                'Reminders',
                 style: TextStyle(color: kBackgroundColor),
               ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Reminders()));
+              },
             ),
             Divider(
               indent: 80.0,
@@ -317,22 +320,6 @@ class _DrawerHomeState extends State<DrawerHome> {
               ),
               title: Text(
                 'Profile',
-                style: TextStyle(color: kBackgroundColor),
-              ),
-            ),
-            Divider(
-              indent: 80.0,
-              endIndent: 30.0,
-              color: kBackgroundColor,
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
-              leading: Icon(
-                Icons.settings_outlined,
-                color: kBackgroundColor,
-              ),
-              title: Text(
-                'Settings',
                 style: TextStyle(color: kBackgroundColor),
               ),
             ),

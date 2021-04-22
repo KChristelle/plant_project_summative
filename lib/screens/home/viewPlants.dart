@@ -37,6 +37,7 @@ class _ViewPlantsState extends State<ViewPlants> {
           title: "My Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -46,16 +47,6 @@ class _ViewPlantsState extends State<ViewPlants> {
             SizedBox(
               height: size.height * 0.04,
             ),
-            // Padding(
-            //   padding: EdgeInsets.symmetric(horizontal: 15),
-            //   child: TitleWithMoreBtn(
-            //     title: "View Plants",
-            //     press: () {},
-            //   ),
-            // ),
-            // SizedBox(
-            //   height: size.height * 0.03,
-            // ),
             SearchBar(),
             Categories(),
             SizedBox(
