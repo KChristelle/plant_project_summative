@@ -70,18 +70,10 @@ class ChecklistCard extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Container(
-            width: kDefaultPadding,
-            height: kDefaultPadding,
-            // decoration: BoxDecoration(
-            //   color: kBackgroundColor,
-            // ),
-            child: Checkbox(
-              checkColor: kBackgroundColor,
-              activeColor: kBackgroundColor,
-              value: false,
-              onChanged: null,
-            ),
+          IconButton(
+            color: kBackgroundColor,
+            icon: Icon(Icons.check_box_outline_blank_outlined),
+            onPressed: () {},
           ),
         ],
       ),

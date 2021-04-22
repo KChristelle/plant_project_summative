@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+// ignore: unused_import
+import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
+// ignore: unused_import
 import '../../data/user.dart';
 
+// ignore: unused_import
 import 'components/categoryTitle.dart';
 
 // This widget is the home page of the application. It is stateful, meaning
@@ -29,11 +33,10 @@ class _ViewPlantsState extends State<ViewPlants> {
     // than having to individually change instances of widgets.
     return Scaffold(
       // backgroundColor: Colors.red,
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
-          title: "Plant App",
+          title: "My Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
         ),
@@ -43,32 +46,25 @@ class _ViewPlantsState extends State<ViewPlants> {
         child: Column(
           children: [
             SizedBox(
-              height: size.height * 0.04,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
-              child: TitleWithMoreBtn(
-                title: "View Plants",
-                press: () {},
-              ),
-            ),
-            SizedBox(
               height: size.height * 0.03,
             ),
             SearchBar(),
             Categories(),
             SizedBox(
-              height: 550,
+              height: 587,
               child: GridView.builder(
-                itemCount: inventorySize,
+                // Removed the "invertorysize " variable
+                // because it is not have a limited size. It created an infinite
+                // number of plant cards. Find the var in user.dart
+                itemCount: 8,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: kDefaultPadding / 2,
-                  // mainAxisSpacing: kDefaultPadding / 14,
+                  crossAxisSpacing: kDefaultPadding / 20,
+                  mainAxisSpacing: kDefaultPadding / 20,
                   childAspectRatio: 0.7,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return plants[index];
+                  return plantsWithLocation[index];
                 },
               ),
             ),
