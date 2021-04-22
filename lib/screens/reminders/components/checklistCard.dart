@@ -28,7 +28,7 @@ class ChecklistCard extends StatelessWidget {
         top: kDefaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: kPrimaryColor.withOpacity(0.7),
+        color: kPrimaryColor.withOpacity(0.9),
       ),
       child: Row(
         children: [

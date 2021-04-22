@@ -135,7 +135,6 @@ class BottomNavBar extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.add_circle_outline,
-              // Icons.add_circle,
               color: kPrimaryColor,
               // size: 35,
               size: 25,

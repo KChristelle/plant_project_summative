@@ -30,7 +30,6 @@ class PlantManager extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

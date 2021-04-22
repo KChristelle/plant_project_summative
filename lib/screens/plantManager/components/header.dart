@@ -35,7 +35,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
               children: <Widget>[
                 // title
                 Text(
-                  'Plant Name',
+                  'Aloe Vera',
                   style: Theme.of(context).textTheme.headline6.copyWith(
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
                 ),
@@ -59,7 +59,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
                     PlantCareParams(
                       icon: Icons.thermostat_outlined,
                       title: "Room Temp",
-                      value: "25*C",
+                      value: "25",
                     ),
 
                     SizedBox(
