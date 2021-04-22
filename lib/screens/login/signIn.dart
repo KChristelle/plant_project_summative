@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/actionButton.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/header.dart';
@@ -97,14 +98,15 @@ class SignIn extends StatelessWidget {
                       textColor: kBackgroundColor,
                       width: size.width * 0.5,
                       press: () async {
-                        int userid = await DatabaseHelper.instance.checkUser(
-                            myEmailController.text, myPwController.text);
+                        bool shouldNavigate =
+                        await  signIn(myEmailController.text,myPwController.text);
 
-                        if (userid == 0) {
+                        if (!shouldNavigate) {
                           showAlertDialogFailedLogin(context);
                         } else {
                           userEmail = myEmailController.text;
-                          userID = userid;
+
+
                           showAlertDialogNewLogin(context);
                         }
                       },

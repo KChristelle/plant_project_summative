@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/actionButton.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/header.dart';
@@ -106,20 +107,14 @@ class CreateAccount extends StatelessWidget {
                       textColor: kBackgroundColor,
                       width: size.width * 0.5,
                       press: () async {
-                        int dupCheck = await DatabaseHelper.instance
-                            .checkEmail(myEmailController.text);
-                        if (dupCheck == 0) {
-                          showAlertDialogDupEmail(context);
-                        } else if ((myPwController.text !=
+                        if ((myPwController.text !=
                                 myPwConfirmController.text) |
                             (myPwController.text == '')) {
                           showAlertDialogPwNotMatch(context);
                         } else {
-                          // ignore: unused_local_variable
-                          int i = await DatabaseHelper.instance.newUser({
-                            DatabaseHelper.columnEmail: myEmailController.text,
-                            DatabaseHelper.columnPW: myPwController.text
-                          });
+                          var res = register(
+                              myEmailController.text, myPwController.text);
+                          print(res);
                           showAlertDialogNewUser(context);
                         }
                       },
