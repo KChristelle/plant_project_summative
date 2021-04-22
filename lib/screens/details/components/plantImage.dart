@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/uploadDialogBox.dart';
 
 class PlantImage extends StatelessWidget {
   @override
@@ -57,10 +58,15 @@ class PlantImage extends StatelessWidget {
                   width: 1.0,
                 ),
               ),
-              child: Icon(
-                Icons.add_photo_alternate_rounded,
+              child: IconButton(
+                icon: Icon(Icons.add_photo_alternate_rounded),
                 color: kBackgroundColor,
-                size: 16,
+                iconSize: 15,
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) => UploadPictureDialog());
+                },
               ),
             ),
           ),
