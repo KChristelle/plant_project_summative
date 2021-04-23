@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
@@ -141,7 +142,8 @@ class BottomNavBar extends StatelessWidget {
               size: 25,
             ),
             onPressed: () {
-              Navigator.push(
+
+               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => PlantProfile(),
