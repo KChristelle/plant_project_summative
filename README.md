@@ -18,7 +18,7 @@ For the UI design of the project we used figma.</br>
 
 [Use Case Model](https://drive.google.com/file/d/1hwRNeirzS-5EvXHqB4-gXtAFjjuYzq6n/view?usp=sharing)
 
-[High Fidelity Prototype] (https://www.figma.com/file/FBQk8oiWgHxI1hONfdTk8X/Plants-App?node-id=0%3A1)
+[High Fidelity Prototype](https://www.figma.com/file/FBQk8oiWgHxI1hONfdTk8X/Plants-App?node-id=0%3A1)
 
 
 ## Prerequisites
