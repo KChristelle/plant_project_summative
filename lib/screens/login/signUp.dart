@@ -5,7 +5,6 @@ import 'package:plant_growth_tracking_app/screens/login/components/actionButton.
 import 'package:plant_growth_tracking_app/screens/login/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/inputField.dart';
 import 'package:plant_growth_tracking_app/screens/login/signIn.dart';
-import '../../data/db_functions.dart';
 import 'components/loginAlert.dart';
 
 class CreateAccount extends StatelessWidget {
