@@ -21,10 +21,10 @@ class PlantImage extends StatelessWidget {
           // Image
           Positioned(
             top: size.height * 0.025,
-            left: size.width * 0.25,
+            left: size.width * 0.30,
             child: Container(
-              height: size.height * 0.25,
-              width: size.height * 0.25,
+              height: size.height * 0.20,
+              width: size.height * 0.20,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/img1.jpg"),
@@ -42,34 +42,34 @@ class PlantImage extends StatelessWidget {
           ),
 
           // Edit icon
-          Positioned(
-            top: size.height * 0.2125,
-            left: size.width * 0.25 + size.height * 0.20,
-            child: Container(
-              width: 26,
-              height: 26,
-              decoration: BoxDecoration(
-                color: Color(0xff316344).withOpacity(0.8),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(12.5),
-                ),
-                border: Border.all(
-                  color: Color(0xffBBB7B7),
-                  width: 1.0,
-                ),
-              ),
-              child: IconButton(
-                icon: Icon(Icons.add_photo_alternate_rounded),
-                color: kBackgroundColor,
-                iconSize: 15,
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (BuildContext context) => UploadPictureDialog());
-                },
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: size.height * 0.2125,
+          //   left: size.width * 0.25 + size.height * 0.20,
+          //   child: Container(
+          //     width: 26,
+          //     height: 26,
+          //     decoration: BoxDecoration(
+          //       color: Color(0xff316344).withOpacity(0.8),
+          //       borderRadius: BorderRadius.all(
+          //         Radius.circular(12.5),
+          //       ),
+          //       border: Border.all(
+          //         color: Color(0xffBBB7B7),
+          //         width: 1.0,
+          //       ),
+          //     ),
+          //     child: IconButton(
+          //       icon: Icon(Icons.add_photo_alternate_rounded),
+          //       color: kBackgroundColor,
+          //       iconSize: 15,
+          //       onPressed: () {
+          //         showDialog(
+          //             context: context,
+          //             builder: (BuildContext context) => UploadPictureDialog());
+          //       },
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

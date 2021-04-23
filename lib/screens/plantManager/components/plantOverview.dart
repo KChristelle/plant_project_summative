@@ -7,7 +7,7 @@ class PlantCareDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Positioned(
-      top: size.height * 0.35,
+      top: size.height * 0.25,
       child: Container(
         width: size.width,
         height: size.height * 0.6,
@@ -63,9 +63,20 @@ class PlantCareDetails extends StatelessWidget {
             SizedBox(
               height: kDefaultPadding,
             ),
-
+            // health
+            PlantCareStatistics(
+              value: "50%",
+              title: "Health",
+              details: 'Overview of the plants overall health.',
+              icon: Icon(
+                Icons.healing,
+                color: lightGreen.withOpacity(0.5),
+                size: 16,
+              ),
+              newheight: 0.87,
+            ),
             // additional statistics
-            AdditionalStatistics(),
+            // AdditionalStatistics(),
           ],
         ),
       ),

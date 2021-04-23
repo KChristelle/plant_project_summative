@@ -12,12 +12,14 @@ class CareOption extends StatelessWidget {
     this.press,
     this.color,
     this.backgroundColor,
+    this.optionSwitch,
     // Add another global var
   });
   final String title, schedule;
   final Icon icon;
   final Function press;
   final Color color, backgroundColor;
+  final Widget optionSwitch;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

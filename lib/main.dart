@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 
 void main() {
   initializeDateFormatting().then((_) => app());
@@ -34,7 +35,8 @@ class PlantApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LandingPage(),
+      // home: LandingPage(),
+      home: PlantManager(),
     );
   }
 }

@@ -18,7 +18,6 @@ class ExplorePage extends StatelessWidget {
           title: "Explore Plants",
           color: kBackgroundColor,
           textColor: Color(0xff316344).withOpacity(0.63),
-
           // textColor: kPrimaryColor,
           iconColor: kPrimaryColor,
         ),

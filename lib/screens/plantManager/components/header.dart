@@ -47,9 +47,12 @@ class HeaderWithPlantDetails extends StatelessWidget {
                 ),
 
                 // details
-                Text(
-                  'Aloe vera is a short-stemmed plant growing\n to 60–100 centimetres tall ... ',
-                  style: TextStyle(color: kPrimaryColor, fontSize: 12),
+                Container(
+                  width: 220,
+                  child: Text(
+                    'Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.',
+                    style: TextStyle(color: kPrimaryColor, fontSize: 12),
+                  ),
                 ),
                 SizedBox(
                   height: kDefaultPadding,
@@ -57,26 +60,26 @@ class HeaderWithPlantDetails extends StatelessWidget {
 
                 // params
                 // room temp
-                Row(
-                  children: [
-                    PlantCareParams(
-                      icon: Icons.thermostat_outlined,
-                      title: "Room Temp",
-                      value: "25°C",
-                    ),
+                // Row(
+                //   children: [
+                //     PlantCareParams(
+                //       icon: Icons.thermostat_outlined,
+                //       title: "Room Temp",
+                //       value: "25°C",
+                //     ),
 
-                    SizedBox(
-                      width: kDefaultPadding,
-                    ),
+                //     SizedBox(
+                //       width: kDefaultPadding,
+                //     ),
 
-                    // sunlight
-                    PlantCareParams(
-                      icon: Icons.wb_sunny_outlined,
-                      title: "Sunlight",
-                      value: "60",
-                    ),
-                  ],
-                ),
+                //     // sunlight
+                //     PlantCareParams(
+                //       icon: Icons.wb_sunny_outlined,
+                //       title: "Sunlight",
+                //       value: "60",
+                //     ),
+                //   ],
+                // ),
                 SizedBox(
                   height: kDefaultPadding * 1,
                 ),
@@ -84,21 +87,21 @@ class HeaderWithPlantDetails extends StatelessWidget {
                 // state of plant
                 //
                 // HEALTHY
-                PlantHealthState(
-                  state: "Healthy",
-                  textColor: kPrimaryColor,
-                  backgroundColor: lightGreen.withOpacity(0.5),
-                ),
+                // PlantHealthState(
+                //   state: "Healthy",
+                //   textColor: kPrimaryColor,
+                //   backgroundColor: lightGreen.withOpacity(0.5),
+                // ),
               ],
             ),
           ),
           // image from plantimage
           Positioned(
             top: size.height * 0.03,
-            left: size.width * 0.70,
+            left: size.width * 0.60,
             child: Container(
-              height: size.height * 0.12,
-              width: size.height * 0.12,
+              height: size.height * 0.18,
+              width: size.height * 0.18,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/img1.jpg"),

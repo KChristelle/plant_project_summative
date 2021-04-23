@@ -32,7 +32,6 @@ class _ViewPlantsState extends State<ViewPlants> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      // backgroundColor: Colors.red,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(

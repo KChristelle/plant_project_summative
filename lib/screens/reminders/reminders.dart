@@ -15,8 +15,8 @@ class Reminders extends StatelessWidget {
         child: AppBarHome(
           title: "Reminders",
           color: kBackgroundColor,
-          textColor: Color(0xff316344).withOpacity(0.63),
-          iconColor: Color(0xff316344).withOpacity(0.63),
+          textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -33,12 +33,12 @@ class Reminders extends StatelessWidget {
               ReminderCards(
                 date: "Monday, Apr 12 2021",
               ),
-              ReminderCards(
-                date: "Tuesday, Apr 13 2021",
-              ),
-              ReminderCards(
-                date: "Wednesday, Apr 14 2021",
-              ),
+              // ReminderCards(
+              //   date: "Tuesday, Apr 13 2021",
+              // ),
+              // ReminderCards(
+              //   date: "Wednesday, Apr 14 2021",
+              // ),
             ],
           ),
         ),
