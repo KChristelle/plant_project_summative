@@ -2,8 +2,6 @@
 
 The proposed project is a plant care mobile application that will allow users to monitor their plants’ overall health growing around the house. Depending on each plant’s humidity, temperature, and nutritional needs, the application will provide instructions and custom notifications for how often a plant needs to be watered, fertilized, pruned, or taken closer to a window to obtain more sunlight.
 
-[This is the link to the project proposal.](https://docs.google.com/document/d/1ulsW3APjbW0lfwVqKMr4JCHsFDbFrHHzirMuvzBlTaU/edit?usp=sharing)
-
 ### Authors
  - Francis Walker
  - Joyce Njeri
@@ -12,6 +10,7 @@ The proposed project is a plant care mobile application that will allow users to
 ## Project Propotype
 
 For the UI design of the project we used figma.</br>
+
 [Project Proposal](https://docs.google.com/document/d/1ulsW3APjbW0lfwVqKMr4JCHsFDbFrHHzirMuvzBlTaU/edit?usp=sharing)
 
 [Project Tracker](https://docs.google.com/spreadsheets/d/1k4k3LYp0RKQzIm6yCqmui0TZwmglxDSaxIUVJWzUI1E/edit?usp=sharing)
