@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
+import 'package:plant_growth_tracking_app/screens/home/explorePage.dart';
 import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/reminders.dart';
@@ -209,7 +210,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                   ),
                   color: Colors.white,
                 ),
-               
                 accountEmail: Text(
                   "UserEmail: " + userEmail,
                   style: TextStyle(color: kPrimaryColor),
@@ -313,9 +313,13 @@ class _DrawerHomeState extends State<DrawerHome> {
                 color: kBackgroundColor,
               ),
               title: Text(
-                'Profile',
+                'Explore Plants',
                 style: TextStyle(color: kBackgroundColor),
               ),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ExplorePage()));
+              },
             ),
             Divider(
               indent: 80.0,

@@ -4,6 +4,22 @@ import 'package:plant_growth_tracking_app/screens/home/components/recommendCard.
 import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/components/checklistCard.dart';
 
+List plantID = ["", ""];
+List plantHealth = [90, 100];
+List plantURL = ["assets/img1.jpg", "assets/img2.jpg"];
+
+// plant species/names
+List<String> plantSpecies = ['Aloe Vera', 'Cactus'];
+
+// plant locations
+List<String> plantLocation = ['Indoor', 'Outdoor'];
+
+// plant descriptions
+List<String> plantDesc = [
+  "Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.",
+  "Cactus generally have thick herbaceous or woody chlorophyll-containing stems.",
+];
+
 List<FeaturedPlantCard> featuredplants = [
   FeaturedPlantCard(
     image: "assets/img1.jpg",
@@ -171,19 +187,6 @@ List<UserPlantCard> userplants = [
     location: "Living Room",
     press: () {},
   ),
-];
-
-// plant species/names
-List<String> plantSpecies = ['Aloe Vera', 'Cactus', 'Angelica'];
-
-// plant locations
-List<String> plantLocation = ['Indoor', 'Outdoor', 'Office'];
-
-// plant descriptions
-List<String> plantDesc = [
-  "Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.",
-  "",
-  ""
 ];
 
 List<ChecklistCard> checklist = [
