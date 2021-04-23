@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
+import 'package:plant_growth_tracking_app/data/user.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
 
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
-// ignore: unused_import
-import '../../data/user.dart';
-
-// ignore: unused_import
-import 'components/categoryTitle.dart';
 
 // This widget is the home page of the application. It is stateful, meaning
 class ViewPlants extends StatefulWidget {

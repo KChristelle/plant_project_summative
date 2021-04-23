@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/screens/plantManager/components/careOptionButton.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/screens/plantManager/components/dayBar.dart';
 import 'package:plant_growth_tracking_app/screens/plantManager/components/plantOverview.dart';
 
 class AdditionalStatistics extends StatefulWidget {

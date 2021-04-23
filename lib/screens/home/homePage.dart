@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
@@ -10,8 +8,6 @@ import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/reminders.dart';
 import '../../data/user.dart';
-// ignore: unused_import
-import '../../data/db_functions.dart';
 
 class HomePage extends StatefulWidget {
   // This widget is the home page of the application. It is stateful, meaning
