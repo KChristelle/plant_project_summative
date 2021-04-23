@@ -53,7 +53,7 @@ class PlantCareDetails extends StatelessWidget {
               title: "Fertilizer",
               details: 'Needs 200g of fertilizer each day',
               icon: Icon(
-                Icons.water_damage_outlined,
+                Icons.eco_outlined,
                 color: lightGreen.withOpacity(0.5),
                 size: 16,
               ),
