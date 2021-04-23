@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
-class ChecklistCard extends StatelessWidget {
-  const ChecklistCard({
+class ChecklistCard extends StatefulWidget {
+  ChecklistCard({
     Key key,
     this.image,
     this.icon,
@@ -14,6 +14,20 @@ class ChecklistCard extends StatelessWidget {
   final String image, category, plantTitle, time;
   final Icon icon;
   final bool action;
+
+  @override
+  _ChecklistCardState createState() => new _ChecklistCardState();
+}
+
+class _ChecklistCardState extends State<ChecklistCard> {
+  Color _backgroundColor = kPrimaryColor.withOpacity(0.63);
+  Icon _icon = Icon(Icons.check_box_outline_blank_outlined);
+  void _onSelected() {
+    setState(() {
+      _backgroundColor = kPrimaryColor.withOpacity(0.9);
+      _icon = Icon(Icons.check_box_outlined);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +42,7 @@ class ChecklistCard extends StatelessWidget {
         top: kDefaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: kPrimaryColor.withOpacity(0.7),
+        color: _backgroundColor,
       ),
       child: Row(
         children: [
@@ -50,7 +64,7 @@ class ChecklistCard extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: category + '\n',
+                  text: widget.category + '\n',
                   style: TextStyle(
                     color: kBackgroundColor,
                     fontSize: 12,
@@ -59,7 +73,7 @@ class ChecklistCard extends StatelessWidget {
                   ),
                 ),
                 TextSpan(
-                  text: plantTitle + ' - ' + time,
+                  text: widget.plantTitle + ' - ' + widget.time,
                   style: TextStyle(
                     color: kBackgroundColor,
                     fontSize: 12,
@@ -72,8 +86,10 @@ class ChecklistCard extends StatelessWidget {
           Spacer(),
           IconButton(
             color: kBackgroundColor,
-            icon: Icon(Icons.check_box_outline_blank_outlined),
-            onPressed: () {},
+            icon: _icon,
+            onPressed: () {
+              _onSelected();
+            },
           ),
         ],
       ),

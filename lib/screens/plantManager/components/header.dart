@@ -35,7 +35,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
               children: <Widget>[
                 // title
                 Text(
-                  'Plant Name',
+                  'Aloe Vera',
                   style: Theme.of(context).textTheme.headline6.copyWith(
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
                 ),

@@ -1,8 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/components/careOptionButton.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/components/dayBar.dart';
 import 'package:plant_growth_tracking_app/screens/plantManager/components/plantOverview.dart';
 
-class AdditionalStatistics extends StatelessWidget {
+class AdditionalStatistics extends StatefulWidget {
+  @override
+  _AdditionalStatisticsState createState() => _AdditionalStatisticsState();
+}
+
+class _AdditionalStatisticsState extends State<AdditionalStatistics> {
+  Color _selectedColor = lightGreen.withOpacity(0.5),
+      _unselectedColor = kBackgroundColor;
+  List barLevels = [1.0, 0.9, 0.6, 0.5, 0.0, 0.1, 0.8];
+  void _onCareOptionSelected() {
+    setState(() {
+      _selectedColor = kBackgroundColor;
+      _unselectedColor = lightGreen.withOpacity(0.5);
+      barLevels = [0.0, 1.0, 0.6, 0.2, 0.0, 0.1, 0.1];
+    });
+  }
+
+  void _onCareOptionUnSelected() {
+    setState(() {
+      _selectedColor = lightGreen.withOpacity(0.5);
+      _unselectedColor = kBackgroundColor;
+      barLevels = [1.0, 0.9, 0.6, 0.5, 0.0, 0.1, 0.8];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,7 +52,10 @@ class AdditionalStatistics extends StatelessWidget {
             CareOptionButton(
               action: "Hydration",
               textColor: kPrimaryColor,
-              backgroundColor: lightGreen.withOpacity(0.5),
+              backgroundColor: _selectedColor,
+              press: () {
+                _onCareOptionUnSelected();
+              },
             ),
             SizedBox(
               width: kDefaultPadding / 2,
@@ -36,7 +65,10 @@ class AdditionalStatistics extends StatelessWidget {
             CareOptionButton(
               action: "Fertilizer",
               textColor: kPrimaryColor,
-              backgroundColor: kBackgroundColor,
+              backgroundColor: _unselectedColor,
+              press: () {
+                _onCareOptionSelected();
+              },
             ),
           ],
         ),
@@ -52,31 +84,31 @@ class AdditionalStatistics extends StatelessWidget {
           children: [
             DayBarLevel(
               day: "Sun",
-              newlevel: 0.2,
+              newlevel: barLevels[0],
             ),
             DayBarLevel(
               day: "Mon",
-              newlevel: 0.5,
+              newlevel: barLevels[1],
             ),
             DayBarLevel(
               day: "Tue",
-              newlevel: 0.8,
+              newlevel: barLevels[2],
             ),
             DayBarLevel(
               day: "Wed",
-              newlevel: 0.0,
+              newlevel: barLevels[3],
             ),
             DayBarLevel(
               day: "Thur",
-              newlevel: 0.1,
+              newlevel: barLevels[4],
             ),
             DayBarLevel(
               day: "Fri",
-              newlevel: 0.2,
+              newlevel: barLevels[5],
             ),
             DayBarLevel(
               day: "Sat",
-              newlevel: 1.0,
+              newlevel: barLevels[6],
             ),
           ],
         ),
@@ -87,7 +119,11 @@ class AdditionalStatistics extends StatelessWidget {
 
 class CareOptionButton extends StatelessWidget {
   CareOptionButton(
-      {Key key, this.action, this.textColor, this.backgroundColor});
+      {Key key,
+      this.action,
+      this.textColor,
+      this.backgroundColor,
+      Null Function() press});
   final String action;
   final Color textColor, backgroundColor;
   @override

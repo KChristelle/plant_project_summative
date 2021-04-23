@@ -39,6 +39,7 @@ class _ViewPlantsState extends State<ViewPlants> {
           title: "My Plants",
           color: kBackgroundColor,
           textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -64,7 +65,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                   childAspectRatio: 0.7,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return plantsWithLocation[index];
+                  return userplants[index];
                 },
               ),
             ),

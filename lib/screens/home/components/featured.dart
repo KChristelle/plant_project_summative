@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/home/components/featuredCardWithLocation.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/featuredCard.dart';
 
 class FeaturesPlants extends StatelessWidget {
   @override
@@ -14,17 +15,21 @@ class FeaturesPlants extends StatelessWidget {
         horizontal: kDefaultPadding * 0.5,
       ),
       child: ListView.builder(
-        itemCount: plants.length,
+        itemCount: featuredplants.length,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
-          return FeaturedCardWithLocation(
-            image: plantsWithLocation[index].image,
-            title: plantsWithLocation[index].title,
-            country: plantsWithLocation[index].country,
-            location: plantsWithLocation[index].location,
-            action: plantsWithLocation[index].action,
+          return FeaturedPlantCard(
+            image: featuredplants[index].image,
+            title: featuredplants[index].title,
+            country: featuredplants[index].country,
+            location: featuredplants[index].location,
+            action: featuredplants[index].action,
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PlantProfile()));
+            },
           );
         },
       ),

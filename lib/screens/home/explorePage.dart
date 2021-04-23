@@ -18,6 +18,9 @@ class ExplorePage extends StatelessWidget {
           title: "Explore Plants",
           color: kBackgroundColor,
           textColor: Color(0xff316344).withOpacity(0.63),
+
+          // textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -43,6 +46,18 @@ class ExplorePage extends StatelessWidget {
           ],
         ),
       ),
+
+      // drawer: DrawerHome(),
+      // body: Column(
+      //   children: [
+      //     SizedBox(
+      //       height: size.height * 0.04,
+      //     ),
+      //     SearchBar(),
+      //     Categories(),
+      //     PlantsGridView(),
+      //   ],
+      // ),
       bottomNavigationBar: BottomNavBar(),
     );
   }

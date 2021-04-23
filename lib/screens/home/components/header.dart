@@ -58,13 +58,17 @@ class HeaderWithSearchBox extends StatelessWidget {
                   ),
                   Spacer(),
                   // logo
-                  // Container(
-                  //   width: size.height * 0.08,
-                  //   height: size.height * 0.08,
-                  //   child: Image.asset(
-                  //     "assets/plants-logo.jpg",
-                  //   ),
-                  // ),
+                  Container(
+                    width: size.height * 0.08,
+                    height: size.height * 0.08,
+                    decoration: BoxDecoration(
+                        color: kBackgroundColor,
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(size.height * 0.06))),
+                    child: Image.asset(
+                      "assets/plants-logo.jpg",
+                    ),
+                  ),
                 ],
               ),
             ),

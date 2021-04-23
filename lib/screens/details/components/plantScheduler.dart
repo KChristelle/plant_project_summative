@@ -5,6 +5,7 @@ import 'package:plant_growth_tracking_app/screens/details/components/careOption.
 // ignore: unused_import
 import 'package:date_field/date_field.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/test.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
 class PlantScheduler extends StatelessWidget {
   PlantScheduler({Key key, this.action});
@@ -345,13 +346,36 @@ class SectionTitle extends StatelessWidget {
   }
 }
 
-class DayButton extends StatelessWidget {
+class DayButton extends StatefulWidget {
   DayButton({Key key, this.action});
   final String action;
   // bool isButtonPressed = false;
   @override
+  _DayButtonState createState() => _DayButtonState();
+}
+
+class _DayButtonState extends State<DayButton> {
+  Color _color = Color(0xff29593C).withOpacity(0.3);
+  Color _textColor = kTextColor;
+  bool isSelected = false;
+  void _toggle() {
+    if (isSelected == false) {
+      setState(() {
+        isSelected = true;
+        _color = Color(0xff29593C).withOpacity(0.9);
+        _textColor = kBackgroundColor;
+      });
+    } else {
+      setState(() {
+        isSelected = false;
+        _color = Color(0xff29593C).withOpacity(0.3);
+        _textColor = kTextColor;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    Color color = Color(0xff29593C).withOpacity(0.3);
     return Container(
       width: 25,
       height: 25,
@@ -363,17 +387,13 @@ class DayButton extends StatelessWidget {
             Radius.circular(35),
           ),
         ),
-        color: color,
-        // color: isButtonPressed ? Colors.green : Colors.green[900],
+        color: _color,
         onPressed: () {
-          // color = kBackgroundColor;
-          // setState(() {
-          //       isButtonPressed =!isButtonPressed;
-          //     });
+          _toggle();
         },
         child: Text(
-          action,
-          style: TextStyle(fontSize: 10),
+          widget.action,
+          style: TextStyle(fontSize: 10, color: _textColor),
         ),
       ),
     );

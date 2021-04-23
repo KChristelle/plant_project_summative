@@ -2,6 +2,8 @@
 //  Licensed under Apache License v2.0
 
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 // Example holidays
@@ -122,15 +124,16 @@ class _CalendarPageState extends State<CalendarPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: PreferredSize(
-      //   preferredSize: Size.fromHeight(kDefaultPadding * 2),
-      //   child: AppBarHome(
-      //     title: "Plant App",
-      //     color: kBackgroundColor,
-      //     textColor: Color(0xff316344).withOpacity(0.63),
-      //   ),
-      // ),
-      // drawer: DrawerHome(),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(kDefaultPadding * 2),
+        child: AppBarHome(
+          title: "Calendar",
+          color: kPrimaryColor,
+          textColor: kBackgroundColor,
+          iconColor: kBackgroundColor,
+        ),
+      ),
+      drawer: DrawerHome(),
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
@@ -144,6 +147,7 @@ class _CalendarPageState extends State<CalendarPage>
           Expanded(child: _buildEventList()),
         ],
       ),
+      // bottomNavigationBar: BottomNavBar(),
     );
   }
 
@@ -155,16 +159,20 @@ class _CalendarPageState extends State<CalendarPage>
       holidays: _holidays,
       startingDayOfWeek: StartingDayOfWeek.monday,
       calendarStyle: CalendarStyle(
-        selectedColor: Colors.deepOrange[400],
-        todayColor: Colors.deepOrange[200],
-        markersColor: Colors.brown[700],
+        // selectedColor: Colors.deepOrange[400],
+        // todayColor: Colors.deepOrange[200],
+        // markersColor: Colors.brown[700],
+        selectedColor: kPrimaryColor,
+        todayColor: kPrimaryColor.withOpacity(0.7),
+        markersColor: kPrimaryColor.withOpacity(0.4),
         outsideDaysVisible: false,
       ),
       headerStyle: HeaderStyle(
         formatButtonTextStyle:
             TextStyle().copyWith(color: Colors.white, fontSize: 15.0),
         formatButtonDecoration: BoxDecoration(
-          color: Colors.deepOrange[400],
+          // color: Colors.deepOrange[400],
+          color: kPrimaryColor,
           borderRadius: BorderRadius.circular(16.0),
         ),
       ),
@@ -209,7 +217,8 @@ class _CalendarPageState extends State<CalendarPage>
             child: Container(
               margin: const EdgeInsets.all(4.0),
               padding: const EdgeInsets.only(top: 5.0, left: 6.0),
-              color: Colors.deepOrange[300],
+              // color: Colors.deepOrange[300],
+              color: kPrimaryColor.withOpacity(0.7),
               width: 100,
               height: 100,
               child: Text(

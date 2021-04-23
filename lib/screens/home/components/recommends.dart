@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/recommendCard.dart';
 
 class RecommendsPlants extends StatelessWidget {
@@ -18,18 +19,21 @@ class RecommendsPlants extends StatelessWidget {
         horizontal: kDefaultPadding * 0.5,
       ),
       child: ListView.builder(
-        itemCount: plants.length,
+        itemCount: recommendedplants.length,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
-          return PlantCardWithLocation(
-            image: plantsWithLocation[index].image,
-            title: plantsWithLocation[index].title,
-            country: plantsWithLocation[index].country,
-            location: plantsWithLocation[index].location,
-            action: plantsWithLocation[index].action,
-            // press: plants[index].press,
+          return RecommendPlantCard(
+            image: recommendedplants[index].image,
+            title: recommendedplants[index].title,
+            country: recommendedplants[index].country,
+            location: recommendedplants[index].location,
+            action: recommendedplants[index].action,
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PlantProfile()));
+            },
           );
         },
       ),
