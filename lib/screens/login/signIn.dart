@@ -6,7 +6,6 @@ import 'package:plant_growth_tracking_app/screens/login/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/login/components/inputField.dart';
 import 'package:plant_growth_tracking_app/screens/login/resetPassword.dart';
 import 'package:plant_growth_tracking_app/screens/login/signUp.dart';
-import '../../data/db_functions.dart';
 import '../../data/user.dart';
 import 'components/loginAlert.dart';
 
@@ -98,14 +97,13 @@ class SignIn extends StatelessWidget {
                       textColor: kBackgroundColor,
                       width: size.width * 0.5,
                       press: () async {
-                        bool shouldNavigate =
-                        await  signIn(myEmailController.text,myPwController.text);
+                        bool shouldNavigate = await signIn(
+                            myEmailController.text, myPwController.text);
 
                         if (!shouldNavigate) {
                           showAlertDialogFailedLogin(context);
                         } else {
                           userEmail = myEmailController.text;
-
 
                           showAlertDialogNewLogin(context);
                         }
