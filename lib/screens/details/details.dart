@@ -6,6 +6,9 @@ import 'package:plant_growth_tracking_app/screens/details/components/plantImage.
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 
 class PlantProfile extends StatelessWidget {
+  PlantProfile(this.index);
+  final int index;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,9 +28,9 @@ class PlantProfile extends StatelessWidget {
             Container(
               height: size.height,
             ),
-            PlantImage(),
-            PlantDetails(),
-            AddToPlants(
+            PlantImage(index),
+            PlantDetails(index),
+            AddToPlants(index: index,
               action: "Add New Plant",
             ),
           ],

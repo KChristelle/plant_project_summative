@@ -53,7 +53,7 @@ class _ChecklistCardState extends State<ChecklistCard> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(25),
               image: DecorationImage(
-                image: AssetImage("assets/img1.jpg"),
+                image: AssetImage("assets/img0.jpg"),
                 fit: BoxFit.cover,
               ),
             ),

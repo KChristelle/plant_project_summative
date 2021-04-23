@@ -104,7 +104,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
                   bottomRight: Radius.circular(36),
                 ),
                 image: DecorationImage(
-                  image: AssetImage("assets/img1.jpg"),
+                  image: AssetImage("assets/img0.jpg"),
                   fit: BoxFit.cover,
                 ),
               ),

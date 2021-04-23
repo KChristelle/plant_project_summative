@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class PlantImage extends StatelessWidget {
+  PlantImage(this.index);
+  final int index;
   @override
+
+
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+
+
     return Positioned(
       top: 0,
       bottom: size.height * 0.6,
@@ -26,7 +33,7 @@ class PlantImage extends StatelessWidget {
               width: size.height * 0.25,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img1.jpg"),
+                  image: AssetImage("assets/img$index.jpg"),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.all(

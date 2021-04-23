@@ -29,9 +29,11 @@ class RecommendsPlants extends StatelessWidget {
             title: plantSpecies[index],
             location: plantLocation[index],
             action: Icon(Icons.add_circle),
+            i: index,
+
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PlantProfile()));
+                  MaterialPageRoute(builder: (context) => PlantProfile(index)));
             },
           );
         },

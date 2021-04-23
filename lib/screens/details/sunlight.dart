@@ -25,7 +25,7 @@ class SunlightScheduler extends StatelessWidget {
             Container(
               height: size.height,
             ),
-            PlantImage(),
+            PlantImage(1),
             PlantScheduler(
               action: "Temperature",
             ),

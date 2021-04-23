@@ -50,7 +50,7 @@ class PlantScheduler extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PlantProfile(),
+                          builder: (context) => PlantProfile(1),
                         ),
                       );
                     },

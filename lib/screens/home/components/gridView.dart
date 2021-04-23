@@ -25,7 +25,7 @@ class PlantsGridView extends StatelessWidget {
             action: Icon(Icons.add_circle),
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PlantProfile()));
+                  MaterialPageRoute(builder: (context) => PlantProfile(2)));
             },
           );
         },

@@ -146,7 +146,7 @@ class BottomNavBar extends StatelessWidget {
                Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlantProfile(),
+                  builder: (context) => PlantProfile(1),
                 ),
               );
             },

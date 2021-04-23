@@ -3,6 +3,8 @@ import 'package:plant_growth_tracking_app/screens/reminders/components/checklist
 
 int plantindex = plantSpecies.length;
 
+
+
 List<String> plantSpecies = [
   'Aloe Vera',
   'Compact Corn',
@@ -31,19 +33,19 @@ List<String> plantDesc = [
   "Multicolored leaves in red, yellow, orange, and green. This tropical plant is commonly planted in resort areas and is a low-maintenance plant once given the right conditions.",
 ];
 List<String> imgURL = [
+  "assets/img0.jpg",
   "assets/img1.jpg",
   "assets/img2.jpg",
   "assets/img3.jpg",
   "assets/img4.jpg",
   "assets/img5.jpg",
   "assets/img6.jpg",
-  "assets/img7.jpg",
 ];
 
 // UPDATE WITH SET CARE OPTIONS
 List<ChecklistCard> checklist = [
   ChecklistCard(
-    image: "assets/img1.jpg",
+    image: "assets/img0.jpg",
     icon: Icon(Icons.water_damage_outlined),
     category: "Watering",
     plantTitle: "Aloe Vera",
@@ -51,7 +53,7 @@ List<ChecklistCard> checklist = [
     action: false,
   ),
   ChecklistCard(
-    image: "assets/img2.jpg",
+    image: "assets/img1.jpg",
     icon: Icon(Icons.water_damage_outlined),
     category: "Fertilize",
     plantTitle: "Aloe Vera",

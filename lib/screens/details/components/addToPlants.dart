@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import '../../../data/db_functions.dart';
 import '../../../data/user.dart';
 
@@ -8,9 +9,11 @@ import '../../../data/user.dart';
 class AddToPlants extends StatelessWidget {
   AddToPlants({
     Key key,
+    this.index,
     this.action,
     this.press,
   });
+  final int index;
   final String action;
   final Function press;
   @override
@@ -34,9 +37,17 @@ class AddToPlants extends StatelessWidget {
           onPressed: () async {
             // ignore: unused_local_variable
             addPlant(userEmail, 100,100,
-                100, 100,1);
+                100, 100,index);
+
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => HomePage()
+              ),
+            );
+
           },
-          child: Text(
+          child: Center(child: Text(
             action,
             style: TextStyle(
               color: kBackgroundColor,
@@ -45,7 +56,7 @@ class AddToPlants extends StatelessWidget {
               letterSpacing: 1.5,
             ),
           ),
-        ),
+        )),
       ),
     );
   }
