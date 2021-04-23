@@ -10,12 +10,14 @@ class UserPlantCard extends StatelessWidget {
     this.country,
     this.action,
     this.location,
+    this.plantID,
     this.press,
   }) : super(key: key);
 
   final String image, title, country, location;
   final Icon action;
   final Function press;
+  final String plantID;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +28,11 @@ class UserPlantCard extends StatelessWidget {
         top: kDefaultPadding / 2,
         bottom: kDefaultPadding * 2.5,
       ),
-      width: size.width * 0.4,
+      width: size.width * 0.5,
       child: Column(
         children: <Widget>[
           Container(
-            height: size.height * 0.21,
+            height: size.height * 0.18,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
@@ -47,7 +49,7 @@ class UserPlantCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlantManager(),
+                  builder: (context) => PlantManager(plantID),
                 ),
               );
             },
@@ -69,6 +71,26 @@ class UserPlantCard extends StatelessWidget {
               ),
               child: Row(
                 children: <Widget>[
+                  // RichText(
+                  //   text: TextSpan(
+                  //     children: [
+                  //       TextSpan(
+                  //           text: "$title\n".toUpperCase(),
+                  //           style: Theme.of(context).textTheme.button),
+                  //       // TextSpan(
+                  //       //   text: "$country\n".toUpperCase(),
+                  //       //   style: TextStyle(
+                  //       //     color: kPrimaryColor.withOpacity(0.5),
+                  //       //     fontSize: 12,
+                  //       //   ),
+                  //       // ),
+                  //       TextSpan(
+                  //         text: "$location",
+                  //         style: TextStyle(
+                  //           color: kPrimaryColor,
+                  //           fontSize: 12,
+                  //           fontWeight: FontWeight.bold,
+                  //           letterSpacing: 0.5,
                   Column(
                     children: <Widget>[
                       Row(
@@ -113,7 +135,7 @@ class UserPlantCard extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PlantManager()));
+                              builder: (context) => PlantManager(plantID)));
                     },
                   ),
                 ],

@@ -157,7 +157,8 @@ class BottomNavBar extends StatelessWidget {
               color: kPrimaryColor,
               size: 25,
             ),
-            onPressed: () {
+            onPressed: ()  {
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -278,8 +279,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                 style: TextStyle(color: kBackgroundColor),
               ),
               onTap: () async {
-                inventorySize =
-                    await DatabaseHelper.instance.getInventoryLength();
+
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ViewPlants()));
               },

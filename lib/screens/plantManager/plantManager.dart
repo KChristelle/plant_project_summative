@@ -5,6 +5,9 @@ import 'package:plant_growth_tracking_app/screens/plantManager/components/header
 import 'package:plant_growth_tracking_app/screens/plantManager/components/plantOverview.dart';
 
 class PlantManager extends StatelessWidget {
+  PlantManager(this.plantID);
+  final String plantID;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;

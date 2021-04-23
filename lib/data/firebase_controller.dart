@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:plant_growth_tracking_app/data/user.dart';
 
 //sign in function
 Future<bool> signIn(String email, String pw) async {
@@ -15,6 +16,7 @@ Future<bool> signIn(String email, String pw) async {
         .signInWithEmailAndPassword(email: email, password: pw);
 
     //bool return governs user path in calling function
+    getUserPlants(userEmail);
     return true;
   } on FirebaseAuthException catch (e) {
     //on error print error
@@ -23,7 +25,7 @@ Future<bool> signIn(String email, String pw) async {
   }
 }
 
-Future<List> getUserPlants(String email) async {
+Future<void> getUserPlants(String email) async {
   List res = [];
   await FirebaseFirestore.instance
       .collection('plants')
@@ -31,13 +33,13 @@ Future<List> getUserPlants(String email) async {
       .get()
       .then((QuerySnapshot querySnapshot) {
     querySnapshot.docs.forEach((doc) {
-      res.add({doc.id, doc["health"], doc["plant_index"]});
+      res.add([doc.id, doc["health"], doc["plant_index"]]);
     });
   });
-  //print(res);
-  return res;
-}
+  print(res);
+  user_plants = res;
 
+}
 
 
 Future<bool> addPlant(String user, int startingHealth, int startingflvl,
