@@ -23,7 +23,7 @@ For the UI design of the project we used figma.</br>
 
 [SRS Documentation](https://drive.google.com/file/d/1NU9dUaUzVkIshsbB91zDDSMvXhpAUlar/view?usp=sharing)
 
-[Video Presentation] (https://www.youtube.com/watch?v=4ubDr7N7Vdo&feature=youtu.be)
+[Video Presentation](https://www.youtube.com/watch?v=4ubDr7N7Vdo&feature=youtu.be)
 
 [Slides](https://docs.google.com/presentation/d/1-Q3yuwgYr9sPCai3Vrz_B9h6j59sLT599AEKRVRjJRU/edit?usp=sharing)
 
