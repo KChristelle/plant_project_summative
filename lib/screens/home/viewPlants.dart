@@ -69,8 +69,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                   return UserPlantCard(
                     image: "assets/img${row[2]}.jpg",
                     title: plantSpecies[row[2]],
-                    country: "Russia",
-                    action: Icon(Icons.add_circle),
+                    action: Icon(Icons.saved_search),
                     location: plantLocation[row[2]],
                     plantID: row[0],
                     press: () {},
