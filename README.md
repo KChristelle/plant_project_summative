@@ -11,6 +11,8 @@ The proposed project is a plant care mobile application that will allow users to
 
 For the UI design of the project we used figma.</br>
 
+## Resource Links
+
 [Project Proposal](https://docs.google.com/document/d/1ulsW3APjbW0lfwVqKMr4JCHsFDbFrHHzirMuvzBlTaU/edit?usp=sharing)
 
 [Project Tracker](https://docs.google.com/spreadsheets/d/1k4k3LYp0RKQzIm6yCqmui0TZwmglxDSaxIUVJWzUI1E/edit?usp=sharing)
