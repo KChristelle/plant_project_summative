@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/switch.dart';
-import 'package:slider_button/slider_button.dart';
-import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class CareOption extends StatelessWidget {
   CareOption({
@@ -9,17 +6,14 @@ class CareOption extends StatelessWidget {
     this.icon,
     this.title,
     this.schedule,
-    this.press,
     this.color,
     this.backgroundColor,
-    this.optionSwitch,
     // Add another global var
   });
   final String title, schedule;
   final Icon icon;
-  final Function press;
   final Color color, backgroundColor;
-  final Widget optionSwitch;
+  final Widget slider;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -69,20 +63,18 @@ class CareOption extends StatelessWidget {
 
         // slider button
         Spacer(),
-        GreenSwitch(
-          press: null,
-        ),
-        SliderButton(
-          action: press,
-          label: Text(''),
-          width: 35,
-          height: 16,
-          backgroundColor: backgroundColor,
-          buttonColor: color,
-          buttonSize: 12,
-          icon: null,
-          boxShadow: BoxShadow(color: kBackgroundColor, blurRadius: 4),
-        ),
+        slider,
+//         SliderButton(
+//           action: press,
+//           label: Text(''),
+//           width: 35,
+//           height: 16,
+//           backgroundColor: backgroundColor,
+//           buttonColor: color,
+//           buttonSize: 12,
+//           icon: null,
+//           boxShadow: BoxShadow(color: kBackgroundColor, blurRadius: 4),
+//         ),
       ],
     );
   }
