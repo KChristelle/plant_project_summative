@@ -57,7 +57,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                 // Removed the "invertorysize " variable
                 // because it is not have a limited size. It created an infinite
                 // number of plant cards. Find the var in user.dart
-                itemCount: 8,
+                itemCount: 4,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: kDefaultPadding / 20,
@@ -65,6 +65,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                   childAspectRatio: 0.7,
                 ),
                 itemBuilder: (BuildContext context, int index) {
+                  // return userplants[index];
                   return userplants[index];
                 },
               ),

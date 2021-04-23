@@ -30,7 +30,7 @@ class UserPlantCard extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: size.height * 0.21,
+            height: size.height * 0.18,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(10),
