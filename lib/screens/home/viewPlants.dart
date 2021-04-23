@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
+import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 import '../../data/user.dart';
 
 // ignore: unused_import
@@ -60,7 +62,18 @@ class _ViewPlantsState extends State<ViewPlants> {
                   childAspectRatio: 0.7,
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return userplants[index];
+                  return UserPlantCard(
+                    image: imgURL[index],
+                    title: plantSpecies[index],
+                    location: plantLocation[index],
+                    action: Icon(Icons.add_circle),
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PlantManager()));
+                    },
+                  );
                 },
               ),
             ),

@@ -15,17 +15,16 @@ class FeaturesPlants extends StatelessWidget {
         horizontal: kDefaultPadding,
       ),
       child: ListView.builder(
-        itemCount: featuredplants.length,
+        itemCount: plantindex,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
           return FeaturedPlantCard(
-            image: featuredplants[index].image,
-            title: featuredplants[index].title,
-            country: featuredplants[index].country,
-            location: featuredplants[index].location,
-            action: featuredplants[index].action,
+            image: imgURL[index],
+            title: plantSpecies[index],
+            location: plantLocation[index],
+            action: Icon(Icons.add_circle),
             press: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => PlantProfile()));
