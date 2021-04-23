@@ -217,6 +217,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                 currentAccountPicture: CircleAvatar(
                   backgroundImage: AssetImage("assets/avatar.webp"),
                 ),
+                accountName: null,
               ),
               // Edit icon
               Positioned(

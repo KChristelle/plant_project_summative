@@ -113,7 +113,7 @@ class CreateAccount extends StatelessWidget {
                         } else {
                           var res = register(
                               myEmailController.text, myPwController.text);
-                          print(res);
+                          // print(res);
                           showAlertDialogNewUser(context);
                         }
                       },
