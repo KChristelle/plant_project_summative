@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
-import '../../../data/db_functions.dart';
 import '../../../data/user.dart';
-
 
 class AddToPlants extends StatelessWidget {
   AddToPlants({
@@ -28,35 +26,32 @@ class AddToPlants extends StatelessWidget {
         height: 38,
         // ignore: deprecated_member_use
         child: RaisedButton(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(30),
-            ),
-          ),
-          color: kPrimaryColor,
-          onPressed: () async {
-            // ignore: unused_local_variable
-            addPlant(userEmail, 100,100,
-                100, 100,index);
-
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => HomePage()
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(30),
               ),
-            );
-
-          },
-          child: Center(child: Text(
-            action,
-            style: TextStyle(
-              color: kBackgroundColor,
-              fontSize: 14,
-              fontWeight: FontWeight.w600,
-              letterSpacing: 1.5,
             ),
-          ),
-        )),
+            color: kPrimaryColor,
+            onPressed: () async {
+              // ignore: unused_local_variable
+              addPlant(userEmail, 100, 100, 100, 100, index);
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
+            child: Center(
+              child: Text(
+                action,
+                style: TextStyle(
+                  color: kBackgroundColor,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1.5,
+                ),
+              ),
+            )),
       ),
     );
   }

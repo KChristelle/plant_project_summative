@@ -3,16 +3,16 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
 class RecommendPlantCard extends StatelessWidget {
-  const RecommendPlantCard({
-    Key key,
-    this.image,
-    this.title,
-    this.country,
-    this.action,
-    this.location,
-    this.i,
-    this.press
-  }) : super(key: key);
+  const RecommendPlantCard(
+      {Key key,
+      this.image,
+      this.title,
+      this.country,
+      this.action,
+      this.location,
+      this.i,
+      this.press})
+      : super(key: key);
 
   final String image, title, country, location;
   final Icon action;
@@ -74,6 +74,7 @@ class RecommendPlantCard extends StatelessWidget {
                   Column(
                     children: <Widget>[
                       Row(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Container(
                             height: kDefaultPadding,

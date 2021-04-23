@@ -1,15 +1,10 @@
-<<<<<<< HEAD
-#Fri Apr 23 15:37:48 CAT 2021
-base.2=/home/rachel/Documents/Year3-CS/Mobile Dev/final/plant_project_summative/build/app/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
-=======
-#Fri Apr 23 17:59:44 CAT 2021
->>>>>>> c21b68fe4453473dd60d3fc08d4ccaf2eeae9ecd
+#Fri Apr 23 19:56:34 CAT 2021
+base.2=/home/rachel/Documents/Year3-CS/Mobile Dev/tired/plant_project_summative/build/app/intermediates/dex/debug/mergeDexDebug/out/classes3.dex
 path.2=classes3.dex
+base.1=/home/rachel/Documents/Year3-CS/Mobile Dev/tired/plant_project_summative/build/app/intermediates/dex/debug/mergeDexDebug/out/classes2.dex
 path.1=classes2.dex
-path.0=classes.dex
+base.0=/home/rachel/Documents/Year3-CS/Mobile Dev/tired/plant_project_summative/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
 renamed.0=classes.dex
-base.2=C\:\\Users\\fhayw\\AndroidStudioProjects\\mobilesumm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes3.dex
-base.1=C\:\\Users\\fhayw\\AndroidStudioProjects\\mobilesumm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes2.dex
-base.0=C\:\\Users\\fhayw\\AndroidStudioProjects\\mobilesumm\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex

@@ -1,5 +1,3 @@
-import 'package:plant_growth_tracking_app/data/data.dart';
-
 int userID;
 String userEmail;
 int inventorySize;
