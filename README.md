@@ -21,7 +21,7 @@ For the UI design of the project we used figma.</br>
 
 [Use Case Model](https://drive.google.com/file/d/1DtDd_t9lfSvp-L-on5w5IDK0rPAP5Lmq/view?usp=sharing)
 
-[SRS Documentation](https://drive.google.com/file/d/1NU9dUaUzVkIshsbB91zDDSMvXhpAUlar/view?usp=sharing)
+[SRS Documentation](https://drive.google.com/file/d/1e21zGCucZ5al0ZzHLUDBvnaIjfVJax6f/view?usp=sharing)
 
 [Video Presentation](https://www.youtube.com/watch?v=4ubDr7N7Vdo&feature=youtu.be)
 
