@@ -242,11 +242,11 @@ class PlantScheduler extends StatelessWidget {
                   // TODO: Change color to green
                   DateTimeFormField(
                     decoration: const InputDecoration(
-                      hintStyle: TextStyle(color: Colors.black45, fontSize: 10),
+                      hintStyle: TextStyle(color: kPrimaryColor, fontSize: 10),
                       errorStyle: TextStyle(color: Colors.redAccent),
                       border: OutlineInputBorder(),
                       // TODO Find the right shade of green
-                      suffixIcon: Icon(Icons.event_note, color: Colors.green),
+                      suffixIcon: Icon(Icons.event_note, color: kPrimaryColor),
                       labelText: 'Starting Date',
                     ),
                     autovalidateMode: AutovalidateMode.always,
