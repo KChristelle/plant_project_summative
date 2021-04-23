@@ -35,8 +35,8 @@ class PlantApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: LandingPage(),
-      home: PlantManager(),
+      home: LandingPage(),
+      // home: PlantManager(),
     );
   }
 }

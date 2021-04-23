@@ -7,6 +7,8 @@ import 'package:plant_growth_tracking_app/screens/details/sunlight.dart';
 import 'package:plant_growth_tracking_app/screens/details/watering.dart';
 
 class PlantDetails extends StatelessWidget {
+  PlantDetails(this.index);
+  final int index;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,7 +44,7 @@ class PlantDetails extends StatelessWidget {
                     children: [
                       SubTitle(title: "Plant Name"),
                       // select plant species
-                      PlantSpeciesSelector(),
+                      PlantSpeciesSelector(index),
                     ],
                   ),
                 ),
@@ -57,7 +59,7 @@ class PlantDetails extends StatelessWidget {
                       SubTitle(title: "Plant Location"),
 
                       // select plant location
-                      PlantLocationSelector(),
+                      PlantLocationSelector(index),
                     ],
                   ),
                 ),
@@ -80,7 +82,7 @@ class PlantDetails extends StatelessWidget {
                   ),
 
                   // select plant description
-                  PlantDescriptionSelector(),
+                  PlantDescriptionSelector(index),
                 ],
               ),
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
+import 'package:plant_growth_tracking_app/screens/details/details.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
 
 class PlantsGridView extends StatelessWidget {
   @override
@@ -8,7 +10,7 @@ class PlantsGridView extends StatelessWidget {
     return SizedBox(
       height: 300,
       child: GridView.builder(
-        itemCount: userplants.length,
+        itemCount: plantindex,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: kDefaultPadding / 2,
@@ -16,7 +18,16 @@ class PlantsGridView extends StatelessWidget {
           childAspectRatio: 0.7,
         ),
         itemBuilder: (BuildContext context, int index) {
-          return userplants[index];
+          return UserPlantCard(
+            image: imgURL[index],
+            title: plantSpecies[index],
+            location: plantLocation[index],
+            action: Icon(Icons.add_circle),
+            press: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => PlantProfile(2)));
+            },
+          );
         },
       ),
     );

@@ -321,15 +321,15 @@
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.2+3",
+      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+3",
       "packageUri": "lib/",
-      "languageVersion": "2.10"
+      "languageVersion": "2.12"
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-1.0.3+1",
+      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite_common-2.0.0+2",
       "packageUri": "lib/",
-      "languageVersion": "2.7"
+      "languageVersion": "2.12"
     },
     {
       "name": "stack_trace",
@@ -351,9 +351,9 @@
     },
     {
       "name": "synchronized",
-      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-2.2.0+2",
+      "rootUri": "file:///home/rachel/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-3.0.0",
       "packageUri": "lib/",
-      "languageVersion": "2.8"
+      "languageVersion": "2.12"
     },
     {
       "name": "table_calendar",
@@ -416,7 +416,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-04-23T09:07:34.902323Z",
+  "generated": "2021-04-23T16:57:49.121102Z",
   "generator": "pub",
   "generatorVersion": "2.12.3"
 }

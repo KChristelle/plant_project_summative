@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 // ignore: unused_import
 import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
+
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 // ignore: unused_import
@@ -24,6 +28,8 @@ class ViewPlants extends StatefulWidget {
 class _ViewPlantsState extends State<ViewPlants> {
   @override
   Widget build(BuildContext context) {
+    inventorySize = user_plants.length;
+
     Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
@@ -56,7 +62,8 @@ class _ViewPlantsState extends State<ViewPlants> {
                 // Removed the "invertorysize " variable
                 // because it is not have a limited size. It created an infinite
                 // number of plant cards. Find the var in user.dart
-                itemCount: 4,
+                // itemCount: 4,
+                itemCount: inventorySize,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: kDefaultPadding / 20,
@@ -65,7 +72,17 @@ class _ViewPlantsState extends State<ViewPlants> {
                 ),
                 itemBuilder: (BuildContext context, int index) {
                   // return userplants[index];
-                  return userplants[index];
+
+                  List<dynamic> row = user_plants[index];
+                  return UserPlantCard(
+                    image: "assets/img${row[2]}.jpg",
+                    title: plantSpecies[row[2]],
+                    country: "Russia",
+                    action: Icon(Icons.add_circle),
+                    location: plantLocation[row[2]],
+                    plantID: row[0],
+                    press: () {},
+                  );
                 },
               ),
             ),

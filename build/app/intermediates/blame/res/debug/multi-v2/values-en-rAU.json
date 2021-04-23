@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/rachel/Documents/Year3-CS/Mobile Dev/final/plant_project_summative/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
+            "outputFile": "C:\\Users\\fhayw\\AndroidStudioProjects\\mobilesumm\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
             "map": [
                 {
-                    "source": "/home/rachel/.gradle/caches/transforms-2/files-2.1/3e26ef26d15f163a2f1a31a2130a0254/core-1.1.0/res/values-en-rAU/values-en-rAU.xml",
+                    "source": "C:\\Users\\fhayw\\.gradle\\caches\\transforms-2\\files-2.1\\3e26ef26d15f163a2f1a31a2130a0254\\core-1.1.0\\res\\values-en-rAU\\values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

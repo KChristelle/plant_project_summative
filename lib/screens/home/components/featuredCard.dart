@@ -10,11 +10,13 @@ class FeaturedPlantCard extends StatelessWidget {
     this.country,
     this.location,
     this.action,
-    this.press,
+    this.i,
+    this.press
   }) : super(key: key);
   final String image, title, country, location;
   final Icon action;
   final Function press;
+  final int i;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +50,7 @@ class FeaturedPlantCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => PlantProfile(),
+                  builder: (context) => PlantProfile(i),
                 ),
               );
             },
@@ -117,7 +119,7 @@ class FeaturedPlantCard extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => PlantProfile()));
+                              builder: (context) => PlantProfile(i)));
                     },
                   ),
                 ],

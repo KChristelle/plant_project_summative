@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/rachel/Documents/Year3-CS/Mobile Dev/final/plant_project_summative/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ro/values-ro.xml",
+            "outputFile": "C:\\Users\\fhayw\\AndroidStudioProjects\\mobilesumm\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
-                    "source": "/home/rachel/.gradle/caches/transforms-2/files-2.1/97461efba6c5e9e0983cc52e8129f2d5/play-services-base-17.1.0/res/values-ro/values.xml",
+                    "source": "C:\\Users\\fhayw\\.gradle\\caches\\transforms-2\\files-2.1\\97461efba6c5e9e0983cc52e8129f2d5\\play-services-base-17.1.0\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/home/rachel/.gradle/caches/transforms-2/files-2.1/420a15668402a80d25e360afa6cb5b8d/jetified-play-services-basement-17.1.0/res/values-ro/values.xml",
+                    "source": "C:\\Users\\fhayw\\.gradle\\caches\\transforms-2\\files-2.1\\edbc61e301bd453025c770a2b722cc44\\jetified-play-services-basement-17.1.0\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/rachel/.gradle/caches/transforms-2/files-2.1/3e26ef26d15f163a2f1a31a2130a0254/core-1.1.0/res/values-ro/values-ro.xml",
+                    "source": "C:\\Users\\fhayw\\.gradle\\caches\\transforms-2\\files-2.1\\3e26ef26d15f163a2f1a31a2130a0254\\core-1.1.0\\res\\values-ro\\values-ro.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -46,12 +46,30 @@ class PlantScheduler extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
-                  IconButton(
-                      icon: Icon(Icons.close),
-                      iconSize: 20,
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      }),
+                  // IconButton(
+                  //     icon: Icon(Icons.close),
+                  //     iconSize: 20,
+                  //     onPressed: () {
+                  //       Navigator.of(context).pop();
+                  //     }),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PlantProfile(1),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "x",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w600,
+                        color: kTextColor,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

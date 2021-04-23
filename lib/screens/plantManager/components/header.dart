@@ -104,7 +104,7 @@ class HeaderWithPlantDetails extends StatelessWidget {
               width: size.height * 0.18,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage("assets/img1.jpg"),
+                  image: AssetImage("assets/img0.jpg"),
                   fit: BoxFit.cover,
                 ),
                 borderRadius: BorderRadius.all(

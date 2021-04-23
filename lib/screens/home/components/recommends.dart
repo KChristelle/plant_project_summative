@@ -19,20 +19,21 @@ class RecommendsPlants extends StatelessWidget {
         horizontal: kDefaultPadding * 0.5,
       ),
       child: ListView.builder(
-        itemCount: recommendedplants.length,
+        itemCount: plantindex,
         scrollDirection: Axis.horizontal,
         shrinkWrap: true,
         primary: true,
         itemBuilder: (context, index) {
           return RecommendPlantCard(
-            image: recommendedplants[index].image,
-            title: recommendedplants[index].title,
-            country: recommendedplants[index].country,
-            location: recommendedplants[index].location,
-            action: recommendedplants[index].action,
+            image: imgURL[index],
+            title: plantSpecies[index],
+            location: plantLocation[index],
+            action: Icon(Icons.add_circle),
+            i: index,
+
             press: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => PlantProfile()));
+                  MaterialPageRoute(builder: (context) => PlantProfile(index)));
             },
           );
         },
