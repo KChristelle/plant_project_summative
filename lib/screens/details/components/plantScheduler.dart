@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
-// ignore: unused_import
-import 'package:date_field/date_field.dart';
-import 'package:plant_growth_tracking_app/screens/details/components/test.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/switch.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
 class PlantScheduler extends StatelessWidget {
@@ -287,14 +285,7 @@ class PlantScheduler extends StatelessWidget {
                     ),
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
-                    press: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DateTimePicker(),
-                        ),
-                      );
-                    },
+                    slider: MGreenSwitch(),
                   ),
                   SizedBox(
                     height: kDefaultPadding / 2,
@@ -311,25 +302,7 @@ class PlantScheduler extends StatelessWidget {
                     ),
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
-                    press: () {
-                      // dialog box with only time picker
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => DateTimePicker(),
-                        ),
-                      );
-                      // DateTimeFormField(
-                      //   mode: DateTimeFieldPickerMode.time,
-                      //   autovalidateMode: AutovalidateMode.always,
-                      //   validator: (e) => (e?.day ?? 0) == 1
-                      //       ? 'Please not the first day'
-                      //       : null,
-                      //   onDateSelected: (DateTime value) {
-                      //     print(value);
-                      //   },
-                      // );
-                    },
+                    slider: EGreenSwitch(),
                   ),
                   SizedBox(
                     height: kDefaultPadding,
