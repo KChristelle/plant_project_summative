@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/resources/constants.dart';
 
 class CareOption extends StatelessWidget {
   CareOption({
@@ -8,6 +9,7 @@ class CareOption extends StatelessWidget {
     this.schedule,
     this.color,
     this.backgroundColor,
+    this.slider,
     // Add another global var
   });
   final String title, schedule;

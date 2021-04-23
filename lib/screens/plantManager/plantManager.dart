@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/screens/plantManager/components/header.dart';
@@ -28,8 +29,10 @@ class PlantManager extends StatelessWidget {
             Container(
               height: size.height,
             ),
-            HeaderWithPlantDetails(),
-            PlantCareDetails(),
+            GetPlantInfo(plantID),
+            GetPlantHealth(plantID),
+
+
           ],
         ),
       ),

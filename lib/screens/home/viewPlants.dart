@@ -20,7 +20,7 @@ class ViewPlants extends StatefulWidget {
 class _ViewPlantsState extends State<ViewPlants> {
   @override
   Widget build(BuildContext context) {
-    inventorySize = user_plants.length;
+    inventorySize = user_plants.length-1;
 
     Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done

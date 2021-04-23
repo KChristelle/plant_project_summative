@@ -4,6 +4,10 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/switch.dart';
 
+import '../fertilize.dart';
+import '../sunlight.dart';
+import '../watering.dart';
+
 class PlantDetails extends StatelessWidget {
   PlantDetails(this.index);
   final int index;
