@@ -21,14 +21,6 @@ This a flutter project and requires:
 - Any IDE of your choice
 - Emulator or device to run the app
 
-## Problem Statement
-
-Over the past few years, the houseplant industry has been growing and shows no signs of slowing down.  Seven in 10 millennials are plant owners, and 67% say taking care of their plants is more demanding than anticipated. New plant owners do not have the tools to take care of their plants and fail to keep their plants alive, leaving them feeling frustrated and discouraged. This Plant Tracker will provide the user with all the information they need before starting this journey. Once they own the plant, they will be given the tools to take care of the plant, such as calendars, reminders, and the right information about the plant.
-
-## Solution Statement
-
-For millennials between the ages of 23 and 38, who want to own a plant/plants and struggle with taking care of them, “The Plant Tracker” is an application that will provide them with the right tools to take care of their plants successfully. Instead of doing the research themselves on each individual plant, the plant tracker will provide all the information on one platform. 
-
 ## Purpose of the Application
 
 The plant tracker application has four main goals:
