@@ -40,13 +40,19 @@ class HeaderWithPlantDetails extends StatelessWidget {
                       color: kPrimaryColor, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
+                  height: kDefaultPadding * 0.5,
+                ),
+                SizedBox(
                   height: kDefaultPadding / 2,
                 ),
 
                 // details
-                Text(
-                  'Aloe vera is a short-stemmed plant growing\n to 60–100 centimetres tall ... ',
-                  style: TextStyle(color: kPrimaryColor, fontSize: 12),
+                Container(
+                  width: 220,
+                  child: Text(
+                    'Aloe vera is a short-stemmed plant growing to 60–100 centimetres tall, spreading by offsets. The leaves are thick and fleshy, green to grey-green, with some varieties showing white flecks on their upper and lower stem surfaces.',
+                    style: TextStyle(color: kPrimaryColor, fontSize: 12),
+                  ),
                 ),
                 SizedBox(
                   height: kDefaultPadding,
@@ -54,26 +60,26 @@ class HeaderWithPlantDetails extends StatelessWidget {
 
                 // params
                 // room temp
-                Row(
-                  children: [
-                    PlantCareParams(
-                      icon: Icons.thermostat_outlined,
-                      title: "Room Temp",
-                      value: "25",
-                    ),
+                // Row(
+                //   children: [
+                //     PlantCareParams(
+                //       icon: Icons.thermostat_outlined,
+                //       title: "Room Temp",
+                //       value: "25°C",
+                //     ),
 
-                    SizedBox(
-                      width: kDefaultPadding,
-                    ),
+                //     SizedBox(
+                //       width: kDefaultPadding,
+                //     ),
 
-                    // sunlight
-                    PlantCareParams(
-                      icon: Icons.wb_sunny_outlined,
-                      title: "Sunlight",
-                      value: "60",
-                    ),
-                  ],
-                ),
+                //     // sunlight
+                //     PlantCareParams(
+                //       icon: Icons.wb_sunny_outlined,
+                //       title: "Sunlight",
+                //       value: "60",
+                //     ),
+                //   ],
+                // ),
                 SizedBox(
                   height: kDefaultPadding * 1,
                 ),
@@ -81,35 +87,56 @@ class HeaderWithPlantDetails extends StatelessWidget {
                 // state of plant
                 //
                 // HEALTHY
-                PlantHealthState(
-                  state: "Healthy",
-                  textColor: kPrimaryColor,
-                  backgroundColor: lightGreen.withOpacity(0.5),
-                ),
+                // PlantHealthState(
+                //   state: "Healthy",
+                //   textColor: kPrimaryColor,
+                //   backgroundColor: lightGreen.withOpacity(0.5),
+                // ),
               ],
             ),
           ),
-
-          // image
+          // image from plantimage
           Positioned(
-            top: 0,
-            left: size.width * 0.5,
-            right: 0,
+            top: size.height * 0.03,
+            left: size.width * 0.60,
             child: Container(
-              width: size.width * 0.5,
-              height: size.height * 0.35,
-              margin: EdgeInsets.only(left: 19),
+              height: size.height * 0.18,
+              width: size.height * 0.18,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomRight: Radius.circular(36),
-                ),
                 image: DecorationImage(
                   image: AssetImage("assets/img0.jpg"),
                   fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(size.height * 0.125),
+                ),
+                border: Border.all(
+                  color: Color(0xffBBB7B7),
+                  width: 1.0,
+                ),
               ),
             ),
           ),
+          // image
+          // Positioned(
+          //   top: 0,
+          //   left: size.width * 0.5,
+          //   right: 0,
+          //   child: Container(
+          //     width: size.width * 0.5,
+          //     height: size.height * 0.35,
+          //     margin: EdgeInsets.only(left: 19),
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.only(
+          //         bottomRight: Radius.circular(36),
+          //       ),
+          //       image: DecorationImage(
+          //         image: AssetImage("assets/img1.jpg"),
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:intl/intl.dart';
 import 'package:plant_growth_tracking_app/data/user.dart';
 
@@ -38,27 +39,24 @@ Future<void> getUserPlants(String email) async {
   });
   print(res);
   user_plants = res;
-
 }
-
 
 Future<bool> addPlant(String user, int startingHealth, int startingflvl,
     int startingwlvl, int startingmlvl, int plantindex) async {
-
   bool status = true;
   CollectionReference plants = FirebaseFirestore.instance.collection('plants');
   plants
       .add({
-    'health': startingHealth,
-    'user': user,
-    'fertiliser': startingflvl,
-    'water': startingwlvl,
-    'maintain_lvl': startingmlvl,
-    'last_light': DateTime.now(),
-    'plant_index': plantindex
-  })
-      .then((value) => status=true)
-      .catchError((error) => status =false);
+        'health': startingHealth,
+        'user': user,
+        'fertiliser': startingflvl,
+        'water': startingwlvl,
+        'maintain_lvl': startingmlvl,
+        'last_light': DateTime.now(),
+        'plant_index': plantindex
+      })
+      .then((value) => status = true)
+      .catchError((error) => status = false);
 
   return status;
 }

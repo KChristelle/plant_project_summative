@@ -64,7 +64,7 @@ class HeaderWithSearchBox extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: kBackgroundColor,
                         borderRadius: BorderRadius.all(
-                            Radius.circular(size.height * 0.06))),
+                            Radius.circular(size.height * 0.07))),
                     child: Image.asset(
                       "assets/plants-logo.jpg",
                     ),

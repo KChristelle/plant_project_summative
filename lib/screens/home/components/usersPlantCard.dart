@@ -71,26 +71,6 @@ class UserPlantCard extends StatelessWidget {
               ),
               child: Row(
                 children: <Widget>[
-                  // RichText(
-                  //   text: TextSpan(
-                  //     children: [
-                  //       TextSpan(
-                  //           text: "$title\n".toUpperCase(),
-                  //           style: Theme.of(context).textTheme.button),
-                  //       // TextSpan(
-                  //       //   text: "$country\n".toUpperCase(),
-                  //       //   style: TextStyle(
-                  //       //     color: kPrimaryColor.withOpacity(0.5),
-                  //       //     fontSize: 12,
-                  //       //   ),
-                  //       // ),
-                  //       TextSpan(
-                  //         text: "$location",
-                  //         style: TextStyle(
-                  //           color: kPrimaryColor,
-                  //           fontSize: 12,
-                  //           fontWeight: FontWeight.bold,
-                  //           letterSpacing: 0.5,
                   Column(
                     children: <Widget>[
                       Row(

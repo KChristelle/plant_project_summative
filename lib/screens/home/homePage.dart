@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/body.dart';
+import 'package:plant_growth_tracking_app/screens/home/components/uploadDialogBox.dart';
 import 'package:plant_growth_tracking_app/screens/home/explorePage.dart';
 import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
 import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 import 'package:plant_growth_tracking_app/screens/reminders/reminders.dart';
 import '../../data/user.dart';
-import '../../data/db_functions.dart';
 
 class HomePage extends StatefulWidget {
   // This widget is the home page of the application. It is stateful, meaning
@@ -105,7 +104,6 @@ class BottomNavBar extends StatelessWidget {
         // bottom: kDefaultPadding,
       ),
       height: 60,
-      // height: 80,
       decoration: BoxDecoration(
         color: kBackgroundColor,
         boxShadow: [
@@ -142,8 +140,7 @@ class BottomNavBar extends StatelessWidget {
               size: 25,
             ),
             onPressed: () {
-
-               Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) => PlantProfile(1),
@@ -157,8 +154,7 @@ class BottomNavBar extends StatelessWidget {
               color: kPrimaryColor,
               size: 25,
             ),
-            onPressed: ()  {
-
+            onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -225,10 +221,10 @@ class _DrawerHomeState extends State<DrawerHome> {
               // Edit icon
               Positioned(
                 top: 95,
-                left: 73,
+                left: 70,
                 child: Container(
-                  width: 20,
-                  height: 20,
+                  width: 26,
+                  height: 26,
                   decoration: BoxDecoration(
                     color: Color(0xff316344).withOpacity(0.8),
                     borderRadius: BorderRadius.all(
@@ -236,14 +232,19 @@ class _DrawerHomeState extends State<DrawerHome> {
                     ),
                     border: Border.all(
                       color: Color(0xffBBB7B7),
-                      width: 1.0,
+                      width: 1.5,
                     ),
                   ),
                   child: IconButton(
-                    icon: Icon(Icons.edit_rounded),
+                    icon: Icon(Icons.add_photo_alternate_rounded),
                     color: kBackgroundColor,
-                    iconSize: 16,
-                    onPressed: () {},
+                    iconSize: 15,
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              UploadPictureDialog());
+                    },
                   ),
                 ),
               ),
@@ -279,7 +280,6 @@ class _DrawerHomeState extends State<DrawerHome> {
                 style: TextStyle(color: kBackgroundColor),
               ),
               onTap: () async {
-
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ViewPlants()));
               },

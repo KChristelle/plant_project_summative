@@ -9,7 +9,8 @@ class Categories extends StatefulWidget {
 
 class _CategoriesState extends State<Categories> {
   // create list of categories to scroll to the right
-  List<String> categories = ["All", "Outdoor", "Indoor", "Office", "Garden"];
+  List<String> categories = ["All", "Outdoor", "Indoor"];
+  //, "Office", "Garden"
 
   // By default our first item will be selected
   int selectedIndex = 0;

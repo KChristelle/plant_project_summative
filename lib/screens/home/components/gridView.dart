@@ -8,7 +8,7 @@ class PlantsGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 587,
       child: GridView.builder(
         itemCount: plantindex,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

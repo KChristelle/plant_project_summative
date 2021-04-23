@@ -111,6 +111,7 @@ class CreateAccount extends StatelessWidget {
                             (myPwController.text == '')) {
                           showAlertDialogPwNotMatch(context);
                         } else {
+                          // ignore: unused_local_variable
                           var res = register(
                               myEmailController.text, myPwController.text);
                           // print(res);

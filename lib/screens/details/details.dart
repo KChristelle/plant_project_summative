@@ -18,7 +18,9 @@ class PlantProfile extends StatelessWidget {
         child: AppBarHome(
           title: "Plant App",
           color: kBackgroundColor,
-          textColor: Color(0xff316344).withOpacity(0.63),
+          // textColor: Color(0xff316344).withOpacity(0.63),
+          textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -36,7 +38,7 @@ class PlantProfile extends StatelessWidget {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

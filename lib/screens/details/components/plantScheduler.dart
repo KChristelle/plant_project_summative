@@ -4,6 +4,7 @@ import 'package:plant_growth_tracking_app/screens/details/components/listSelecto
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 // ignore: unused_import
 import 'package:date_field/date_field.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/test.dart';
 import 'package:plant_growth_tracking_app/screens/details/details.dart';
 
 class PlantScheduler extends StatelessWidget {
@@ -45,6 +46,12 @@ class PlantScheduler extends StatelessWidget {
                     ),
                   ),
                   Spacer(),
+                  // IconButton(
+                  //     icon: Icon(Icons.close),
+                  //     iconSize: 20,
+                  //     onPressed: () {
+                  //       Navigator.of(context).pop();
+                  //     }),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -163,65 +170,95 @@ class PlantScheduler extends StatelessWidget {
                     height: 1.0,
                     color: Color(0xffBBB7B7),
                   ),
-                  SizedBox(
-                    height: kDefaultPadding,
-                  ),
+                  // SizedBox(
+                  //   height: kDefaultPadding,
+                  // ),
 
                   // calendar setting
-                  Row(
-                    children: [
-                      // calendar icon
-                      IconButton(
-                        icon: Icon(Icons.calendar_today),
-                        iconSize: 20,
-                        color: kTextColor,
-                        onPressed: () {
-                          //
-                        },
-                      ),
+                  // Row(
+                  //   children: [
+                  //     // calendar icon
+                  //     IconButton(
+                  //       icon: Icon(Icons.calendar_today),
+                  //       iconSize: 20,
+                  //       color: kTextColor,
+                  //       onPressed: () {
+                  //         //
+                  //       },
+                  //     ),
 
-                      SizedBox(
-                        width: size.width * 0.04,
-                      ),
+                  //     SizedBox(
+                  //       width: size.width * 0.04,
+                  //     ),
 
-                      // starting date
-                      Column(
-                        children: [
-                          RichText(
-                            text: TextSpan(
-                              children: [
-                                TextSpan(
-                                  text: "Starting Date\n",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w600,
-                                    letterSpacing: 0.5,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                                TextSpan(
-                                  text: "Today",
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w300,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      // arrow
-                      Icon(
-                        Icons.arrow_forward_ios,
-                        size: 18,
-                        color: kTextColor,
-                      ),
-                    ],
-                  ),
+                  //     // starting date
+                  //     Column(
+                  //       children: [
+                  //         RichText(
+                  //           text: TextSpan(
+                  //             children: [
+                  //               TextSpan(
+                  //                 text: "Starting Date\n",
+                  //                 style: TextStyle(
+                  //                   fontWeight: FontWeight.w600,
+                  //                   letterSpacing: 0.5,
+                  //                   fontSize: 12,
+                  //                   color: darkGreen,
+                  //                 ),
+                  //               ),
+                  //               TextSpan(
+                  //                 text: "Today",
+                  //                 style: TextStyle(
+                  //                   fontSize: 10,
+                  //                   fontWeight: FontWeight.w300,
+                  //                   letterSpacing: 0.5,
+                  //                   color: darkGreen,
+                  //                 ),
+                  //               ),
+                  //             ],
+                  //           ),
+                  //         ),
+                  //       ],
+                  //     ),
+                  //     Spacer(),
+                  //     // arrow
+                  //     IconButton(
+                  //         icon: Icon(Icons.arrow_forward_ios),
+                  //         iconSize: 18,
+                  //         color: kTextColor,
+                  //         onPressed: () {
+                  //           Navigator.push(
+                  //             context,
+                  //             MaterialPageRoute(
+                  //               builder: (context) => DateTimePicker(),
+                  //             ),
+                  //           );
+                  //         }),
+                  //   ],
+                  // ),
                   SizedBox(
                     height: kDefaultPadding,
+                  ),
+
+                  // TODO: Change color to green
+                  DateTimeFormField(
+                    decoration: const InputDecoration(
+                      hintStyle: TextStyle(color: Colors.black45, fontSize: 10),
+                      errorStyle: TextStyle(color: Colors.redAccent),
+                      border: OutlineInputBorder(),
+                      // TODO Find the right shade of green
+                      suffixIcon: Icon(Icons.event_note, color: Colors.green),
+                      labelText: 'Starting Date',
+                    ),
+                    autovalidateMode: AutovalidateMode.always,
+                    validator: (e) =>
+                        (e?.day ?? 0) == 1 ? 'Please not the first day' : null,
+                    onDateSelected: (DateTime value) {
+                      print(value);
+                    },
+                  ),
+                  SizedBox(
+                    height: kDefaultPadding / 2,
                   ),
                   Container(
                     height: 1.0,
@@ -235,10 +272,10 @@ class PlantScheduler extends StatelessWidget {
                   SectionTitle(
                     title: "SET REMINDER",
                   ),
+
                   SizedBox(
                     height: kDefaultPadding / 2,
                   ),
-
                   // morning
                   CareOption(
                     title: "Morning",
@@ -251,12 +288,12 @@ class PlantScheduler extends StatelessWidget {
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
                     press: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => DateTimePicker(),
-                      //   ),
-                      // );
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DateTimePicker(),
+                        ),
+                      );
                     },
                   ),
                   SizedBox(
@@ -275,11 +312,22 @@ class PlantScheduler extends StatelessWidget {
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
                     press: () {
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => DateTimePicker(),
-                      //   ),
+                      // dialog box with only time picker
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DateTimePicker(),
+                        ),
+                      );
+                      // DateTimeFormField(
+                      //   mode: DateTimeFieldPickerMode.time,
+                      //   autovalidateMode: AutovalidateMode.always,
+                      //   validator: (e) => (e?.day ?? 0) == 1
+                      //       ? 'Please not the first day'
+                      //       : null,
+                      //   onDateSelected: (DateTime value) {
+                      //     print(value);
+                      //   },
                       // );
                     },
                   ),
@@ -319,6 +367,7 @@ class SectionTitle extends StatelessWidget {
 class DayButton extends StatefulWidget {
   DayButton({Key key, this.action});
   final String action;
+  // bool isButtonPressed = false;
   @override
   _DayButtonState createState() => _DayButtonState();
 }
@@ -350,9 +399,10 @@ class _DayButtonState extends State<DayButton> {
       height: 25,
       // ignore: deprecated_member_use
       child: RaisedButton(
+        padding: EdgeInsets.all(0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(30),
+            Radius.circular(35),
           ),
         ),
         color: _color,

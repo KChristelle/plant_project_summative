@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-import 'package:plant_growth_tracking_app/screens/plantManager/components/statistics.dart';
 
 class PlantCareDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Positioned(
-      top: size.height * 0.35,
+      top: size.height * 0.25,
       child: Container(
         width: size.width,
         height: size.height * 0.6,
@@ -21,7 +20,7 @@ class PlantCareDetails extends StatelessWidget {
             TitleWithIcon(
               title: 'Plant Overview',
               icon: Icon(
-                Icons.search,
+                Icons.remove_red_eye,
                 color: lightGreen,
                 size: 20,
               ),
@@ -63,9 +62,20 @@ class PlantCareDetails extends StatelessWidget {
             SizedBox(
               height: kDefaultPadding,
             ),
-
+            // health
+            PlantCareStatistics(
+              value: "50%",
+              title: "Health",
+              details: 'Overview of the plants overall health.',
+              icon: Icon(
+                Icons.healing,
+                color: lightGreen.withOpacity(0.5),
+                size: 16,
+              ),
+              newheight: 0.87,
+            ),
             // additional statistics
-            AdditionalStatistics(),
+            // AdditionalStatistics(),
           ],
         ),
       ),

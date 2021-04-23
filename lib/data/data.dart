@@ -6,14 +6,12 @@ import 'package:plant_growth_tracking_app/screens/reminders/components/checklist
 
 int plantindex = plantSpecies.length;
 
-
-
 List<String> plantSpecies = [
   'Aloe Vera',
-  'Compact Corn',
+  'Compact',
   'Kentia Palm',
-  'Fiddle Leaf Pig',
-  'Burgundy Rubber',
+  'Fiddle Leaf',
+  'Burgundy',
   'Green Prayer',
   'Croton',
 ];
@@ -214,28 +212,28 @@ List<UserPlantCard> userplants = [
 ];
 
 List<ChecklistCard> checklist = [
-ChecklistCard(
-image: "assets/img1.jpg",
-icon: Icon(Icons.water_damage_outlined),
-category: "Watering",
-plantTitle: "Aloe Vera",
-time: "10:00 AM",
-action: false,
-),
-ChecklistCard(
-image: "assets/img2.jpg",
-icon: Icon(Icons.water_damage_outlined),
-category: "Fertilize",
-plantTitle: "Aloe Vera",
-time: "10:00 AM",
-action: false,
-),
-ChecklistCard(
-image: "assets/img3.jpg",
-icon: Icon(Icons.water_damage_outlined),
-category: "Sunlight",
-plantTitle: "Cactus",
-time: "10:00 AM",
-action: false,
-),
+  ChecklistCard(
+    image: "assets/img1.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Watering",
+    plantTitle: "Aloe Vera",
+    time: "10:00 AM",
+    action: false,
+  ),
+  ChecklistCard(
+    image: "assets/img2.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Fertilize",
+    plantTitle: "Aloe Vera",
+    time: "10:00 AM",
+    action: false,
+  ),
+  ChecklistCard(
+    image: "assets/img3.jpg",
+    icon: Icon(Icons.water_damage_outlined),
+    category: "Sunlight",
+    plantTitle: "Cactus",
+    time: "10:00 AM",
+    action: false,
+  ),
 ];

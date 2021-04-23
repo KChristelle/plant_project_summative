@@ -17,8 +17,8 @@ class PlantManager extends StatelessWidget {
         child: AppBarHome(
           title: "Plant Manager",
           color: kBackgroundColor,
-          textColor: Color(0xff316344).withOpacity(0.63),
-          iconColor: Color(0xff316344).withOpacity(0.63),
+          textColor: kPrimaryColor,
+          iconColor: kPrimaryColor,
         ),
       ),
       drawer: DrawerHome(),
@@ -33,6 +33,7 @@ class PlantManager extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

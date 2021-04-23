@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:plant_growth_tracking_app/data/firebase_controller.dart';
+import 'package:plant_growth_tracking_app/data/user.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
-// ignore: unused_import
-import 'package:plant_growth_tracking_app/screens/home/components/gridView.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
 
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
-// ignore: unused_import
-import '../../data/user.dart';
-
-// ignore: unused_import
-import 'components/categoryTitle.dart';
 
 // This widget is the home page of the application. It is stateful, meaning
 class ViewPlants extends StatefulWidget {
@@ -25,16 +18,9 @@ class ViewPlants extends StatefulWidget {
 }
 
 class _ViewPlantsState extends State<ViewPlants> {
-
-
   @override
   Widget build(BuildContext context) {
-
-
     inventorySize = user_plants.length;
-
-
-
 
     Size size = MediaQuery.of(context).size;
     // This method is rerun every time setState is called, for instance as done
@@ -44,7 +30,6 @@ class _ViewPlantsState extends State<ViewPlants> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      // backgroundColor: Colors.red,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kDefaultPadding * 2),
         child: AppBarHome(
@@ -69,6 +54,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                 // Removed the "invertorysize " variable
                 // because it is not have a limited size. It created an infinite
                 // number of plant cards. Find the var in user.dart
+                // itemCount: 4,
                 itemCount: inventorySize,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -80,7 +66,7 @@ class _ViewPlantsState extends State<ViewPlants> {
                   // return userplants[index];
 
                   List<dynamic> row = user_plants[index];
-                  return  UserPlantCard(
+                  return UserPlantCard(
                     image: "assets/img${row[2]}.jpg",
                     title: plantSpecies[row[2]],
                     country: "Russia",
@@ -89,7 +75,6 @@ class _ViewPlantsState extends State<ViewPlants> {
                     plantID: row[0],
                     press: () {},
                   );
-
                 },
               ),
             ),
@@ -97,7 +82,7 @@ class _ViewPlantsState extends State<ViewPlants> {
         ),
       ),
       bottomNavigationBar:
-      BottomNavBar(), // This trailing comma makes auto-formatting nicer for build methods.
+          BottomNavBar(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

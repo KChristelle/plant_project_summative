@@ -12,7 +12,7 @@ class FeaturesPlants extends StatelessWidget {
       width: size.width,
       height: size.height * 0.4,
       margin: EdgeInsets.symmetric(
-        horizontal: kDefaultPadding,
+        horizontal: kDefaultPadding * 0.5,
       ),
       child: ListView.builder(
         itemCount: plantindex,
