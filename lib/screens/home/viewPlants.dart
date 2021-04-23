@@ -4,7 +4,7 @@ import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/header.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/topNav.dart';
 import 'package:plant_growth_tracking_app/screens/home/components/usersPlantCard.dart';
-
+import 'package:plant_growth_tracking_app/screens/plantManager/plantManager.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
 import 'package:plant_growth_tracking_app/data/data.dart';
 
@@ -72,7 +72,12 @@ class _ViewPlantsState extends State<ViewPlants> {
                     action: Icon(Icons.saved_search),
                     location: plantLocation[row[2]],
                     plantID: row[0],
-                    press: () {},
+                    press: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PlantManager()));
+                    },
                   );
                 },
               ),
