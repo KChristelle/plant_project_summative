@@ -20,6 +20,8 @@ For the UI design of the project we used figma.</br>
 
 [High Fidelity Prototype](https://www.figma.com/file/FBQk8oiWgHxI1hONfdTk8X/Plants-App?node-id=0%3A1)
 
+[SRS Documentation](https://docs.google.com/document/d/1Ubz3csXKA-lcpOi6siukqwOuN22Aalm7EAjAzpGE8U8/edit?usp=sharing)
+
 
 ## Prerequisites
 
