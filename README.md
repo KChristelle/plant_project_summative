@@ -17,9 +17,9 @@ For the UI design of the project we used figma.</br>
 
 [Project Tracker](https://docs.google.com/spreadsheets/d/1k4k3LYp0RKQzIm6yCqmui0TZwmglxDSaxIUVJWzUI1E/edit?usp=sharing)
 
-[Use Case Model](https://drive.google.com/file/d/1hwRNeirzS-5EvXHqB4-gXtAFjjuYzq6n/view?usp=sharing)
-
 [High Fidelity Prototype](https://www.figma.com/file/FBQk8oiWgHxI1hONfdTk8X/Plants-App?node-id=0%3A1)
+
+[Use Case Model](https://drive.google.com/file/d/1DtDd_t9lfSvp-L-on5w5IDK0rPAP5Lmq/view?usp=sharing)
 
 [SRS Documentation](https://drive.google.com/file/d/1NU9dUaUzVkIshsbB91zDDSMvXhpAUlar/view?usp=sharing)
 
