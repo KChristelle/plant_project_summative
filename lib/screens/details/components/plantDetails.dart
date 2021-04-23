@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/careOption.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/details/components/listSelector.dart';
-import 'package:plant_growth_tracking_app/screens/details/fertilize.dart';
-import 'package:plant_growth_tracking_app/screens/details/sunlight.dart';
-import 'package:plant_growth_tracking_app/screens/details/watering.dart';
+import 'package:plant_growth_tracking_app/screens/details/components/switch.dart';
 
 class PlantDetails extends StatelessWidget {
   PlantDetails(this.index);
@@ -117,17 +115,7 @@ class PlantDetails extends StatelessWidget {
                     schedule: "Not Set",
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
-                    press: () {
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => WateringScheduler(),
-                      //   ),
-                      // );
-                    },
-                    optionSwitch: WaterSwitch(),
+                    slider: WGreenSwitch(),
                   ),
                   SizedBox(
                     height: 5,
@@ -151,18 +139,7 @@ class PlantDetails extends StatelessWidget {
                     schedule: "Not Set",
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
-                    press: () {
-                      FertilizerSwitch();
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (context) => FertilizeScheduler(),
-                      //   ),
-                      // );
-                    },
-                    optionSwitch: FertilizerSwitch(),
+                    slider: FGreenSwitch(),
                   ),
                   SizedBox(
                     height: 5,
@@ -186,17 +163,7 @@ class PlantDetails extends StatelessWidget {
                     schedule: "Not Set",
                     color: sliderColor,
                     backgroundColor: sliderBackgroundColor,
-                    press: () {
-                      // sliderColor = kBackgroundColor;
-                      // sliderBackgroundColor = kPrimaryColor;
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SunlightScheduler(),
-                        ),
-                      );
-                    },
-                    optionSwitch: SunlightSwitch(),
+                    slider: SGreenSwitch(),
                   ),
                   SizedBox(
                     height: 5,
