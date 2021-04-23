@@ -1,11 +1,22 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:plant_growth_tracking_app/resources/constants.dart';
 import 'package:plant_growth_tracking_app/screens/home/homePage.dart';
+import 'package:plant_growth_tracking_app/screens/home/viewPlants.dart';
+import 'package:plant_growth_tracking_app/screens/login/landingPage.dart';
 
 void main() {
-  initializeDateFormatting().then((_) => runApp(PlantApp()));
+
+  initializeDateFormatting().then((_) => app());
+}
+
+void app() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(PlantApp());
 }
 
 class PlantApp extends StatelessWidget {
@@ -27,7 +38,11 @@ class PlantApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+       home: LandingPage(),
+     //home: HomePage(),
+      // home: Reminders(),
+       //home: ViewPlants(),
+      // home: ExplorePage(),
     );
   }
 }
