@@ -210,7 +210,7 @@ class _DrawerHomeState extends State<DrawerHome> {
                   color: Colors.white,
                 ),
                 accountEmail: Text(
-                  "UserEmail: " + userEmail,
+                  "Email: " + userEmail,
                   style: TextStyle(color: kPrimaryColor),
                 ),
                 currentAccountPicture: CircleAvatar(
@@ -272,7 +272,7 @@ class _DrawerHomeState extends State<DrawerHome> {
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 30.0, 0.0),
               leading: Icon(
-                Icons.shopping_bag_outlined,
+                Icons.verified_user_outlined,
                 color: kBackgroundColor,
               ),
               title: Text(
@@ -292,7 +292,7 @@ class _DrawerHomeState extends State<DrawerHome> {
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
               leading: Icon(
-                Icons.favorite_border_outlined,
+                Icons.event_note_outlined,
                 color: kBackgroundColor,
               ),
               title: Text(
@@ -312,7 +312,7 @@ class _DrawerHomeState extends State<DrawerHome> {
             ListTile(
               contentPadding: EdgeInsets.fromLTRB(25.0, 0.0, 15.0, 0.0),
               leading: Icon(
-                Icons.verified_user_outlined,
+                Icons.spa_rounded,
                 color: kBackgroundColor,
               ),
               title: Text(
