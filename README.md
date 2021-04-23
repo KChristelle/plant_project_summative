@@ -21,7 +21,11 @@ For the UI design of the project we used figma.</br>
 
 [High Fidelity Prototype](https://www.figma.com/file/FBQk8oiWgHxI1hONfdTk8X/Plants-App?node-id=0%3A1)
 
-[SRS Documentation](https://docs.google.com/document/d/1Ubz3csXKA-lcpOi6siukqwOuN22Aalm7EAjAzpGE8U8/edit?usp=sharing)
+[SRS Documentation](https://drive.google.com/file/d/1NU9dUaUzVkIshsbB91zDDSMvXhpAUlar/view?usp=sharing)
+
+[Video Presentation] (https://www.youtube.com/watch?v=4ubDr7N7Vdo&feature=youtu.be)
+
+[Slides](https://docs.google.com/presentation/d/1-Q3yuwgYr9sPCai3Vrz_B9h6j59sLT599AEKRVRjJRU/edit?usp=sharing)
 
 
 ## Prerequisites
