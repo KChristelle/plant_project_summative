@@ -49,37 +49,3 @@ Below is a brief overview of how the app works. The mobile application will:
 4. Explore and recommend other plant species suitable for growing at home
 5. Send push notifications on watering and overall health of the plant
 6. Display graphs for soil moisture levels and the required amount of water for a plant
-
-## Database
-
-Database is implemented with sqflite. 
-The database consists of 3 tables.
-
-1- Users (UserID, Email, Password)
-    This table id used to store a new users credentials. 
-    This table is used to validate a users login,
-    This table is used to associate user behavior to a unique user account. 
-    Unique email is enforced.
-    
-2- Plants (PlantID, Name, Details)
-    This table is used to store a plants name and details
-    
-3- Inventory (InventoryID, UserID, PlantID, Status, Health, Water, Sun)
-    This table is used to store a users plants. 
-    It stored the health of the plant and allows tracking of a plants metrics. 
-    
-TODO: 
-    Enforce valid email.  
-    Encrypt stored passwords.
-    Implement plant card factories. 
-    
-    
-## Points to work on for Summative
-
-Please note that this is not the final version of our project. <br>
-Some design will be improved upon and all backend functionality will be implemented for the final version of the project. For example:
-
-- Buying Plants
-- Viewing health of your plant
-- Search and explore for more plants
-- Calendar for viewing daily tasks
